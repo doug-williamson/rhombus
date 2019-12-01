@@ -3,32 +3,67 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rhombus": {
+    "rhombus-shell": {
+      "projectType": "library",
+      "root": "projects/rhombus-shell",
+      "sourceRoot": "projects/rhombus-shell/src",
+      "prefix": "rhombus-shell",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rhombus-shell/tsconfig.lib.json",
+            "project": "projects/rhombus-shell/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rhombus-shell/src/test.ts",
+            "tsConfig": "projects/rhombus-shell/tsconfig.spec.json",
+            "karmaConfig": "projects/rhombus-shell/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rhombus-shell/tsconfig.lib.json",
+              "projects/rhombus-shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "rhombus-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
+      "root": "projects/rhombus-app",
+      "sourceRoot": "projects/rhombus-app/src",
+      "prefix": "rhombus-app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rhombus",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist/rhombus-app",
+            "index": "projects/rhombus-app/src/index.html",
+            "main": "projects/rhombus-app/src/main.ts",
+            "polyfills": "projects/rhombus-app/src/polyfills.ts",
+            "tsConfig": "projects/rhombus-app/tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/rhombus-app/src/favicon.ico",
+              "projects/rhombus-app/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/rhombus-app/src/styles.scss"
             ],
             "scripts": []
           },
@@ -36,8 +71,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/rhombus-app/src/environments/environment.ts",
+                  "with": "projects/rhombus-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -67,33 +102,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rhombus:build"
+            "browserTarget": "rhombus-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rhombus:build:production"
+              "browserTarget": "rhombus-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rhombus:build"
+            "browserTarget": "rhombus-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "projects/rhombus-app/src/test.ts",
+            "polyfills": "projects/rhombus-app/src/polyfills.ts",
+            "tsConfig": "projects/rhombus-app/tsconfig.spec.json",
+            "karmaConfig": "projects/rhombus-app/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/rhombus-app/src/favicon.ico",
+              "projects/rhombus-app/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/rhombus-app/src/styles.scss"
             ],
             "scripts": []
           }
@@ -102,9 +137,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "projects/rhombus-app/tsconfig.app.json",
+              "projects/rhombus-app/tsconfig.spec.json",
+              "projects/rhombus-app/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -114,16 +149,16 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rhombus:serve"
+            "protractorConfig": "projects/rhombus-app/e2e/protractor.conf.js",
+            "devServerTarget": "rhombus-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rhombus:serve:production"
+              "devServerTarget": "rhombus-app:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "rhombus"
+  "defaultProject": "rhombus-app"
 }
