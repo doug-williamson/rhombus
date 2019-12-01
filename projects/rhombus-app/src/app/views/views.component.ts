@@ -6,7 +6,7 @@ import { RhombusShellNavItem } from 'projects/rhombus-shell/src/lib/models/shell
   templateUrl: './views.component.html',
   styleUrls: ['./views.component.scss']
 })
-export class ViewsComponent implements OnInit {
+export class RhombusAppViewsComponent implements OnInit {
 
   title = 'Rhombus App';
 

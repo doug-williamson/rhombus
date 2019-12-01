@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./views/views.module').then(m => m.ViewsModule)
+    loadChildren: () => import('./views/views.module').then(m => m.RhombusAppViewsModule)
   }
 ];
 
@@ -12,4 +12,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class RhombusAppRoutingModule { }

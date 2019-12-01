@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ViewsComponent } from './views.component';
-import { HomeComponent } from './home/home.component';
-import { LibraryComponent } from './library/library.component';
+import { RhombusAppViewsComponent } from './views.component';
+import { RhombusAppHomeComponent } from './home/home.component';
+import { RhombusAppLibraryComponent } from './library/library.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ViewsComponent,
+    component: RhombusAppViewsComponent,
     children: [
       {
         path: '',
@@ -16,11 +16,11 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: HomeComponent,
+        component: RhombusAppHomeComponent,
       },
       {
         path: 'library',
-        component: LibraryComponent,
+        component: RhombusAppLibraryComponent,
       }
     ]
   }

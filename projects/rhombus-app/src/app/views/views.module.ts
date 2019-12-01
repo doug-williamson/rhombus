@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ViewsComponent } from './views.component';
+import { RhombusAppViewsComponent } from './views.component';
 import { RhombusShellModule } from 'projects/rhombus-shell/src/public-api';
 import { ViewsRoutingModule } from './views.routing';
-import { HomeComponent } from './home/home.component';
-import { LibraryComponent } from './library/library.component';
+import { RhombusAppHomeComponent } from './home/home.component';
+import { RhombusAppLibraryComponent } from './library/library.component';
 
 @NgModule({
   imports: [
@@ -14,9 +14,9 @@ import { LibraryComponent } from './library/library.component';
     ViewsRoutingModule,
   ],
   declarations: [
-    ViewsComponent,
-    HomeComponent,
-    LibraryComponent
+    RhombusAppViewsComponent,
+    RhombusAppHomeComponent,
+    RhombusAppLibraryComponent
   ],
 })
-export class ViewsModule { }
+export class RhombusAppViewsModule { }

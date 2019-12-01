@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.scss']
 })
-export class LibraryComponent implements OnInit {
+export class RhombusAppLibraryComponent implements OnInit {
 
   constructor() { }
 
