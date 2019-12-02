@@ -11,6 +11,6 @@ export class RhombusShellAboutComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
 
 }

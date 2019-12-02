@@ -63,7 +63,8 @@
               "projects/rhombus-app/src/assets"
             ],
             "styles": [
-              "projects/rhombus-app/src/styles.scss"
+              "projects/rhombus-app/src/styles.scss",
+              "projects/rhombus-app/src/theme.scss"
             ],
             "scripts": []
           },
