@@ -1,41 +1,36 @@
-import { NgModule } from '@angular/core';
-import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
-import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatToolbarModule, MatListModule, MatIconModule, MatSidenavModule, MatMenuModule, MatDialogModule, MatCardModule } from '@angular/material';
-import { RouterModule } from '@angular/router';
-import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
-import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
-import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { RhombusShellCoreModule } from './core/shell-core.module';
+import { RhombusShellApplicationInformation, RHOMBUS_SHELL_APPLICATION_INFORMATION } from './core/models/shell-app-info';
+
+export interface RhombusShellConfiguration {
+  applicationInfo: RhombusShellApplicationInformation;
+}
+
+@NgModule({
+  exports: [
+    RhombusShellCoreModule,
+  ]
+})
+export class RhombusShellModule {
+    static forRoot(config: RhombusShellConfiguration): ModuleWithProviders {
+      return {
+        ngModule: RhombusShellRootModule,
+        providers: [
+          {
+            provide: RHOMBUS_SHELL_APPLICATION_INFORMATION,
+            useValue: config.applicationInfo,
+          }
+        ]
+      }
+    };
+ }
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule,
-    FlexLayoutModule,
-
-    MatButtonModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatMenuModule,
-    MatDialogModule,
-  ],
-  declarations: [
-    RhombusShellWrapperComponent,
-    RhombusShellHeaderComponent,
-    RhombusShellNavComponent,
-    RhombusShellAboutComponent,
-  ],
-  entryComponents: [
-    RhombusShellAboutComponent,
+    RhombusShellCoreModule.forRoot(),
   ],
   exports: [
-    RhombusShellWrapperComponent
-  ],
-  providers: [
+    RhombusShellModule
   ]
 })
-export class RhombusShellModule { }
+export class RhombusShellRootModule {}

@@ -1,2 +1,3 @@
-<rhombus-shell-wrapper [title]="title" [navItems]="navItems">
-</rhombus-shell-wrapper>
+<div [ngClass]="{ 'rhombus-dark-theme' : _isDarkTheme | async }">
+    <rhombus-shell-wrapper [title]="title" [navItems]="navItems"></rhombus-shell-wrapper>
+</div>

@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RhombusShellNavService } from '../../services/nav.service';
 import { MatDialog } from '@angular/material';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
+import { RhombusShellNavService } from '../../services/nav.service';
+import { RhombusShellThemeService } from '../../services/theme.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'rhombus-shell-header',
@@ -10,14 +12,18 @@ import { RhombusShellAboutComponent } from '../shell-about/shell-about.component
 })
 export class RhombusShellHeaderComponent implements OnInit {
 
+  isDarkTheme: Observable<boolean>;
+
   @Input()
   title: string;
   
   constructor(
     private navService: RhombusShellNavService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private themeService: RhombusShellThemeService) { }
 
   ngOnInit() {
+    this.isDarkTheme = this.themeService.isDarkTheme;
   }
 
   toggleNav() {
@@ -26,11 +32,15 @@ export class RhombusShellHeaderComponent implements OnInit {
 
   showAbout(): void {
     const dialogRef = this.dialog.open(RhombusShellAboutComponent, {
-      width: '250px',
+      width: '400px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  toggleDarkTheme(checked: boolean) {
+    this.themeService.setDarkTheme(checked);
   }
 }

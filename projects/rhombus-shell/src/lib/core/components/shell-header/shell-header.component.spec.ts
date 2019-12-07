@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShellHeaderComponent } from './shell-header.component';
+import { RhombusShellHeaderComponent } from './shell-header.component';
 
-describe('ShellHeaderComponent', () => {
-  let component: ShellHeaderComponent;
-  let fixture: ComponentFixture<ShellHeaderComponent>;
+describe('RhombusShellHeaderComponent', () => {
+  let component: RhombusShellHeaderComponent;
+  let fixture: ComponentFixture<RhombusShellHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShellHeaderComponent ]
+      declarations: [ RhombusShellHeaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShellHeaderComponent);
+    fixture = TestBed.createComponent(RhombusShellHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

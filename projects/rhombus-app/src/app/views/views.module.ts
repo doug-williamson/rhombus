@@ -10,7 +10,15 @@ import { RhombusAppLibraryComponent } from './library/library.component';
   imports: [
     CommonModule,
 
-    RhombusShellModule,
+    RhombusShellModule.forRoot({
+      applicationInfo: {
+        name: 'Rhombus Software',
+        version: '1.0.0-beta.1',
+        logoUrl: undefined,
+        logoLetters: 'R',
+        twitterUrl: 'https://twitter.com/ngRhombus',
+      }
+    }),
     ViewsRoutingModule,
   ],
   declarations: [

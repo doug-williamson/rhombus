@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-@import './components/shell-about/_shell-about.theme';
+@import './core/components/shell-about/_shell-about.theme';
 
 @mixin rhombus-shell-theme($theme) {
     @include rhombus-shell-about-theme($theme);

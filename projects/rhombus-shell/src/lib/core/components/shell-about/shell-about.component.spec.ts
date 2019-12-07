@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShellWrapperComponent } from './shell-wrapper.component';
+import { RhombusShellAboutComponent } from './shell-about.component';
 
-describe('ShellWrapperComponent', () => {
-  let component: ShellWrapperComponent;
-  let fixture: ComponentFixture<ShellWrapperComponent>;
+describe('RhombusShellAboutComponent', () => {
+  let component: RhombusShellAboutComponent;
+  let fixture: ComponentFixture<RhombusShellAboutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShellWrapperComponent ]
+      declarations: [ RhombusShellAboutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShellWrapperComponent);
+    fixture = TestBed.createComponent(RhombusShellAboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
