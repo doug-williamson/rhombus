@@ -4,12 +4,21 @@
     </button>
     <button mat-button [routerLink]="''">{{title}}</button>
     <div fxFlex></div>
-    <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)">Slide me!</mat-slide-toggle>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-slide-toggle 
+        class="shell-header__dark-mode"
+        (color)="accent"
+        [checked]="isDarkTheme | async" 
+        (change)="toggleDarkTheme($event.checked)" >
+        Dark Mode
+    </mat-slide-toggle>
+    <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>info</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item [routerLink]="'/settings'">Settings</button>
         <button mat-menu-item (click)="showAbout()">About</button>
-    </mat-menu>
+    </mat-menu> -->
+    <button mat-icon-button (click)="showAbout()">
+        <mat-icon>info</mat-icon>
+    </button>
 </mat-toolbar>

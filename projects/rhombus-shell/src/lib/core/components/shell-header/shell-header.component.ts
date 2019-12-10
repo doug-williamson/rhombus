@@ -23,7 +23,7 @@ export class RhombusShellHeaderComponent implements OnInit {
     private themeService: RhombusShellThemeService) { }
 
   ngOnInit() {
-    this.isDarkTheme = this.themeService.isDarkTheme;
+    this.isDarkTheme = this.themeService.darkThemeSubject.asObservable();
   }
 
   toggleNav() {

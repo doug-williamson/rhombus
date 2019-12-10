@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
     RhombusAppRoutingModule
   ],
   declarations: [
-    RhombusAppComponent
+    RhombusAppComponent,
   ],
   bootstrap: [RhombusAppComponent]
 })

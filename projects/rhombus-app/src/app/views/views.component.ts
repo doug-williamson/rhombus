@@ -24,7 +24,7 @@ export class RhombusAppViewsComponent implements OnInit {
     private themeService: RhombusShellThemeService) { }
 
   ngOnInit() {
-    this._isDarkTheme = this.themeService.isDarkTheme;
+    this._isDarkTheme = this.themeService.darkThemeSubject.asObservable();
   }
 
 }

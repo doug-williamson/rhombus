@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "lib",
+      "rhombus-shell",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "lib",
+      "rhombus-shell",
       "kebab-case"
     ]
   }

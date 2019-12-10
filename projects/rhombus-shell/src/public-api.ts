@@ -2,4 +2,4 @@
  * Public API Surface of rhombus-shell
  */
 
-export * from './lib/shell.module';
+export { RhombusShellModule } from './lib/shell.module';
