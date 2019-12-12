@@ -12,6 +12,7 @@ import {
   MatSlideToggleModule,
   MatToolbarModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { RhombusShellConfigurationModule } from '@dougwilliamson/rhombus-shell/lib/configuration/configuration.module';
 import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
 import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
 import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
@@ -46,6 +47,7 @@ import { RhombusShellThemeService } from './services/theme.service';
   ],
   exports: [
     RhombusShellWrapperComponent,
+    RhombusShellConfigurationModule,
   ],
   providers: [
     RhombusShellApplicationInfoService,
@@ -68,7 +70,7 @@ export class RhombusShellCoreModule {
         RhombusShellCoreModule,
     ],
     providers: [
-
+      RhombusShellThemeService,
     ],
 })
 export class RhombusShellCoreRootModule {}

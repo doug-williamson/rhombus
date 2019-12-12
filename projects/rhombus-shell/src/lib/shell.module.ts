@@ -1,5 +1,4 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { RhombusShellConfigurationModule } from './configuration/configuration.module';
 import { RhombusShellCoreModule } from './core/core.module';
 import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation } from './core/models/shell-app-info';
 
@@ -10,7 +9,6 @@ export interface RhombusShellConfiguration {
 @NgModule({
   exports: [
     RhombusShellCoreModule,
-    RhombusShellConfigurationModule,
   ],
 })
 export class RhombusShellModule {

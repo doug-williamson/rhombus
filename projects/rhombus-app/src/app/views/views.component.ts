@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RhombusShellNavItem } from 'projects/rhombus-shell/src/lib/core/models/shell-nav-item';
-import { RhombusShellThemeService } from 'projects/rhombus-shell/src/lib/core/services/theme.service';
+import { RhombusShellNavItem } from 'projects/rhombus-shell';
+import { RhombusShellThemeService } from 'projects/rhombus-shell';
 import { Observable } from 'rxjs';
 
 @Component({
