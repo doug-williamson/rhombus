@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule, MatCardModule, MatIconModule, MatListModule, MatToolbarModule } from '@angular/material';
-import { RhombusShellModule } from 'projects/rhombus-shell/src/public-api';
+import { RhombusShellModule } from 'projects/rhombus-shell';
 import { RhombusAppHomeComponent } from './home/home.component';
 import { RhombusShellComponent } from './rhombus-shell/rhombus-shell.component';
 import { RhombusAppViewsComponent } from './views.component';

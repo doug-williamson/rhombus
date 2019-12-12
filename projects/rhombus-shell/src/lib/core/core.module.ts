@@ -12,13 +12,13 @@ import {
   MatSlideToggleModule,
   MatToolbarModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
-import { RhombusShellConfigurationModule } from '@dougwilliamson/rhombus-shell/lib/configuration/configuration.module';
 import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
 import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
 import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
 import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
 import { RhombusShellApplicationInfoService } from './services/application-info.service';
 import { RhombusShellThemeService } from './services/theme.service';
+import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
 
 @NgModule({
   imports: [

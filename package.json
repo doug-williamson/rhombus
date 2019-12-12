@@ -8,9 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:rhombus-shell": "ng build @dougwilliamson/rhombus-shell",
-    "package:rhombus-shell": "npm pack ./dist/dougwilliamson/rhombus-shell",
-    "publish:rhombus-shell": "npm publish ./dist/dougwilliamson/rhombus-shell"
+    "build:rhombus-shell": "ng build @dougwilliamson/rhombus-shell && scss-bundle -c projects/rhombus-shell/scss-bundle.config.json",
+    "package:rhombus-shell": "npm pack ./dist/dougwilliamson/rhombus-shell && scss-bundle -c projects/rhombus-shell/scss-bundle.config.json",
+    "publish:rhombus-shell": "npm publish ./dist/dougwilliamson/rhombus-shell && scss-bundle -c projects/rhombus-shell/scss-bundle.config.json"
   },
   "private": true,
   "dependencies": {

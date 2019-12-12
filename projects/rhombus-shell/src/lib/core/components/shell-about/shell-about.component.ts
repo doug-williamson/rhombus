@@ -20,8 +20,6 @@ export class RhombusShellAboutComponent implements OnInit {
     this._appLogoLetters = this.applicationInfo.logoLetters;
     this._appLogoUrl = this.applicationInfo.logoUrl;
     this._appTwitterUrl = this.applicationInfo.twitterUrl;
-
-    console.log(this._appLogoUrl);
   }
 
   ngOnInit() {
