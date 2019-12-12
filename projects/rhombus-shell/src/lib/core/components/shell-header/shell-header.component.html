@@ -1,12 +1,12 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
     <button mat-icon-button (click)="toggleNav()">
         <mat-icon>menu</mat-icon>
     </button>
-    <button mat-button [routerLink]="''">{{title}}</button>
+    <button mat-button class="shell-header__title" [routerLink]="''">{{title}}</button>
     <div fxFlex></div>
     <mat-slide-toggle 
         class="shell-header__dark-mode"
-        (color)="accent"
+        [color]="'primary'"
         [checked]="isDarkTheme | async" 
         (change)="toggleDarkTheme($event.checked)" >
         Dark Mode

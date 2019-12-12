@@ -4,18 +4,27 @@ import { RhombusAppViewsComponent } from './views.component';
 import { RhombusShellModule } from 'projects/rhombus-shell/src/public-api';
 import { ViewsRoutingModule } from './views.routing';
 import { RhombusAppHomeComponent } from './home/home.component';
-import { RhombusAppLibraryComponent } from './library/library.component';
+import { MatButtonModule, MatCardModule, MatListModule, MatIconModule, MatToolbarModule } from '@angular/material';
+import { RhombusShellComponent } from './rhombus-shell/rhombus-shell.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
+    FlexLayoutModule,
+
+    MatButtonModule,
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
+    MatToolbarModule,
 
     RhombusShellModule.forRoot({
       applicationInfo: {
         name: 'Rhombus Software',
         version: '1.0.0-beta.1',
-        logoUrl: undefined,
-        logoLetters: 'R',
+        logoUrl: '/assets/rhombus-icon.png',
+        logoLetters: undefined,
         twitterUrl: 'https://twitter.com/ngRhombus',
       }
     }),
@@ -24,7 +33,7 @@ import { RhombusAppLibraryComponent } from './library/library.component';
   declarations: [
     RhombusAppViewsComponent,
     RhombusAppHomeComponent,
-    RhombusAppLibraryComponent
+    RhombusShellComponent,
   ],
 })
 export class RhombusAppViewsModule { }

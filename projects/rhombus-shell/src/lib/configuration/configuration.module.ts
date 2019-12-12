@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RhombusShellThemeComponent } from './theme/theme.component';
-import { RhombusShellThemeRootComponent } from './theme-root/theme-root.component';
+import { RhombusShellThemeRootComponent } from './theme/theme-root.component';
 
 @NgModule({
   declarations: [

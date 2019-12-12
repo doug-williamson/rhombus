@@ -12,8 +12,8 @@ $custom-typography: mat-typography-config(
 @include angular-material-typography($custom-typography);
 
 // Default colors
-$my-app-primary: mat-palette($mat-purple, 700, 100, 800);
-$my-app-accent:  mat-palette($mat-yellow, 700, 100, 800);
+$my-app-primary: mat-palette($mat-blue, 700, 100, 800);
+$my-app-accent:  mat-palette($mat-green, 700, 100, 800);
 $my-app-warn: mat-palette($mat-red, 700, 100, 800);
 
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);

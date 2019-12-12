@@ -11,12 +11,16 @@ import { Observable } from 'rxjs';
 export class RhombusAppViewsComponent implements OnInit {
 
   _isDarkTheme: Observable<boolean>;
-  title = 'Rhombus App';
+  title = 'rhombus';
 
   navItems: RhombusShellNavItem[] = [
     {
-      label: 'Library',
-      route: '/library',
+      label: 'Getting Started',
+      route: '/getting-started',
+    },
+    {
+      label: 'Rhombus Shell',
+      route: '/rhombus-shell',
     }
   ]
 

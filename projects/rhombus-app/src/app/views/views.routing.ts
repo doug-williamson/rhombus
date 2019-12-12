@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RhombusAppViewsComponent } from './views.component';
 import { RhombusAppHomeComponent } from './home/home.component';
-import { RhombusAppLibraryComponent } from './library/library.component';
+import { RhombusShellComponent } from './rhombus-shell/rhombus-shell.component';
 
 const routes: Routes = [
   {
@@ -19,8 +19,8 @@ const routes: Routes = [
         component: RhombusAppHomeComponent,
       },
       {
-        path: 'library',
-        component: RhombusAppLibraryComponent,
+        path: 'rhombus-shell',
+        component: RhombusShellComponent
       }
     ]
   }
