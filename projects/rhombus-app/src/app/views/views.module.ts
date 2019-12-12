@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RhombusAppViewsComponent } from './views.component';
-import { RhombusShellModule } from 'projects/rhombus-shell/src/public-api';
-import { ViewsRoutingModule } from './views.routing';
-import { RhombusAppHomeComponent } from './home/home.component';
-import { MatButtonModule, MatCardModule, MatListModule, MatIconModule, MatToolbarModule } from '@angular/material';
-import { RhombusShellComponent } from './rhombus-shell/rhombus-shell.component';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule, MatCardModule, MatIconModule, MatListModule, MatToolbarModule } from '@angular/material';
+import { RhombusShellModule } from 'projects/rhombus-shell/src/public-api';
+import { RhombusAppHomeComponent } from './home/home.component';
+import { RhombusShellComponent } from './rhombus-shell/rhombus-shell.component';
+import { RhombusAppViewsComponent } from './views.component';
+import { ViewsRoutingModule } from './views.routing';
 
 @NgModule({
   imports: [
@@ -26,7 +26,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         logoUrl: '/assets/rhombus-icon.png',
         logoLetters: undefined,
         twitterUrl: 'https://twitter.com/ngRhombus',
-      }
+      },
     }),
     ViewsRoutingModule,
   ],

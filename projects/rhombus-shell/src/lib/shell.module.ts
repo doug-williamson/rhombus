@@ -1,7 +1,7 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { RhombusShellCoreModule } from './core/core.module';
-import { RhombusShellApplicationInformation, RHOMBUS_SHELL_APPLICATION_INFORMATION } from './core/models/shell-app-info';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RhombusShellConfigurationModule } from './configuration/configuration.module';
+import { RhombusShellCoreModule } from './core/core.module';
+import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation } from './core/models/shell-app-info';
 
 export interface RhombusShellConfiguration {
   applicationInfo: RhombusShellApplicationInformation;
@@ -11,7 +11,7 @@ export interface RhombusShellConfiguration {
   exports: [
     RhombusShellCoreModule,
     RhombusShellConfigurationModule,
-  ]
+  ],
 })
 export class RhombusShellModule {
   static forRoot(config: RhombusShellConfiguration): ModuleWithProviders {
@@ -21,10 +21,10 @@ export class RhombusShellModule {
         {
           provide: RHOMBUS_SHELL_APPLICATION_INFORMATION,
           useValue: config.applicationInfo,
-        }
-      ]
-    }
-  };
+        },
+      ],
+    };
+  }
  }
 
 @NgModule({
@@ -32,7 +32,7 @@ export class RhombusShellModule {
     RhombusShellCoreModule.forRoot(),
   ],
   exports: [
-    RhombusShellModule
-  ]
+    RhombusShellModule,
+  ],
 })
 export class RhombusShellRootModule {}

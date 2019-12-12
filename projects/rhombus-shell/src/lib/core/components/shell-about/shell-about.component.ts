@@ -4,7 +4,7 @@ import { RhombusShellApplicationInfoService } from '../../services/application-i
 @Component({
   selector: 'rhombus-shell-about',
   templateUrl: './shell-about.component.html',
-  styleUrls: ['./shell-about.component.scss']
+  styleUrls: ['./shell-about.component.scss'],
 })
 export class RhombusShellAboutComponent implements OnInit {
 

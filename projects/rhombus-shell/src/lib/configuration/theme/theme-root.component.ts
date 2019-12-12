@@ -1,6 +1,6 @@
-import { Component, OnInit, ContentChildren, QueryList } from '@angular/core';
-import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
+import { Component, ContentChildren, OnInit, QueryList } from '@angular/core';
 import { RhombusShellThemeService } from '../../core/services/theme.service';
+import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
 import { RhombusShellThemeComponent } from '../theme/theme.component';
 
 @Component({
@@ -8,10 +8,10 @@ import { RhombusShellThemeComponent } from '../theme/theme.component';
   template: '',
   providers: [
     {
-      provide: RhombusShellRootConfigurationComponent, 
-      useExisting: RhombusShellThemeRootComponent
-    }
-  ]
+      provide: RhombusShellRootConfigurationComponent,
+      useExisting: RhombusShellThemeRootComponent,
+    },
+  ],
 })
 export class RhombusShellThemeRootComponent implements RhombusShellRootConfigurationComponent {
 

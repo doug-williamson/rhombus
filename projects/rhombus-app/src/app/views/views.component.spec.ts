@@ -8,7 +8,7 @@ describe('ViewsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewsComponent ]
+      declarations: [ ViewsComponent ],
     })
     .compileComponents();
   }));

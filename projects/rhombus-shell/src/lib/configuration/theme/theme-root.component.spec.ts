@@ -8,7 +8,7 @@ describe('RhombusShellThemeRootComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RhombusShellThemeRootComponent ]
+      declarations: [ RhombusShellThemeRootComponent ],
     })
     .compileComponents();
   }));

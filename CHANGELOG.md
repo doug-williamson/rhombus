@@ -7,7 +7,7 @@ All notable changes to Rhombus.Website will be documented in this location. See 
 
 ### Features
 
-* Created the following npm libraries:
+* Created the following npm library:
   - **@dougwilliamson/rhombus-shell**
     - Created application shell to handle the following:
         - Header

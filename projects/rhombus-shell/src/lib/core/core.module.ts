@@ -1,15 +1,23 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatToolbarModule, MatListModule, MatIconModule, MatSidenavModule, MatMenuModule, MatDialogModule, MatCardModule, MatSlideToggleModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatSlideToggleModule,
+  MatToolbarModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
-import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
+import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
 import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
 import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
-import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
+import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
 import { RhombusShellApplicationInfoService } from './services/application-info.service';
 import { RhombusShellThemeService } from './services/theme.service';
-import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
 
 @NgModule({
   imports: [
@@ -41,14 +49,14 @@ import { RhombusShellConfigurationModule } from '../configuration/configuration.
   ],
   providers: [
     RhombusShellApplicationInfoService,
-    RhombusShellThemeService
-  ]
+    RhombusShellThemeService,
+  ],
 })
 export class RhombusShellCoreModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: RhombusShellCoreRootModule,
-        }
+        };
     }
 }
 
@@ -61,6 +69,6 @@ export class RhombusShellCoreModule {
     ],
     providers: [
 
-    ]
+    ],
 })
 export class RhombusShellCoreRootModule {}

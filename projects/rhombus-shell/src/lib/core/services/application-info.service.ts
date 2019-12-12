@@ -1,8 +1,8 @@
-import { Injectable, Optional, Inject } from '@angular/core';
+import { Inject, Injectable, Optional } from '@angular/core';
 import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation } from '../models/shell-app-info';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RhombusShellApplicationInfoService {
 

@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { RhombusShellTheme } from '../models/theme';
 
 const LOCAL_STORAGE_THEME_MODE_KEY = 'RhombusShellThemeMode';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RhombusShellThemeService {
 
@@ -22,7 +22,7 @@ export class RhombusShellThemeService {
   get availableThemes$() {
     return this._availableThemesSubject.asObservable();
   }
-  
+
   constructor(private overlayContainer: OverlayContainer) {
     this.setInitialTheme();
 
@@ -39,7 +39,7 @@ export class RhombusShellThemeService {
 
   setDarkTheme(isDarkTheme: boolean) {
     this.darkThemeSubject.next(isDarkTheme);
-    this.updateCDKOverlay(this.className);
+    this.updateCDKOverlay();
     localStorage.setItem(LOCAL_STORAGE_THEME_MODE_KEY, this.className);
   }
 
@@ -51,7 +51,7 @@ export class RhombusShellThemeService {
     this._darkTheme = (val === 'rhombus-light-theme') ? false : true;
   }
 
-  private updateCDKOverlay(className: string) {
+  private updateCDKOverlay() {
     const containerElement = this.overlayContainer.getContainerElement();
     // const currentTheme = this._currentThemeSubject.value;
 
@@ -65,7 +65,7 @@ export class RhombusShellThemeService {
       containerElement.classList.remove('rhombus-dark-theme');
       containerElement.classList.add('rhombus-light-theme');
     }
-    
+
   }
 
   private setInitialTheme() {
@@ -85,6 +85,6 @@ export class RhombusShellThemeService {
 
     this.className = localStorage.getItem(LOCAL_STORAGE_THEME_MODE_KEY);
     this.setDarkTheme(this._darkTheme);
-    this.updateCDKOverlay(this.className);
+    this.updateCDKOverlay();
   }
 }

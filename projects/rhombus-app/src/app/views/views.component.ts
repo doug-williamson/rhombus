@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'rhombus-app-views',
   templateUrl: './views.component.html',
-  styleUrls: ['./views.component.scss']
+  styleUrls: ['./views.component.scss'],
 })
 export class RhombusAppViewsComponent implements OnInit {
 
@@ -15,14 +15,10 @@ export class RhombusAppViewsComponent implements OnInit {
 
   navItems: RhombusShellNavItem[] = [
     {
-      label: 'Getting Started',
-      route: '/getting-started',
-    },
-    {
       label: 'Rhombus Shell',
       route: '/rhombus-shell',
-    }
-  ]
+    },
+  ];
 
   constructor(
     private themeService: RhombusShellThemeService) { }

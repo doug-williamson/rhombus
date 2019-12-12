@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RhombusAppHomeComponent } from './home.component';
 
-import { HomeComponent } from './home.component';
-
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('RhombusAppHomeComponent', () => {
+  let component: RhombusAppHomeComponent;
+  let fixture: ComponentFixture<RhombusAppHomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ RhombusAppHomeComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(RhombusAppHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

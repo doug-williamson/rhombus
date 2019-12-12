@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShellNavComponent } from './shell-nav.component';
+import { RhombusShellNavComponent } from './shell-nav.component';
 
-describe('ShellNavComponent', () => {
-  let component: ShellNavComponent;
-  let fixture: ComponentFixture<ShellNavComponent>;
+describe('RhombusShellNavComponent', () => {
+  let component: RhombusShellNavComponent;
+  let fixture: ComponentFixture<RhombusShellNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShellNavComponent ]
+      declarations: [ RhombusShellNavComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShellNavComponent);
+    fixture = TestBed.createComponent(RhombusShellNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

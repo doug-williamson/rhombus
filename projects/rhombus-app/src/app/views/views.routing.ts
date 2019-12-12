@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { RhombusAppViewsComponent } from './views.component';
+import { RouterModule, Routes } from '@angular/router';
 import { RhombusAppHomeComponent } from './home/home.component';
 import { RhombusShellComponent } from './rhombus-shell/rhombus-shell.component';
+import { RhombusAppViewsComponent } from './views.component';
 
 const routes: Routes = [
   {
@@ -20,14 +20,14 @@ const routes: Routes = [
       },
       {
         path: 'rhombus-shell',
-        component: RhombusShellComponent
-      }
-    ]
-  }
+        component: RhombusShellComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class ViewsRoutingModule { }

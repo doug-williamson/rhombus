@@ -8,7 +8,7 @@ describe('RhombusShellWrapperComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RhombusShellWrapperComponent ]
+      declarations: [ RhombusShellWrapperComponent ],
     })
     .compileComponents();
   }));

@@ -1,14 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
+import { Observable } from 'rxjs';
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellThemeService } from '../../services/theme.service';
-import { Observable } from 'rxjs';
+import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
 
 @Component({
   selector: 'rhombus-shell-header',
   templateUrl: './shell-header.component.html',
-  styleUrls: ['./shell-header.component.scss']
+  styleUrls: ['./shell-header.component.scss'],
 })
 export class RhombusShellHeaderComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class RhombusShellHeaderComponent implements OnInit {
 
   @Input()
   title: string;
-  
+
   constructor(
     private navService: RhombusShellNavService,
     private dialog: MatDialog,

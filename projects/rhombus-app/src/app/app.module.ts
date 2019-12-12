@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RhombusAppRoutingModule } from './app.routing';
-import { RhombusAppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { RhombusAppComponent } from './app.component';
+import { RhombusAppRoutingModule } from './app.routing';
 
 @NgModule({
   imports: [
@@ -13,11 +13,11 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
 
     RouterModule,
-    RhombusAppRoutingModule
+    RhombusAppRoutingModule,
   ],
   declarations: [
     RhombusAppComponent,
   ],
-  bootstrap: [RhombusAppComponent]
+  bootstrap: [RhombusAppComponent],
 })
 export class RhombusAppModule { }

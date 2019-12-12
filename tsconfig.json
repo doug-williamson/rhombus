@@ -19,16 +19,12 @@
       "dom"
     ],
     "paths": {
-      "rhombus-shell": [
-        "dist/rhombus-shell"
+      "@dougwilliamson/rhombus-shell": [
+        "dist/dougwilliamson/rhombus-shell"
       ],
-      "rhombus-shell/*": [
-        "dist/rhombus-shell/*"
+      "@dougwilliamson/rhombus-shell/*": [
+        "dist/dougwilliamson/rhombus-shell/*"
       ]
     }
   },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
 }

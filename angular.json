@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rhombus-shell": {
+    "@dougwilliamson/rhombus-shell": {
       "projectType": "library",
       "root": "projects/rhombus-shell",
       "sourceRoot": "projects/rhombus-shell/src",

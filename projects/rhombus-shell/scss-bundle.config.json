@@ -1,0 +1,7 @@
+{
+  "bundlerOptions": {
+    "entry": "projects/rhombus-shell/src/lib/_shell.theme.scss",
+    "dest": "dist/dougwilliamson/rhombus-shell/_theme.scss",
+    "ignoredImports": "~@angular/.*"
+  }
+}
