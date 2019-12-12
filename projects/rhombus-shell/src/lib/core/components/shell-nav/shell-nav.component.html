@@ -1,0 +1,8 @@
+<mat-nav-list class="nav-list__container">
+    <!-- <mat-list-item [routerLink]="'/library'">Library</mat-list-item> -->
+    <ng-container *ngFor="let navItem of navItems">
+        <mat-list-item [routerLink]="navItem.route">
+            <h4 mat-line>{{ navItem.label }}</h4>
+        </mat-list-item>
+    </ng-container>
+</mat-nav-list>

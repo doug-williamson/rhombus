@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+@import 'projects/rhombus-shell/src/lib/shell.theme';
+
+@include mat-core();
+
+// Typography
+$custom-typography: mat-typography-config(
+  $font-family: 'Helvetica',
+  $headline: mat-typography-level(24px, 48px, 400),
+  $body-1: mat-typography-level(16px, 24px, 400)
+);
+@include angular-material-typography($custom-typography);
+
+// Default colors
+$my-app-primary: mat-palette($mat-blue, 700, 100, 800);
+$my-app-accent:  mat-palette($mat-green, 700, 100, 800);
+$my-app-warn: mat-palette($mat-red, 700, 100, 800);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include rhombus-shell-theme($my-app-theme);
+@include angular-material-theme($my-app-theme);
+
+.rhombus-dark-theme {
+  $my-app-dark-theme: mat-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
+  @include angular-material-theme($my-app-dark-theme);
+
+  @include rhombus-shell-theme($my-app-dark-theme);
+}

@@ -17,10 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@dougwilliamson/rhombus-shell": [
+        "dist/dougwilliamson/rhombus-shell"
+      ],
+      "@dougwilliamson/rhombus-shell/*": [
+        "dist/dougwilliamson/rhombus-shell/*"
+      ]
+    }
   },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
 }
