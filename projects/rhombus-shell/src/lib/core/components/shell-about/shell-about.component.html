@@ -4,11 +4,13 @@
     <ng-template #logoLetters>
       <div mat-card-avatar class="shell-about__letters" fxLayout fxLayoutAlign="center center">{{ _appLogoLetters }}</div>
     </ng-template>
-
     <mat-card-title class="shell-about__title">{{ _appName }}</mat-card-title>
-    <mat-card-subtitle class="shell-about__subtitle">{{ _appVersion }}</mat-card-subtitle>
+    <mat-card-subtitle class="shell-about__subtitle">Version: {{ _appVersion }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content fxLayoutAlign="center center">
     <a mat-button color="primary" (click)="gotoLink(_appTwitterUrl)">Twitter</a>
   </mat-card-content>
+  <mat-card-footer>
+    <mat-card-subtitle class="shell-about__powered-by-rhombus" fxLayoutAlign="center center">Powered by Rhombus</mat-card-subtitle>
+  </mat-card-footer>
 </mat-card>

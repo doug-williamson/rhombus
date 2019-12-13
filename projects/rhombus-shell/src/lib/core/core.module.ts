@@ -18,6 +18,7 @@ import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.compo
 import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
 import { RhombusShellApplicationInfoService } from './services/application-info.service';
 import { RhombusShellThemeService } from './services/theme.service';
+import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { RhombusShellThemeService } from './services/theme.service';
   ],
   exports: [
     RhombusShellWrapperComponent,
+    RhombusShellConfigurationModule,
   ],
   providers: [
     RhombusShellApplicationInfoService,
@@ -68,7 +70,7 @@ export class RhombusShellCoreModule {
         RhombusShellCoreModule,
     ],
     providers: [
-
+      RhombusShellThemeService,
     ],
 })
 export class RhombusShellCoreRootModule {}
