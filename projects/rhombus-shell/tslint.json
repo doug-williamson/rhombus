@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "rhombus-shell",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "rhombus-shell",
+      "kebab-case"
+    ]
+  }
+}
