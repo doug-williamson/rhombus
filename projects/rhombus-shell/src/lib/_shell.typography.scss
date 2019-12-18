@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+
+// 400: Regular
+// 700: Bold
+
+$_rhombus-font-family: 'Work Sans, sans-serif';
+$_rhombus-display-font-family: '"Montserrat", Work Sans, sans-serif';
+
+$rhombus-shell-typography: mat-typography-config(
+    $font-family: $_rhombus-font-family,
+
+    $display-4: mat-typography-level(36px, 44px, 400, $font-family: $_rhombus-display-font-family),
+    $display-3: mat-typography-level(24px, 28px, 400, $font-family: $_rhombus-display-font-family),
+    $display-2: mat-typography-level(16px, 20px, 400, $font-family: $_rhombus-display-font-family),
+    $display-1: mat-typography-level(14px, 16px, 400, $font-family: $_rhombus-display-font-family),
+    $headline: mat-typography-level(24px, 28px, 400),
+    $title: mat-typography-level(20px, 24px, 700),
+    $subheading-1: mat-typography-level(16px, 20px, 400),
+    $subheading-2: mat-typography-level(16px, 20px, 700),
+    $body-1: mat-typography-level(14px, 20px, 400),
+    $body-2: mat-typography-level(14px, 20px, 700),
+    $button: mat-typography-level(14px, 16px, 700),
+    $input: mat-typography-level(14px, 1.25, 400)
+);

@@ -4,6 +4,8 @@
 @include mat-core();
 
 // Typography
+@include rhombus-typography();
+
 $custom-typography: mat-typography-config(
   $font-family: 'Helvetica',
   $headline: mat-typography-level(24px, 48px, 400),
