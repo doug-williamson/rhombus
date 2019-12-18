@@ -1,7 +1,13 @@
 @import '~@angular/material/theming';
+@import './shell.typography';
 
 @import './core/components/shell-about/_shell-about.theme';
 
 @mixin rhombus-shell-theme($theme) {
     @include rhombus-shell-about-theme($theme);
+}
+
+@mixin rhombus-typography($typography: $rhombus-shell-typography) {
+    @include angular-material-typography($typography);
+
 }
