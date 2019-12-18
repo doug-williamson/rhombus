@@ -22,7 +22,7 @@ import { ViewsRoutingModule } from './views.routing';
     RhombusShellModule.forRoot({
       applicationInfo: {
         name: 'Rhombus Software',
-        version: '1.0.0-beta.0',
+        version: '1.0.0-beta.1',
         logoUrl: '/assets/rhombus-icon.png',
         logoLetters: undefined,
         twitterUrl: 'https://twitter.com/ngRhombus',
