@@ -1,7 +1,7 @@
 <div fxLayout="column" fxFlexFill class="app__container">
     <rhombus-shell-header [title]="title"></rhombus-shell-header>
     <mat-drawer-container fxFlex>
-        <mat-drawer #drawer mode="side" [(opened)]="_isOpened">
+        <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened">
             <rhombus-shell-nav [navItems]="navItems"></rhombus-shell-nav>
         </mat-drawer>
         <mat-drawer-content>
