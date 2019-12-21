@@ -26,6 +26,7 @@ import { ViewsRoutingModule } from './views.routing';
         logoUrl: '/assets/rhombus-icon.png',
         logoLetters: undefined,
         twitterUrl: 'https://twitter.com/ngRhombus',
+        changelogUrl: 'https://github.com/doug-williamson/rhombus/blob/master/CHANGELOG.md',
       },
     }),
     ViewsRoutingModule,
