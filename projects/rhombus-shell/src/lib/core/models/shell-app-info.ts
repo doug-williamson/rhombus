@@ -9,4 +9,5 @@ export interface RhombusShellApplicationInformation {
     logoLetters?: string;
     logoUrl?: string;
     twitterUrl?: string;
+    changelogUrl?: string;
 }

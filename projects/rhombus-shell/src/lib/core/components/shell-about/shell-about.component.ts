@@ -13,6 +13,7 @@ export class RhombusShellAboutComponent implements OnInit {
   _appLogoLetters?: string;
   _appLogoUrl?: string;
   _appTwitterUrl?: string;
+  _appChangelogUrl?: string;
 
   constructor(private applicationInfo: RhombusShellApplicationInfoService) {
     this._appName = this.applicationInfo.name;
@@ -20,12 +21,13 @@ export class RhombusShellAboutComponent implements OnInit {
     this._appLogoLetters = this.applicationInfo.logoLetters;
     this._appLogoUrl = this.applicationInfo.logoUrl;
     this._appTwitterUrl = this.applicationInfo.twitterUrl;
+    this._appChangelogUrl = this.applicationInfo.changelogUrl;
   }
 
   ngOnInit() {
   }
 
-  gotoLink(url: string) {
+  goToLink(url: string) {
     window.open(url, '_blank');
   }
 }

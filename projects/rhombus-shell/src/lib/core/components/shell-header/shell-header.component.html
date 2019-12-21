@@ -11,14 +11,11 @@
         (change)="toggleDarkTheme($event.checked)" >
         Dark Mode
     </mat-slide-toggle>
-    <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>info</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>arrow_drop_down</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item [routerLink]="'/settings'">Settings</button>
+        <!-- <button mat-menu-item [routerLink]="'/settings'">Settings</button> -->
         <button mat-menu-item (click)="showAbout()">About</button>
-    </mat-menu> -->
-    <button mat-icon-button (click)="showAbout()">
-        <mat-icon>info</mat-icon>
-    </button>
+    </mat-menu>
 </mat-toolbar>
