@@ -29,4 +29,8 @@ export class RhombusShellApplicationInfoService {
   get twitterUrl(): string {
     return this.info && this.info.twitterUrl;
   }
+
+  get changelogUrl(): string {
+    return this.info && this.info.changelogUrl;
+  }
 }

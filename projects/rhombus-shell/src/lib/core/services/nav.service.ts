@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class RhombusShellNavService {
 
-  showSidenav$ = new BehaviorSubject<boolean>(true);
-  _isOpened = true;
+  showSidenav$ = new BehaviorSubject<boolean>(false);
+  _isOpened = false;
 
   constructor() { }
 
