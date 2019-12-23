@@ -12,13 +12,14 @@ import {
   MatSlideToggleModule,
   MatToolbarModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
+import { RhombusShellSettingsModule } from '../configuration/public_api';
 import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
 import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
 import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
 import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
 import { RhombusShellApplicationInfoService } from './services/application-info.service';
 import { RhombusShellThemeService } from './services/theme.service';
-import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
 
 @NgModule({
   imports: [
@@ -64,13 +65,10 @@ export class RhombusShellCoreModule {
 
 @NgModule({
     imports: [
-
+      RhombusShellSettingsModule,
     ],
     exports: [
-        RhombusShellCoreModule,
-    ],
-    providers: [
-      RhombusShellThemeService,
+      RhombusShellCoreModule,
     ],
 })
 export class RhombusShellCoreRootModule {}
