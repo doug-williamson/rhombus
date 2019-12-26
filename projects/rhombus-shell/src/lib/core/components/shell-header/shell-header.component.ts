@@ -12,18 +12,15 @@ import { RhombusShellAboutComponent } from '../shell-about/shell-about.component
 })
 export class RhombusShellHeaderComponent implements OnInit {
 
-  isDarkTheme: Observable<boolean>;
-
   @Input()
   title: string;
 
   constructor(
     private navService: RhombusShellNavService,
-    private dialog: MatDialog,
-    private themeService: RhombusShellThemeService) { }
+    private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.isDarkTheme = this.themeService.darkThemeSubject.asObservable();
+    
   }
 
   toggleNav() {
@@ -38,9 +35,5 @@ export class RhombusShellHeaderComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       // console.log('The dialog was closed');
     });
-  }
-
-  toggleDarkTheme(checked: boolean) {
-    this.themeService.setDarkTheme(checked);
   }
 }
