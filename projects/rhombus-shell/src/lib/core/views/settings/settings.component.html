@@ -2,14 +2,6 @@
     <mat-toolbar color="primary">
         <span>Settings</span>
     </mat-toolbar>
-    <div fxLayout="column" fxLayoutAlign="start center" style="margin: 16px;">
-        <mat-slide-toggle 
-            class="shell-header__dark-mode"
-            [color]="'primary'"
-            [checked]="isDarkTheme | async" 
-            (change)="toggleDarkTheme($event.checked)" >
-            Dark Mode
-        </mat-slide-toggle>
-    </div>
+    <rhombus-shell-theme-setting></rhombus-shell-theme-setting>
 </div>
       

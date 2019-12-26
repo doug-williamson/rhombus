@@ -10,81 +10,72 @@ const LOCAL_STORAGE_THEME_MODE_KEY = 'RhombusShellThemeMode';
 })
 export class RhombusShellThemeService {
 
-  private _darkTheme: boolean;
   public darkThemeSubject = new BehaviorSubject<boolean>(false);
   private _currentThemeSubject = new BehaviorSubject<RhombusShellTheme | undefined>(undefined);
   private _availableThemesSubject = new BehaviorSubject<RhombusShellTheme[]>([]);
 
-  get currentTheme$() {
-    return this._currentThemeSubject.asObservable();
-  }
-
+  /**
+   * Available themes to consume
+   */
   get availableThemes$() {
     return this._availableThemesSubject.asObservable();
   }
 
+  /**
+   * Currently selected theme
+   */
+  get currentTheme$() {
+    return this._currentThemeSubject.asObservable();
+  }
+
   constructor(private overlayContainer: OverlayContainer) {
     this.setInitialTheme();
-
-    this.darkThemeSubject.subscribe(results => {
-      this._darkTheme = results;
-    });
   }
 
-  // updateTheme(theme: RhombusShellTheme) {
-  //   this.updateCDKOverlay(theme.className);
-  //   localStorage.setItem(LOCAL_STORAGE_THEME_MODE_KEY, theme.className);
-  //   this._currentThemeSubject.next(theme);
-  // }
-
-  setDarkTheme(isDarkTheme: boolean) {
-    this.darkThemeSubject.next(isDarkTheme);
-    this.updateCDKOverlay();
-    localStorage.setItem(LOCAL_STORAGE_THEME_MODE_KEY, this.className);
+  /**
+   * Update the applications CSS theme applied to the root element
+   */
+  updateTheme(theme: RhombusShellTheme) {
+    const themeClassName = theme.className;
+    this.updateCDKOverlay(themeClassName);
+    localStorage.setItem(LOCAL_STORAGE_THEME_MODE_KEY, themeClassName);
+    this._currentThemeSubject.next(theme);
   }
 
-  get className() {
-    return  !this._darkTheme ? 'rhombus-light-theme' : 'rhombus-dark-theme';
-  }
-
-  set className(val: string) {
-    this._darkTheme = (val === 'rhombus-light-theme') ? false : true;
-  }
-
-  private updateCDKOverlay() {
-    const containerElement = this.overlayContainer.getContainerElement();
-    // const currentTheme = this._currentThemeSubject.value;
-
-    // if (currentTheme && currentTheme.className) {
-    //   containerElement.classList.remove(currentTheme.className);
-    // }
-    if (this._darkTheme) {
-      containerElement.classList.remove('rhombus-light-theme');
-      containerElement.classList.add('rhombus-dark-theme');
-    } else {
-      containerElement.classList.remove('rhombus-dark-theme');
-      containerElement.classList.add('rhombus-light-theme');
-    }
-
+  updateAvailableThemes(themes: RhombusShellTheme[]) {
+    this._availableThemesSubject.next(themes);
+    this.setInitialTheme();
   }
 
   private setInitialTheme() {
-    // const availableThemes = this._availableThemesSubject.value;
-    // if (availableThemes.length > 0) {
-    //   let theme = availableThemes[0];
-    //   const savedThemeClassName = localStorage.getItem(LOCAL_STORAGE_THEME_MODE_KEY);
+    const availableThemes = this._availableThemesSubject.value;
+    if (availableThemes.length > 0) {
+      // Pick the first theme as the default theme
+      let theme = availableThemes[0];
+      const savedThemeClassName = localStorage.getItem(LOCAL_STORAGE_THEME_MODE_KEY);
 
-    //   const savedTheme = availableThemes.find(a => a.className === savedThemeClassName);
+      const savedTheme = availableThemes
+        .find(t => t.className === savedThemeClassName);
 
-    //   if (savedTheme) {
-    //     theme = savedTheme;
-    //   }
+      if (savedTheme) {
+        theme = savedTheme;
+      } else {
+        localStorage.setItem(LOCAL_STORAGE_THEME_MODE_KEY, savedThemeClassName);
+      }
 
-    //   this.updateTheme(theme);
-    // }
+      this.updateTheme(theme);
+    }
+  }
 
-    this.className = localStorage.getItem(LOCAL_STORAGE_THEME_MODE_KEY);
-    this.setDarkTheme(this._darkTheme);
-    this.updateCDKOverlay();
+  /**
+   * Updates the CDK overlay class so dialogs and dropdowns are properly themed
+   */
+  private updateCDKOverlay(themeClassName: string) {
+    const containerElement = this.overlayContainer.getContainerElement();
+    const currentTheme = this._currentThemeSubject.value;
+    if (currentTheme && currentTheme.className) {
+      containerElement.classList.remove(currentTheme.className);
+    }
+    containerElement.classList.add(themeClassName);
   }
 }
