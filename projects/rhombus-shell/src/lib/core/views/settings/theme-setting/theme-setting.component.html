@@ -1,0 +1,10 @@
+<ng-container *ngIf="_themes$ | async as themes">
+    <mat-form-field fxFlex style="padding: 8px">
+        <mat-label>Theme Mode</mat-label>
+        <mat-select [value]="( _currentTheme$ | async)" (selectionChange)="onThemeChange($event)">
+            <mat-option *ngFor="let theme of themes" [value]="theme">
+                {{ theme.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</ng-container>

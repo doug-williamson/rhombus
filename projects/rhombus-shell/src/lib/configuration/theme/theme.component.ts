@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
+import { RhombusShellTheme } from '../../core/models/theme';
 
 @Component({
   selector: 'rhombus-shell-theme',
@@ -20,6 +21,21 @@ export class RhombusShellThemeComponent implements OnChanges {
     if (changes.name || changes.className) {
       this.rootConfig.refresh();
     }
+  }
+
+  toModel(): RhombusShellTheme | undefined {
+   if (this.isValid) {
+    return {
+      name: this.name,
+      className: this.className,
+    };
+   } else {
+     return undefined;
+   }
+  }
+
+  private get isValid() {
+    return (this.name !== undefined) && (this.className !== undefined);
   }
 
 }
