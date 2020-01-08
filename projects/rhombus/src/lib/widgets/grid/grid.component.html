@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-toolbar [color]="color">
+        <span>{{ headerText }}</span>
+    </mat-toolbar>
+    <mat-card-content class="rhombus-app__page-padding">
+        <mat-grid-list cols="{{ columns }}" rowHeight="50px">
+            <ng-container *ngFor="let item of content">
+                <mat-grid-tile>
+                    {{ item }}
+                </mat-grid-tile>
+            </ng-container>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>

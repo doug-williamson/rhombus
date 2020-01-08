@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RhombusShellComponent implements OnInit {
 
+  _columns: number;
+  _headerText = 'Rhombus Shell';
+  _color = 'primary';
+  _contentList = [ 'Item 1', 'Item 2', 'Item 3' ];
+
   constructor() { }
 
   ngOnInit() {

@@ -160,6 +160,41 @@
           }
         }
       }
+    },
+    "@dougwilliamson/rhombus": {
+      "projectType": "library",
+      "root": "projects/rhombus",
+      "sourceRoot": "projects/rhombus/src",
+      "prefix": "rhombus",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rhombus/tsconfig.lib.json",
+            "project": "projects/rhombus/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rhombus/src/test.ts",
+            "tsConfig": "projects/rhombus/tsconfig.spec.json",
+            "karmaConfig": "projects/rhombus/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rhombus/tsconfig.lib.json",
+              "projects/rhombus/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "rhombus-app"
 }
