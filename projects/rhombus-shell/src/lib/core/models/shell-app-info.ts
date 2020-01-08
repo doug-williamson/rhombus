@@ -14,5 +14,6 @@ export interface RhombusShellApplicationInformation {
     logoUrl?: string;
     twitterUrl?: string;
     changelogUrl?: string;
+    donateUrl?: string;
     firebaseConfig?: FirebaseOptions;
 }

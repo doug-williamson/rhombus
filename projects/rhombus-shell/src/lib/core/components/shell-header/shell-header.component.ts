@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
+import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.component';
 
 @Component({
   selector: 'rhombus-shell-header',
@@ -29,6 +30,17 @@ export class RhombusShellHeaderComponent implements OnInit {
 
   showAbout(): void {
     const dialogRef = this.dialog.open(RhombusShellAboutComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      // console.log('The dialog was closed');
+    });
+  }
+
+  showDonate(): void {
+    console.log('Doug');
+    const dialogRef = this.dialog.open(RhombusShellDonateComponent, {
       width: '400px',
     });
 
