@@ -1,5 +1,5 @@
 import { Inject, Injectable, Optional } from '@angular/core';
-import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation } from '../models/shell-app-info';
+import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation, FirebaseOptions } from '../models/shell-app-info';
 
 @Injectable({
   providedIn: 'root',
@@ -32,5 +32,13 @@ export class RhombusShellApplicationInfoService {
 
   get changelogUrl(): string {
     return this.info && this.info.changelogUrl;
+  }
+
+  get donateUrl(): string {
+    return this.info && this.info.donateUrl;
+  }
+
+  get firebaseConfig(): FirebaseOptions {
+    return this.info && this.info.firebaseConfig;
   }
 }

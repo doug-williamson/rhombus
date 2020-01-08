@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RhombusShellNavItem } from 'projects/rhombus-shell';
 import { Observable } from 'rxjs';
-import { RhombusShellNavItem, RhombusShellThemeService } from 'projects/rhombus-shell';
 
 @Component({
   selector: 'rhombus-app-root',
@@ -19,9 +19,7 @@ export class RhombusAppComponent implements OnInit {
     },
   ];
 
-  constructor(private themeService: RhombusShellThemeService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this._isDarkTheme = this.themeService.darkThemeSubject.asObservable();
-  }
+  ngOnInit() {}
 }

@@ -23,7 +23,7 @@ export class RhombusShellModule {
       ],
     };
   }
- }
+}
 
 @NgModule({
   imports: [

@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Observable } from 'rxjs';
+import { AuthenticationService } from '../../authentication/authentication.service';
 import { RhombusShellNavService } from '../../services/nav.service';
-import { RhombusShellThemeService } from '../../services/theme.service';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
+import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.component';
 
 @Component({
   selector: 'rhombus-shell-header',
@@ -17,10 +17,11 @@ export class RhombusShellHeaderComponent implements OnInit {
 
   constructor(
     private navService: RhombusShellNavService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    public auth: AuthenticationService) { }
 
   ngOnInit() {
-    
+
   }
 
   toggleNav() {
@@ -32,8 +33,23 @@ export class RhombusShellHeaderComponent implements OnInit {
       width: '400px',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       // console.log('The dialog was closed');
     });
+  }
+
+  showDonate(): void {
+    console.log('Doug');
+    const dialogRef = this.dialog.open(RhombusShellDonateComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      // console.log('The dialog was closed');
+    });
+  }
+
+  signOut() {
+    this.auth.signOut();
   }
 }
