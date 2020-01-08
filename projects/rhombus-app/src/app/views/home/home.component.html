@@ -15,17 +15,11 @@
             </p>
         </mat-card-content>
     </mat-card>
-    <mat-card>
-        <mat-toolbar color="accent">
-            <span>Latest News</span>
-        </mat-toolbar>
-        <mat-card-content class="rhombus-app__page-padding">
-            <mat-list>
-                <mat-list-item>Item 1</mat-list-item>
-                <mat-list-item>Item 2</mat-list-item>
-                <mat-list-item>Item 3</mat-list-item>
-            </mat-list>
-        </mat-card-content>
-    </mat-card>
+    <rhombus-widget-grid fxFlex
+        [columns]="_columns" 
+        [headerText]="'Coming Soon'" 
+        [color]="'accent'" 
+        [content]="_contentList">
+    </rhombus-widget-grid>
 </div>
       
