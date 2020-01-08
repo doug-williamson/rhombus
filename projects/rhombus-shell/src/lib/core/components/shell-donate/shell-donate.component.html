@@ -1,27 +1,15 @@
-<!-- <mat-card class="shell-about__card" fxFlex>
+<mat-card class="shell-about__card" fxFlex>
     <mat-card-header class="shell-about__header">
         <mat-card-title class="shell-about__title">Donate</mat-card-title>
         <mat-card-subtitle class="shell-about__subtitle">
-            Want to buy me a cup of coffee? A beer? Maybe a Carribean cruise for two? :)
-        </mat-card-subtitle>
-        <mat-card-subtitle>
-            Thank you for your patronage!!! You are awesome!!!
+            <p>Want to buy me a cup of coffee? A beer? Maybe a Carribean cruise for two? :)</p>
+            <p>Thank you for your patronage!!! You are awesome!!!</p>
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content fxLayoutAlign="center center">
       <a mat-button color="primary" (click)="goToLink(_appDonateUrl)">PayPal</a>
     </mat-card-content>
     <mat-card-footer fxLayoutAlign="center center">
-        <mat-card-subtitle class="shell-about__powered-by-rhombus" fxLayoutAlign="center center">Donations are optional, non-refundable</mat-card-subtitle>
+        <div class="shell-about__powered-by-rhombus" fxLayoutAlign="center center">Donations are optional, non-refundable</div>
     </mat-card-footer>
-</mat-card> -->
-
-<h1 mat-dialog-title>Donate</h1>
-<div mat-dialog-content>
-  <p>Want to buy me a cup of coffee? A beer? Maybe a Carribean cruise for two? :)</p>
-  <p>Thank you for your patronage!!! You are awesome!!!</p>
-</div>
-<div mat-dialog-actions fxLayout="column" fxLayoutAlign="center center">
-    <a mat-button color="primary" (click)="goToLink(_appDonateUrl)">PayPal</a>
-    <div class="shell-about__powered-by-rhombus">Donations are optional, non-refundable</div>
-</div>
+</mat-card>

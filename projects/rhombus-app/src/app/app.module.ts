@@ -36,7 +36,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     RhombusShellModule.forRoot({
       applicationInfo: {
         name: 'Rhombus Software',
-        version: '1.0.0-beta.3',
+        version: '1.0.0-beta.4',
         logoUrl: '/assets/rhombus-icon.png',
         logoLetters: undefined,
         twitterUrl: 'https://twitter.com/ngRhombus',
