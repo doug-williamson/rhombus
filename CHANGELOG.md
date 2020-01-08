@@ -2,6 +2,18 @@
 
 All notable changes to Rhombus Software will be documented in this location. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta.4"></a>
+# 1.0.0-beta.4 (2020-01-08)
+
+## Features
+
+* Created the following npm library:
+  - **@dougwilliamson/rhombus**
+    - Created application shell to handle the following:
+        - List Widget component
+        - Grid Widget component
+* rhombus-shell: added Donate mat-menu button, dialog and configurable url
+
 <a name="1.0.0-beta.3"></a>
 # 1.0.0-beta.3 (2019-12-25)
 
