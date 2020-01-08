@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
 import { RhombusShellSettingsModule } from '../configuration/public_api';
 import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
+import { RhombusShellDonateComponent } from './components/shell-donate/shell-donate.component';
 import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
 import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
 import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
@@ -42,9 +43,11 @@ import { RhombusShellThemeService } from './services/theme.service';
     RhombusShellHeaderComponent,
     RhombusShellNavComponent,
     RhombusShellAboutComponent,
+    RhombusShellDonateComponent,
   ],
   entryComponents: [
     RhombusShellAboutComponent,
+    RhombusShellDonateComponent,
   ],
   exports: [
     RhombusShellWrapperComponent,

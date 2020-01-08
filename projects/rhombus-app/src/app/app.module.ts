@@ -41,6 +41,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
         logoLetters: undefined,
         twitterUrl: 'https://twitter.com/ngRhombus',
         changelogUrl: 'https://github.com/doug-williamson/rhombus/blob/master/CHANGELOG.md',
+        donateUrl: 'https://www.paypal.me/dmwilliamson08',
         firebaseConfig: undefined,
       },
     }),

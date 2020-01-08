@@ -34,6 +34,10 @@ export class RhombusShellApplicationInfoService {
     return this.info && this.info.changelogUrl;
   }
 
+  get donateUrl(): string {
+    return this.info && this.info.donateUrl;
+  }
+
   get firebaseConfig(): FirebaseOptions {
     return this.info && this.info.firebaseConfig;
   }
