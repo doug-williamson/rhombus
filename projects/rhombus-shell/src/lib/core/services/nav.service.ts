@@ -16,5 +16,9 @@ export class RhombusShellNavService {
     this.showSidenav$.next(this._isOpened);
   }
 
+  close() {
+    this._isOpened = false;
+    this.showSidenav$.next(false);
+  }
 
 }

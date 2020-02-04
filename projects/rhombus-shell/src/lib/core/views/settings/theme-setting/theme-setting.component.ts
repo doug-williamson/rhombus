@@ -23,7 +23,6 @@ export class RhombusShellThemeSettingComponent  {
 
   onThemeChange(change: MatSelectChange) {
     this.themeService.updateTheme(change.value);
-    console.log('Doug');
   }
 
 }

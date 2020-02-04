@@ -39,7 +39,6 @@ export class RhombusShellHeaderComponent implements OnInit {
   }
 
   showDonate(): void {
-    console.log('Doug');
     const dialogRef = this.dialog.open(RhombusShellDonateComponent, {
       width: '400px',
     });
