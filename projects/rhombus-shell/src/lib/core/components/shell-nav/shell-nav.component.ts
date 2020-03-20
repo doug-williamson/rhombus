@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RhombusShellNavItem } from '../../models/shell-nav-item';
 
 @Component({
@@ -13,7 +14,6 @@ export class RhombusShellNavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
