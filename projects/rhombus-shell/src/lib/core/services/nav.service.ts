@@ -7,9 +7,14 @@ import { BehaviorSubject } from 'rxjs';
 export class RhombusShellNavService {
 
   showSidenav$ = new BehaviorSubject<boolean>(false);
-  _isOpened = false;
+  _isOpened = true;
 
   constructor() { }
+
+  setState(isOpened: boolean) {
+    this._isOpened = isOpened;
+    this.showSidenav$.next(isOpened);
+  }
 
   toggle() {
     this._isOpened = !this._isOpened;
