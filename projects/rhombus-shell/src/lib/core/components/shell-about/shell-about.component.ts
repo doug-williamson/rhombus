@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RhombusShellApplicationInfoService } from '../../services/application-info.service';
+import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
   selector: 'rhombus-shell-about',
@@ -15,7 +16,7 @@ export class RhombusShellAboutComponent implements OnInit {
   _appTwitterUrl?: string;
   _appChangelogUrl?: string;
 
-  constructor(private applicationInfo: RhombusShellApplicationInfoService) {
+  constructor(private applicationInfo: RhombusShellApplicationInfoService, public media: MediaObserver) {
     this._appName = this.applicationInfo.name;
     this._appVersion = this.applicationInfo.version;
     this._appLogoLetters = this.applicationInfo.logoLetters;
