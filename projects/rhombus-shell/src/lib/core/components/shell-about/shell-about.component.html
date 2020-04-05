@@ -1,11 +1,9 @@
 <mat-card class="shell-about__card" fxFlex>
   <mat-card-header class="shell-about__header">
-    <ng-container *ngIf="media.isActive('gt-xs')">
-      <img *ngIf="_appLogoUrl; else logoLetters" mat-card-avatar [src]="_appLogoUrl" class="shell-about__url">
-      <ng-template #logoLetters>
-        <div mat-card-avatar class="shell-about__letters" fxLayout fxLayoutAlign="center center">{{ _appLogoLetters }}</div>
-      </ng-template>
-    </ng-container>
+    <img *ngIf="media.isActive('gt-xs') && _appLogoUrl; else logoLetters" mat-card-avatar [src]="_appLogoUrl" class="shell-about__url">
+    <ng-template #logoLetters>
+      <div *ngIf="media.isActive('gt-xs')" mat-card-avatar class="shell-about__letters" fxLayout fxLayoutAlign="center center">{{ _appLogoLetters }}</div>
+    </ng-template>
     <mat-card-title class="shell-about__title">{{ _appName }}</mat-card-title>
     <mat-card-subtitle class="shell-about__subtitle">
       <button mat-icon-button color="primary" (click)="goToLink(_appChangelogUrl)">
