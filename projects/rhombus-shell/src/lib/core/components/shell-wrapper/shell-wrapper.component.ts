@@ -54,4 +54,8 @@ export class RhombusShellWrapperComponent implements OnInit {
     });
   }
 
+  closedSidenav() {
+    this.navService.close();
+  }
+
 }
