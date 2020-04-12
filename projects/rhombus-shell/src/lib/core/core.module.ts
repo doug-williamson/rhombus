@@ -59,7 +59,7 @@ import { RhombusShellThemeService } from './services/theme.service';
   ],
 })
 export class RhombusShellCoreModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<RhombusShellCoreRootModule> {
         return {
             ngModule: RhombusShellCoreRootModule,
         };
