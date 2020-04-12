@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
