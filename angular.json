@@ -14,13 +14,13 @@
           "options": {
             "tsConfig": "projects/rhombus-shell/tsconfig.lib.json",
             "project": "projects/rhombus-shell/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/rhombus-shell/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -176,13 +176,13 @@
           "options": {
             "tsConfig": "projects/rhombus/tsconfig.lib.json",
             "project": "projects/rhombus/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/rhombus/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -204,6 +204,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rhombus-app"
+    }
+  },
+  "defaultProject": "rhombus-app",
+  "cli": {
+    "analytics": "ff28884d-93dd-4b5c-aaf4-f040754ef70d"
+  }
 }
