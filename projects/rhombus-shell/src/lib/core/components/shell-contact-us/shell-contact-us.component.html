@@ -1,0 +1,13 @@
+<mat-card class="shell-about__card" fxFlex>
+    <mat-card-header class="shell-about__header">
+        <mat-card-title class="shell-about__title">Contact Us</mat-card-title>
+        <mat-card-subtitle class="shell-about__subtitle">
+            <p>Have a suggestion for a site feature?</p>
+            <p>Feel the need to tell me how I'm doing?</p>
+            <p>Drop me a message: doug@dougwilliamson.space.</p>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxLayoutAlign="center center">
+      <button mat-button color="primary" [cdkCopyToClipboard]="_appContactUsLink" (click)="openSnackBar()">Copy Email to Clipboard</button>
+    </mat-card-content>
+</mat-card>

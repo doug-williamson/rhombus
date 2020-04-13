@@ -4,6 +4,7 @@ import { AuthenticationService } from '../../authentication/authentication.servi
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
 import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.component';
+import { ShellContactUsComponent } from '../shell-contact-us/shell-contact-us.component';
 
 @Component({
   selector: 'rhombus-shell-header',
@@ -30,6 +31,16 @@ export class RhombusShellHeaderComponent implements OnInit {
 
   showAbout(): void {
     const dialogRef = this.dialog.open(RhombusShellAboutComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      // console.log('The dialog was closed');
+    });
+  }
+
+  showContactUs(): void {
+    const dialogRef = this.dialog.open(ShellContactUsComponent, {
       width: '400px',
     });
 
