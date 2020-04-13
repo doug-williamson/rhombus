@@ -38,6 +38,10 @@ export class RhombusShellApplicationInfoService {
     return this.info && this.info.donateUrl;
   }
 
+  get contactUsLink(): string {
+    return this.info && this.info.contactUsLink;
+  }
+
   get firebaseConfig(): FirebaseOptions {
     return this.info && this.info.firebaseConfig;
   }
