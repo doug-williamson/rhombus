@@ -12,7 +12,7 @@ export interface RhombusShellConfiguration {
   ],
 })
 export class RhombusShellModule {
-  static forRoot(config: RhombusShellConfiguration): ModuleWithProviders {
+  static forRoot(config: RhombusShellConfiguration): ModuleWithProviders<RhombusShellRootModule> {
     return {
       ngModule: RhombusShellRootModule,
       providers: [

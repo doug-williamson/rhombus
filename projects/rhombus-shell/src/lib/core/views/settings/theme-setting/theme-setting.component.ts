@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatSelectChange } from '@angular/material';
+import { MatSelectChange } from '@angular/material/select';
 import { Observable } from 'rxjs';
 import { RhombusShellTheme } from '../../../models/theme';
 import { RhombusShellThemeService } from '../../../services/theme.service';

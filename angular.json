@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/rhombus-shell/tsconfig.lib.json",
             "project": "projects/rhombus-shell/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/rhombus-shell/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -57,7 +62,7 @@
             "main": "projects/rhombus-app/src/main.ts",
             "polyfills": "projects/rhombus-app/src/polyfills.ts",
             "tsConfig": "projects/rhombus-app/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/rhombus-app/src/favicon.ico",
               "projects/rhombus-app/src/assets"
@@ -81,7 +86,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -172,6 +176,11 @@
           "options": {
             "tsConfig": "projects/rhombus/tsconfig.lib.json",
             "project": "projects/rhombus/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/rhombus/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -195,6 +204,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rhombus-app"
+    }
+  },
+  "defaultProject": "rhombus-app",
+  "cli": {
+    "analytics": "ff28884d-93dd-4b5c-aaf4-f040754ef70d"
+  }
 }
