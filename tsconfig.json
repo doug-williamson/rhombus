@@ -26,10 +26,10 @@
         "dist/dougwilliamson/rhombus-shell/*"
       ],
       "rhombus": [
-        "dist/rhombus"
+        "dist/dougwilliamson/rhombus"
       ],
       "rhombus/*": [
-        "dist/rhombus/*"
+        "dist/dougwilliamson/rhombus/*"
       ]
     }
   }

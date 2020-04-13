@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RhombusShellSettingsComponent } from './settings.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,8 +9,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { RhombusShellSettingsComponent } from './settings.component';
 import { RhombusShellThemeSettingComponent } from './theme-setting/theme-setting.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [

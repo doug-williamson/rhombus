@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
@@ -22,7 +23,6 @@ import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.compo
 import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
 import { RhombusShellApplicationInfoService } from './services/application-info.service';
 import { RhombusShellThemeService } from './services/theme.service';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
