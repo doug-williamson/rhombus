@@ -22,7 +22,7 @@ export class RhombusShellThemeSettingComponent  {
    }
 
   onThemeChange(change: MatSelectChange) {
-    this.themeService.updateTheme(change.value);
+    // this.themeService.updateTheme(change.value);
   }
 
 }

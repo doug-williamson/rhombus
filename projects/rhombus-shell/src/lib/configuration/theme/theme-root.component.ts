@@ -27,22 +27,24 @@ export class RhombusShellThemeRootComponent implements RhombusShellRootConfigura
       this.themeConfigs.changes.pipe(
         startWith(this.themeConfigs),
       ).subscribe((shellThemes: QueryList<RhombusShellThemeComponent>) => {
-        this.updateAvailableThemes(shellThemes);
+        // this.updateAvailableThemes(shellThemes);
       });
     }
+
+    this.themeService.setInitialDarkMode();
   }
 
   refresh() {
     if (this.themeConfigs) {
-      this.updateAvailableThemes(this.themeConfigs);
+      // this.updateAvailableThemes(this.themeConfigs);
     }
   }
 
-  private updateAvailableThemes(configs: QueryList<RhombusShellThemeComponent>) {
-    const themes = configs
-      .map(config => config.toModel())
-      .filter((theme): theme is RhombusShellTheme => theme !== undefined);
-    this.themeService.updateAvailableThemes(themes);
-  }
+  // private updateAvailableThemes(configs: QueryList<RhombusShellThemeComponent>) {
+  //   const themes = configs
+  //     .map(config => config.toModel())
+  //     .filter((theme): theme is RhombusShellTheme => theme !== undefined);
+  //   this.themeService.updateAvailableThemes(themes);
+  // }
 
 }
