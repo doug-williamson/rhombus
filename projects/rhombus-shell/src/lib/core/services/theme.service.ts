@@ -11,7 +11,7 @@ const LOCAL_STORAGE_DARK_MODE_KEY = 'RhombusShellDarkMode';
 })
 export class RhombusShellThemeService {
 
-  private _darkModeSubject = new BehaviorSubject<boolean>(false);
+  private _darkModeSubject = new BehaviorSubject<boolean | undefined>(false);
   private _currentThemeSubject = new BehaviorSubject<RhombusShellTheme | undefined>(undefined);
   private _availableThemesSubject = new BehaviorSubject<RhombusShellTheme[]>([]);
 
@@ -62,6 +62,7 @@ export class RhombusShellThemeService {
   setInitialDarkMode() {
     let _darkMode = false;
     const _darkModeValue = localStorage.getItem(LOCAL_STORAGE_DARK_MODE_KEY);
+
     if (_darkModeValue) {
       _darkMode = (_darkModeValue === 'true') ? true : false;
     } else {
@@ -101,7 +102,6 @@ export class RhombusShellThemeService {
     } else {
       containerElement.classList.remove('rhombus-dark-theme');
     }
-    console.log(containerElement);
   }
 
   // private updateCDKOverlay(themeClassName: string) {
