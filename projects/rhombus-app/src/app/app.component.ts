@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RhombusShellNavItem } from 'projects/rhombus-shell';
+import { RhombusShellNavItem, RhombusShellThemeService } from 'projects/rhombus-shell';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class RhombusAppComponent implements OnInit {
 
-  _isDarkTheme: Observable<boolean>;
+  _darkMode$: Observable<boolean>;
   title = 'rhombus';
 
   navItems: RhombusShellNavItem[] = [
@@ -19,7 +19,9 @@ export class RhombusAppComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(private themeService: RhombusShellThemeService) {
+    this._darkMode$ = this.themeService.darkMode$;
+   }
 
   ngOnInit() {}
 }

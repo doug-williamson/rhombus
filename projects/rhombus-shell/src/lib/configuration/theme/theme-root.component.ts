@@ -23,26 +23,26 @@ export class RhombusShellThemeRootComponent implements RhombusShellRootConfigura
   constructor(private themeService: RhombusShellThemeService) { }
 
   ngAfterContentInit() {
-    if (this.themeConfigs) {
-      this.themeConfigs.changes.pipe(
-        startWith(this.themeConfigs),
-      ).subscribe((shellThemes: QueryList<RhombusShellThemeComponent>) => {
-        this.updateAvailableThemes(shellThemes);
-      });
-    }
+    // if (this.themeConfigs) {
+    //   this.themeConfigs.changes.pipe(
+    //     startWith(this.themeConfigs),
+    //   ).subscribe((shellThemes: QueryList<RhombusShellThemeComponent>) => {
+    //     // this.updateAvailableThemes(shellThemes);
+    //   });
+    // }
+
+    this.themeService.setInitialDarkMode();
   }
 
   refresh() {
-    if (this.themeConfigs) {
-      this.updateAvailableThemes(this.themeConfigs);
-    }
+    // this.themeService.setInitialDarkMode();
   }
 
-  private updateAvailableThemes(configs: QueryList<RhombusShellThemeComponent>) {
-    const themes = configs
-      .map(config => config.toModel())
-      .filter((theme): theme is RhombusShellTheme => theme !== undefined);
-    this.themeService.updateAvailableThemes(themes);
-  }
+  // private updateAvailableThemes(configs: QueryList<RhombusShellThemeComponent>) {
+  //   const themes = configs
+  //     .map(config => config.toModel())
+  //     .filter((theme): theme is RhombusShellTheme => theme !== undefined);
+  //   this.themeService.updateAvailableThemes(themes);
+  // }
 
 }

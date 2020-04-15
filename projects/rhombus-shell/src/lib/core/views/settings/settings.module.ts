@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { RhombusShellSettingsComponent } from './settings.component';
 import { RhombusShellThemeSettingComponent } from './theme-setting/theme-setting.component';
+import { DarkModeComponent } from './dark-mode/dark-mode.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { RhombusShellThemeSettingComponent } from './theme-setting/theme-setting
   declarations: [
     RhombusShellSettingsComponent,
     RhombusShellThemeSettingComponent,
+    DarkModeComponent,
 
   ],
 })

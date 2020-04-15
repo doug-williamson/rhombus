@@ -9,11 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:rhombus": "ng build @dougwilliamson/rhombus",
-    "build:rhombus-shell": "ng build @dougwilliamson/rhombus-shell && scss-bundle -c projects/rhombus-shell/scss-bundle.config.json",
+    "build:rhombus-shell": "ng build --prod @dougwilliamson/rhombus-shell && scss-bundle -c projects/rhombus-shell/scss-bundle.config.json",
     "package:rhombus": "npm pack ./dist/dougwilliamson/rhombus",
-    "package:rhombus-shell": "npm pack ./dist/dougwilliamson/rhombus-shell && scss-bundle -c projects/rhombus-shell/scss-bundle.config.json",
+    "package:rhombus-shell": "npm pack ./dist/dougwilliamson/rhombus-shell",
     "publish:rhombus": "npm publish ./dist/dougwilliamson/rhombus",
-    "publish:rhombus-shell": "npm publish ./dist/dougwilliamson/rhombus-shell && scss-bundle -c projects/rhombus-shell/scss-bundle.config.json"
+    "publish:rhombus-shell": "npm publish ./dist/dougwilliamson/rhombus-shell"
   },
   "private": true,
   "dependencies": {
@@ -53,7 +53,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "ng-packagr": "^9.0.0",
     "protractor": "~5.4.0",
-    "scss-bundle": "~2.5.0",
+    "scss-bundle": "~2.5.1",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.8.3"
