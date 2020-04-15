@@ -4,7 +4,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatCardModule, MatIconModule, MatListModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RhombusShellModule } from 'projects/rhombus-shell';
@@ -42,6 +46,7 @@ import { RhombusShellComponent } from './views/rhombus-shell/rhombus-shell.compo
         twitterUrl: 'https://twitter.com/ngRhombus',
         changelogUrl: 'https://github.com/doug-williamson/rhombus/blob/master/CHANGELOG.md',
         donateUrl: 'https://www.paypal.me/dmwilliamson08',
+        contactUsLink: 'doug@dougwilliamson.space',
         firebaseConfig: undefined,
       },
     }),

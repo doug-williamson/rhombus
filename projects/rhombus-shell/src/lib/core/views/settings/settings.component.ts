@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { RhombusShellThemeService } from '../../public_api';
 
 @Component({
   selector: 'rhombus-shell-settings',
@@ -9,17 +7,8 @@ import { RhombusShellThemeService } from '../../public_api';
 })
 export class RhombusShellSettingsComponent implements OnInit {
 
-  isDarkTheme: Observable<boolean>;
+  constructor() { }
 
-  constructor(private themeService: RhombusShellThemeService) { }
-
-  ngOnInit() {
-    this.isDarkTheme = this.themeService.darkThemeSubject.asObservable();
-  }
-
-  toggleDarkTheme(checked: boolean) {
-    // this.themeService.setDarkTheme(checked);
-
-  }
+  ngOnInit() {}
 
 }
