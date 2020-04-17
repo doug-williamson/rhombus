@@ -2,7 +2,7 @@
     <rhombus-shell-header [title]="title"></rhombus-shell-header>
     <mat-drawer-container fxFlex>
         <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened" (closedStart)="closedSidenav()">
-            <rhombus-shell-nav [navItems]="navItems"></rhombus-shell-nav>
+            <rhombus-shell-nav [navEntries]="navEntries"></rhombus-shell-nav>
         </mat-drawer>
         <mat-drawer-content>
             <router-outlet></router-outlet>

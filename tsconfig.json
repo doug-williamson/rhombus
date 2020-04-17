@@ -20,17 +20,11 @@
     ],
     "paths": {
       "@dougwilliamson/rhombus-shell": [
-        "dist/dougwilliamson/rhombus-shell"
+        "./projects/rhombus-shell"
       ],
-      "@dougwilliamson/rhombus-shell/*": [
-        "dist/dougwilliamson/rhombus-shell/*"
+      "@dougwilliamson/rhombus": [
+        "./projects/rhombus"
       ],
-      "rhombus": [
-        "dist/dougwilliamson/rhombus"
-      ],
-      "rhombus/*": [
-        "dist/dougwilliamson/rhombus/*"
-      ]
     }
   }
 }

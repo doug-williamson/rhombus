@@ -15,12 +15,12 @@ export class RhombusShellModule {
   static forRoot(config: RhombusShellConfiguration): ModuleWithProviders<RhombusShellRootModule> {
     return {
       ngModule: RhombusShellRootModule,
-      // providers: [
-      //   {
-      //     provide: RHOMBUS_SHELL_APPLICATION_INFORMATION,
-      //     useValue: config.applicationInfo,
-      //   },
-      // ],
+      providers: [
+        {
+          provide: RHOMBUS_SHELL_APPLICATION_INFORMATION,
+          useValue: config.applicationInfo,
+        },
+      ],
     };
   }
 }

@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RhombusAppComponent } from './app.component';
+import { GettingStartedComponent } from './views/getting-started/getting-started.component';
 import { RhombusAppHomeComponent } from './views/home/home.component';
-import { RhombusShellComponent } from './views/rhombus-shell/rhombus-shell.component';
+import { HeaderComponent } from './views/rhombus-shell/header/header.component';
+import { SettingsComponent } from './views/rhombus-shell/settings/settings.component';
+import { SidenavComponent } from './views/rhombus-shell/sidenav/sidenav.component';
+import { WrapperComponent } from './views/rhombus-shell/wrapper/wrapper.component';
+import { IntroComponent } from './views/rhombus/intro/intro.component';
 
 const routes: Routes = [
   {
@@ -13,11 +17,34 @@ const routes: Routes = [
   {
     path: 'home',
     component: RhombusAppHomeComponent,
-    
   },
   {
-    path: 'rhombus-shell',
-    component: RhombusShellComponent,
+    path: 'getting-started',
+    component: GettingStartedComponent,
+  },
+  {
+    path: 'rhombus/intro',
+    component: IntroComponent,
+  },
+  {
+    path: 'rhombus-shell/intro',
+    component: IntroComponent,
+  },
+  {
+    path: 'rhombus-shell/wrapper',
+    component: WrapperComponent,
+  },
+  {
+    path: 'rhombus-shell/header',
+    component: HeaderComponent,
+  },
+  {
+    path: 'rhombus-shell/settings',
+    component: SettingsComponent,
+  },
+  {
+    path: 'rhombus-shell/sidenav',
+    component: SidenavComponent,
   },
 ];
 

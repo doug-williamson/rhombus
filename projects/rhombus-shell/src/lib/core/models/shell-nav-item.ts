@@ -1,4 +1,11 @@
+export type RhombusShellNavEntry = RhombusShellNavGroup | RhombusShellNavItem;
+
+export interface RhombusShellNavGroup {
+    name: string;
+    children: RhombusShellNavItem[];
+}
+
 export interface RhombusShellNavItem {
-    label: string;
+    name: string;
     route: string;
 }

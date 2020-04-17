@@ -1,8 +1,43 @@
 <mat-nav-list class="nav-list__container">
     <!-- <mat-list-item [routerLink]="'/library'">Library</mat-list-item> -->
-    <ng-container *ngFor="let navItem of navItems">
-        <mat-list-item [routerLink]="navItem.route">
-            <h4 mat-line>{{ navItem.label }}</h4>
-        </mat-list-item>
+    <ng-container *ngFor="let navEntry of navEntries">
+        <ng-container *ngTemplateOutlet="navEntry.children ? groupEntry : itemEntry; context: { $implicit: navEntry }"></ng-container>
     </ng-container>
+
+    <ng-template #groupEntry let-navEntry>
+        <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{ navEntry.name }}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <ng-container *ngFor="let navItem of navEntry.children">
+                    <ng-container *ngTemplateOutlet="itemEntry; context: { $implicit: navItem }"></ng-container>
+                </ng-container>
+            </mat-nav-list>
+        </mat-expansion-panel>
+    </ng-template>
+
+    <ng-template #itemEntry let-navEntry>
+        <mat-list-item [routerLink]="navEntry.route">
+            <h4 mat-line>{{ navEntry.name }}</h4>
+        </mat-list-item>
+    </ng-template>
+<!--     
+    <mat-list-item [routerLink]="navItem.route" *ngFor="let navItem of navItems">
+        <h4 mat-line>{{ navItem.label }}</h4>
+    </mat-list-item> -->
+
+    
+    <!-- <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>Rhombus Shell</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+            <a mat-list-item>Introduction</a>
+            <a mat-list-item>Wrapper</a>
+            <a mat-list-item>Header</a>
+            <a mat-list-item>Sidenav</a>
+            <a mat-list-item>Settings</a>
+        </mat-nav-list>
+    </mat-expansion-panel> -->
 </mat-nav-list>

@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -32,6 +33,7 @@ import { RhombusShellThemeService } from './services/theme.service';
 
     MatButtonModule,
     MatCardModule,
+    MatExpansionModule,
     MatToolbarModule,
     MatListModule,
     MatIconModule,
