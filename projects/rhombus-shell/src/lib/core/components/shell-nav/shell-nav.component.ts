@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { Router } from '@angular/router';
-import { RhombusShellNavItem } from '../../models/shell-nav-item';
+import { RhombusShellNavEntry } from '../../models/shell-nav-item';
 import { RhombusShellNavService } from '../../services/nav.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { RhombusShellNavService } from '../../services/nav.service';
 export class RhombusShellNavComponent implements OnInit {
 
   @Input()
-  navItems: RhombusShellNavItem[];
+  navEntries: RhombusShellNavEntry[];
 
   constructor(private router: Router, private navService: RhombusShellNavService, private media: MediaObserver) { }
 

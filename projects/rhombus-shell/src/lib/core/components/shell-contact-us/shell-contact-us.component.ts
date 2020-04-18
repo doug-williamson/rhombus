@@ -16,7 +16,7 @@ export class ShellContactUsComponent implements OnInit {
   }
 
   openSnackBar() {
-    const message = 'Copied. Click Ctrl + V to paste';
+    const message = 'Copied. Ctrl + V to paste';
     const action = undefined;
 
     this._snackBar.open(message, action, {

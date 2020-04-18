@@ -2,7 +2,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { RhombusShellNavItem } from '../../models/shell-nav-item';
+import { RhombusShellNavItem, RhombusShellNavEntry } from '../../models/shell-nav-item';
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellThemeService } from '../../services/theme.service';
 
@@ -21,7 +21,7 @@ export class RhombusShellWrapperComponent implements OnInit {
   title: string;
 
   @Input()
-  navItems: RhombusShellNavItem[];
+  navEntries: RhombusShellNavEntry[];
 
   constructor(
     public navService: RhombusShellNavService,

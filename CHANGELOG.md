@@ -1,6 +1,17 @@
 # Change Log
 
-All notable changes to Rhombus Software will be documented in this location. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to Rhombus software will be documented in this location. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+# URL
+
+https://rhombus.space
+
+<a name="1.0.0-beta.6"></a>
+# 1.0.0-beta.5 (2020-04-17)
+
+### Features
+* rhombus-app: Stubbed out views for Rhombus/Rhombus-Shell
+* rhombus-shell: updated sidenav to handle NavGroup as well as NavItem
 
 <a name="1.0.0-beta.5"></a>
 # 1.0.0-beta.5 (2020-02-04)
