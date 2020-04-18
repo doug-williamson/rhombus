@@ -24,6 +24,7 @@ import { SettingsComponent } from './views/rhombus-shell/settings/settings.compo
 import { SidenavComponent } from './views/rhombus-shell/sidenav/sidenav.component';
 import { WrapperComponent } from './views/rhombus-shell/wrapper/wrapper.component';
 import { IntroComponent } from './views/rhombus/intro/intro.component';
+import { RhombusModule } from './views/rhombus/rhombus.module';
 
 @NgModule({
   imports: [
@@ -57,17 +58,15 @@ import { IntroComponent } from './views/rhombus/intro/intro.component';
         firebaseConfig: undefined,
       },
     }),
+
+    RhombusModule,
+    RhombusShellModule,
     RhombusAppRoutingModule,
   ],
   declarations: [
     RhombusAppComponent,
     RhombusAppHomeComponent,
     GettingStartedComponent,
-    IntroComponent,
-    WrapperComponent,
-    HeaderComponent,
-    SidenavComponent,
-    SettingsComponent,
   ],
   providers: [
     AngularFirestore,
