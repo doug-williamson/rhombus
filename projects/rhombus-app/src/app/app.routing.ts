@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RhombusAppComponent } from './app.component';
+import { GettingStartedComponent } from './views/getting-started/getting-started.component';
 import { RhombusAppHomeComponent } from './views/home/home.component';
-import { RhombusShellComponent } from './views/rhombus-shell/rhombus-shell.component';
 
 const routes: Routes = [
   {
@@ -15,8 +14,16 @@ const routes: Routes = [
     component: RhombusAppHomeComponent,
   },
   {
+    path: 'getting-started',
+    component: GettingStartedComponent,
+  },
+  {
+    path: 'rhombus',
+    loadChildren: () => import('./views/rhombus/rhombus.module').then(m => m.RhombusModule),
+  },
+  {
     path: 'rhombus-shell',
-    component: RhombusShellComponent,
+    loadChildren: () => import('./views/rhombus-shell/rhombus-shell.module').then(m => m.RhombusShellModule),
   },
 ];
 

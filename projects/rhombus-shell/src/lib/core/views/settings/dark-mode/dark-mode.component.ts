@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatListOption } from '@angular/material/list';
 import { Observable } from 'rxjs';
-import { RhombusShellThemeService } from '../../../public_api';
+import { RhombusShellThemeService } from '../../../services/theme.service';
+
+
 
 @Component({
   selector: 'rhombus-shell-dark-mode',

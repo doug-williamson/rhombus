@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RhombusShellNavItem, RhombusShellThemeService } from 'projects/rhombus-shell';
+import { RhombusShellNavEntry, RhombusShellThemeService } from 'projects/rhombus-shell';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,12 +10,46 @@ import { Observable } from 'rxjs';
 export class RhombusAppComponent implements OnInit {
 
   _darkMode$: Observable<boolean>;
-  title = 'rhombus';
+  title = 'Rhombus';
 
-  navItems: RhombusShellNavItem[] = [
+  navEntries: RhombusShellNavEntry[] = [
     {
-      label: 'Rhombus Shell',
-      route: '/rhombus-shell',
+      name: 'Getting Started',
+      route: 'getting-started',
+    },
+    {
+      name: 'Rhombus',
+      children: [
+        {
+          name: 'Introduction',
+          route: 'rhombus/intro',
+        },
+      ],
+    },
+    {
+      name: 'Rhombus Shell',
+      children: [
+        {
+          name: 'Introduction',
+          route: 'rhombus-shell/intro',
+        },
+        {
+          name: 'Wrapper',
+          route: 'rhombus-shell/wrapper',
+        },
+        {
+          name: 'Header',
+          route: 'rhombus-shell/header',
+        },
+        {
+          name: 'Sidenav',
+          route: 'rhombus-shell/sidenav',
+        },
+        {
+          name: 'Settings',
+          route: 'rhombus-shell/settings',
+        },
+      ],
     },
   ];
 
