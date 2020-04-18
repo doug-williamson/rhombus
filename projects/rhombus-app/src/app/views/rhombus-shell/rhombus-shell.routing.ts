@@ -8,11 +8,6 @@ import { IntroComponent } from './intro/intro.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'intro',
-    pathMatch: 'full',
-  },
-  {
     path: 'intro',
     component: IntroComponent,
   },
