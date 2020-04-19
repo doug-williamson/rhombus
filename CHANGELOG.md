@@ -7,7 +7,7 @@ All notable changes to Rhombus software will be documented in this location. See
 https://rhombus.space
 
 <a name="1.0.0-beta.6"></a>
-# 1.0.0-beta.5 (2020-04-17)
+# 1.0.0-beta.6 (2020-04-17)
 
 ### Features
 * rhombus-app: Stubbed out views for Rhombus/Rhombus-Shell
