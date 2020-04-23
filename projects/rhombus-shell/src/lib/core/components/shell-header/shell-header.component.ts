@@ -1,10 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
-import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.component';
 import { ShellContactUsComponent } from '../shell-contact-us/shell-contact-us.component';
+import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.component';
+import { BreadCrumb } from '../shell-wrapper/breadcrumb';
 
 @Component({
   selector: 'rhombus-shell-header',
@@ -14,7 +16,7 @@ import { ShellContactUsComponent } from '../shell-contact-us/shell-contact-us.co
 export class RhombusShellHeaderComponent implements OnInit {
 
   @Input()
-  title: string;
+  breadcrumbs: Observable<BreadCrumb[]>;
 
   constructor(
     private navService: RhombusShellNavService,

@@ -30,6 +30,9 @@ import { DarkModeComponent } from './dark-mode/dark-mode.component';
       {
         path: 'settings',
         component: RhombusShellSettingsComponent,
+        data: {
+          breadcrumb: 'Settings',
+        }
       },
     ]),
   ],
