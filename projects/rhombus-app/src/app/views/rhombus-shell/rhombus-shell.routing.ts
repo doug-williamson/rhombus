@@ -10,22 +10,37 @@ const routes: Routes = [
   {
     path: 'intro',
     component: IntroComponent,
+    data: {
+      breadcrumb: 'Intro',
+    },
   },
   {
     path: 'wrapper',
     component: WrapperComponent,
+    data: {
+      breadcrumb: 'Wrapper',
+    },
   },
   {
     path: 'header',
     component: HeaderComponent,
+    data: {
+      breadcrumb: 'Header',
+    },
   },
   {
     path: 'sidenav',
     component: SidenavComponent,
+    data: {
+      breadcrumb: 'Sidenav',
+    },
   },
   {
     path: 'settings',
     component: SettingsComponent,
+    data: {
+      breadcrumb: 'Settings',
+    },
   },
 ];
 
