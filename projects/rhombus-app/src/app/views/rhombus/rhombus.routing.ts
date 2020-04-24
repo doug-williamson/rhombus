@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: 'intro',
     component: IntroComponent,
+    data: {
+      breadcrumb: 'Intro',
+    },
   },
 ];
 
