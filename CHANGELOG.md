@@ -7,7 +7,7 @@ All notable changes to Rhombus software will be documented in this location. See
 https://rhombus.space
 
 <a name="1.0.0-beta.7"></a>
-# 1.0.0-beta.6 (2020-04-23)
+# 1.0.0-beta.7 (2020-04-23)
 
 ### Features
 * rhombus-app: added breadcrumb to routing
