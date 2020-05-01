@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
 import { HeaderComponent } from './header/header.component';
 import { IntroComponent } from './intro/intro.component';
 import { RhombusShellViewsRouting } from './rhombus-shell.routing';
@@ -17,6 +22,12 @@ import { WrapperComponent } from './wrapper/wrapper.component';
   ],
   imports: [
     CommonModule,
+
+    MatCardModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule,
 
     RhombusShellViewsRouting,
   ],

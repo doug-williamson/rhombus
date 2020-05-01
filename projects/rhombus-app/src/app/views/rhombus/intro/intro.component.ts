@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
   selector: 'rhombus-app-intro',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroComponent implements OnInit {
 
-  constructor() { }
+  constructor(public media: MediaObserver) { }
 
   ngOnInit(): void {
+  }
+
+  goToLink(url: string) {
+    window.open(url, '_blank');
   }
 
 }

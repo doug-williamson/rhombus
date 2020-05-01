@@ -1,1 +1,25 @@
-<p>intro works!</p>
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFill class="experience__wrapper">
+    <mat-card style="margin-bottom: 16px;">
+        <mat-card-header class="experience__wrapper-header">
+            <img mat-card-avatar *ngIf="media.isActive('gt-xs')" [src]="'./assets/rhombus-icon.png'" class="experience__wrapper-image">
+            <mat-card-title class="experience__wrapper-title">Rhombus - Introduction</mat-card-title>
+            <mat-card-subtitle class="experience__wrapper-subtitle">
+                <button mat-button color="primary" (click)="goToLink('https://www.npmjs.com/package/@dougwilliamson/rhombus')">
+                    <mat-icon>open_in_new</mat-icon>
+                    NPM
+                </button>
+            </mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+    <div fxLayout="column">
+        <mat-card>
+            <mat-card-title>Introduction</mat-card-title>
+        </mat-card>
+        <mat-card>
+            <mat-card-title>Features</mat-card-title>
+        </mat-card>
+        <mat-card>
+            <mat-card-title>Setup</mat-card-title>
+        </mat-card>
+    </div>
+</div>

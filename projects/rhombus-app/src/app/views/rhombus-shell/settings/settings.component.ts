@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
   selector: 'rhombus-app-settings',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  subtitle = '<rhombus-shell-settings>';
+  
+  constructor(public media: MediaObserver) { }
 
   ngOnInit(): void {
   }
