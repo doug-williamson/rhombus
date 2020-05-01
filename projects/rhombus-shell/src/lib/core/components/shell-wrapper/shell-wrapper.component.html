@@ -8,7 +8,9 @@
     <mat-drawer-content>
         <div fxLayout="column" fxFlexFill [ngClass]="_themeClassName$ | async" class="app__container">
             <rhombus-shell-header [breadcrumbs]="_breadcrumbs$ | async"></rhombus-shell-header>
-            <router-outlet></router-outlet>
+            <div fxFlex>
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </mat-drawer-content>
 </mat-drawer-container>

@@ -11,6 +11,7 @@ import { RhombusShellViewsRouting } from './rhombus-shell.routing';
 import { SettingsComponent } from './settings/settings.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
   ],
   imports: [
     CommonModule,
+    FlexLayoutModule,
 
     MatCardModule,
     MatGridListModule,
