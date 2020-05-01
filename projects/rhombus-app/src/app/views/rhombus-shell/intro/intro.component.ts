@@ -16,9 +16,13 @@ export interface Tile {
 export class IntroComponent implements OnInit {
 
   tiles: Tile[] = [
+    {text: 'Wrapper', cols: 8, rows: 1, color: 'grey'},
+    {text: '', cols: 1, rows: 4, color: 'grey'},
     {text: 'Sidenav', cols: 1, rows: 4, color: 'lightgrey'},
-    {text: 'Header', cols: 3, rows: 1, color: 'lightgrey'},
-    {text: 'Content', cols: 3, rows: 3, color: 'white'},
+    {text: 'Header', cols: 5, rows: 1, color: 'lightgrey'},
+    {text: '', cols: 1, rows: 4, color: 'grey'},
+    {text: 'Content', cols: 5, rows: 3, color: 'white'},
+    {text: '', cols: 8, rows: 1, color: 'grey'},
   ];
 
   constructor(public media: MediaObserver) { }
