@@ -6,6 +6,15 @@ All notable changes to Rhombus software will be documented in this location. See
 
 https://rhombus.space
 
+<a name="1.0.0-beta.8"></a>
+# 1.0.0-beta.8 (2020-04-23)
+
+## Features
+* rhombus-app: Began laying framework for rhombus/rhombus-shell views
+
+### Bug Fixes
+* rhombus-shell: fixed Home button text issue
+
 <a name="1.0.0-beta.7"></a>
 # 1.0.0-beta.7 (2020-04-23)
 

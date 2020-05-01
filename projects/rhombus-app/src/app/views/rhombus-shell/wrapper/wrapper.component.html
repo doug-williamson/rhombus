@@ -1,1 +1,38 @@
-<p>wrapper works!</p>
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFill class="experience__wrapper">
+    <mat-card style="margin-bottom: 16px;">
+        <mat-card-header class="experience__wrapper-header">
+            <img mat-card-avatar *ngIf="media.isActive('gt-xs')" [src]="'./assets/rhombus-icon.png'" class="experience__wrapper-image">
+            <mat-card-title class="experience__wrapper-title">Rhombus-Shell Wrapper</mat-card-title>
+            <mat-card-subtitle class="experience__wrapper-subtitle">{{ subtitle }}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+    <mat-tab-group mat-stretch-tabs class="mat-elevation-z4" fxFlex>
+        <mat-tab label="Overview">
+            <div fxLayout="column">
+                <mat-card>
+                    <mat-card-title>Introduction</mat-card-title>
+                </mat-card>
+                <mat-card>
+                    <mat-card-title>Features</mat-card-title>
+                </mat-card>
+                <mat-card>
+                    <mat-card-title>Views</mat-card-title>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab label="Diagram">
+            <mat-card style="padding: 64px">
+                <mat-grid-list cols="8" rowHeight="50px">
+                    <mat-grid-tile
+                        *ngFor="let tile of tiles"
+                        [colspan]="tile.cols"
+                        [rowspan]="tile.rows"
+                        [style.background]="tile.color">
+                      {{tile.text}}
+                    </mat-grid-tile>
+                  </mat-grid-list>
+            </mat-card>
+        </mat-tab>
+        
+    </mat-tab-group>
+</div>

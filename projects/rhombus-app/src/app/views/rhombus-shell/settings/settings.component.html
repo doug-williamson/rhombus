@@ -1,1 +1,20 @@
-<p>settings works!</p>
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFill class="experience__wrapper">
+    <mat-card style="margin-bottom: 16px;">
+        <mat-card-header class="experience__wrapper-header">
+            <img mat-card-avatar *ngIf="media.isActive('gt-xs')" [src]="'./assets/rhombus-icon.png'" class="experience__wrapper-image">
+            <mat-card-title class="experience__wrapper-title">Rhombus-Shell Settings</mat-card-title>
+            <mat-card-subtitle class="experience__wrapper-subtitle">{{ subtitle }}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+    <div fxLayout="column">
+        <mat-card>
+            <mat-card-title>Introduction</mat-card-title>
+        </mat-card>
+        <mat-card>
+            <mat-card-title>Core Settings</mat-card-title>
+        </mat-card>
+        <mat-card>
+            <mat-card-title>Specific Settings</mat-card-title>
+        </mat-card>
+    </div>
+</div>

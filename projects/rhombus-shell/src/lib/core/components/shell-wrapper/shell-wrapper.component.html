@@ -1,7 +1,7 @@
 <mat-drawer-container fxFlex>
     <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened" (closedStart)="closedSidenav()">
         <mat-toolbar>
-            <button mat-button class="shell-header__title" [routerLink]="''">Rhombus</button>
+            <button mat-button class="shell-header__title" [routerLink]="''">{{ title }}</button>
         </mat-toolbar>
         <rhombus-shell-nav [navEntries]="navEntries"></rhombus-shell-nav>
     </mat-drawer>
