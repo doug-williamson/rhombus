@@ -55,7 +55,7 @@ export class RhombusShellWrapperComponent implements OnInit {
       }
     });
 
-    this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
+    this.breakpointObserver.observe([Breakpoints.Large, Breakpoints.XLarge])
     .subscribe((state: BreakpointState) => {
       if (state.matches) {
         this.navService.setState(true);
