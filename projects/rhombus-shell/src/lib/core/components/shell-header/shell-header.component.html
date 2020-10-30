@@ -15,6 +15,7 @@
         <mat-menu #menu="matMenu">
             <button mat-menu-item [routerLink]="'settings'">Settings</button>
             <button mat-menu-item (click)="showAbout()">About</button>
+            <button mat-menu-item (click)="showContact()">Contact</button>
             <button mat-menu-item (click)="showDonate()">Donate</button>
             <mat-divider></mat-divider>
             <button mat-menu-item (click)="signOut()">Sign Out</button>
@@ -27,7 +28,7 @@
         <mat-menu #menu="matMenu">
             <button mat-menu-item [routerLink]="'settings'">Settings</button>
             <button mat-menu-item (click)="showAbout()">About</button>
-            <button mat-menu-item (click)="showContactUs()">Contact Us</button>
+            <button mat-menu-item (click)="showContact()">Contact</button>
             <button mat-menu-item (click)="showDonate()">Donate</button>
         </mat-menu>
     </ng-template>
