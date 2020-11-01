@@ -6,6 +6,17 @@ All notable changes to Rhombus software will be documented in this location. See
 
 https://rhombus.space
 
+<a name="1.0.0-beta.9"></a>
+# 1.0.0-beta.9 (2020-11-01)
+
+### Features
+* Template: Added custom gradients for BGR primary/accent/warning
+* Donate: Added to Firebase service
+* Contact: Added to Firebase service
+
+### Bug Fixes
+* rhombus-shell: collapsed sidenav for viewports < XL
+
 <a name="1.0.0-beta.8"></a>
 # 1.0.0-beta.8 (2020-04-23)
 
