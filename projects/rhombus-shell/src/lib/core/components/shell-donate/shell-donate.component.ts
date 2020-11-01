@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { RhombusShellApplicationInfoService } from '../../services/application-info.service';
+import { IShellDonate, ShellDonateService } from './shell-donate.service';
 
 @Component({
   selector: 'rhombus-shell-shell-donate',
@@ -8,13 +10,15 @@ import { RhombusShellApplicationInfoService } from '../../services/application-i
 })
 export class RhombusShellDonateComponent implements OnInit {
 
-  _appDonateUrl?: string;
+  donate: IShellDonate;
 
-  constructor(private applicationInfo: RhombusShellApplicationInfoService) {
-    this._appDonateUrl = this.applicationInfo.donateUrl;
+  constructor(private donateService: ShellDonateService) {
   }
 
   ngOnInit() {
+    this.donateService.getDonate$().subscribe(res => {
+      this.donate = res[0];
+    });
   }
 
   goToLink(url: string) {

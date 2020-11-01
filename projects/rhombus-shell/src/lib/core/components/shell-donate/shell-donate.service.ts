@@ -3,26 +3,26 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export interface IShellContact {
-  discordLink: string;
+export interface IShellDonate {
+  payPalLink: string;
   paragraphs: Array<string>;
 }
 
 @Injectable({
   providedIn: 'root',
 })
-export class ShellContactService {
+export class ShellDonateService {
 
-  contactCollection: AngularFirestoreCollection<IShellContact>;
+  contactCollection: AngularFirestoreCollection<IShellDonate>;
 
   constructor(private firestore: AngularFirestore) { }
 
-  getContact$(): Observable<IShellContact[]> {
-    this.contactCollection = this.firestore.collection<IShellContact>('contact');
+  getDonate$(): Observable<IShellDonate[]> {
+    this.contactCollection = this.firestore.collection<IShellDonate>('donate');
 
     return this.contactCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as IShellContact;
+        const data = a.payload.doc.data() as IShellDonate;
         const id = a.payload.doc.id;
 
         return { id, ...data };
