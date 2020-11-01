@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
-import { ShellContactUsComponent } from '../shell-contact-us/shell-contact-us.component';
+import { ShellContactComponent } from '../shell-contact/shell-contact.component';
 import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.component';
 import { BreadCrumb } from '../shell-wrapper/breadcrumb';
 
@@ -41,8 +41,8 @@ export class RhombusShellHeaderComponent implements OnInit {
     });
   }
 
-  showContactUs(): void {
-    const dialogRef = this.dialog.open(ShellContactUsComponent, {
+  showContact(): void {
+    const dialogRef = this.dialog.open(ShellContactComponent, {
       width: '400px',
     });
 
