@@ -27,7 +27,6 @@ export class ShellContactComponent implements OnInit {
 
   ngOnInit() {
     this.contactService.getContact$().subscribe(res => {
-      console.log(res);
       this.contact = res[0];
     });
   }
