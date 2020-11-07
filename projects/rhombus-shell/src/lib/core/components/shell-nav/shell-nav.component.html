@@ -17,8 +17,13 @@
     </ng-template>
 
     <ng-template #itemEntry let-navEntry>
-        <mat-list-item [routerLink]="navEntry.route">
-            <h4 mat-line>{{ navEntry.name }}</h4>
-        </mat-list-item>
+        <a mat-list-item
+            role="option" 
+            [routerLink]="navEntry.route" 
+            routerLinkActive
+            #navItemRoute="routerLinkActive"
+            [rhActive]="navItemRoute.isActive">
+            <span matLine>{{ navEntry.name }}</span>
+        </a>
     </ng-template>
 </mat-nav-list>

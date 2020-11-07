@@ -75,9 +75,9 @@ $_rhombus-accent: (
 );
 
 // Default colors
-$my-app-primary: mat-palette($_rhombus-primary, 700, 100, 800);
-$my-app-accent:  mat-palette($_rhombus-accent, 700, 100, 800);
-$my-app-warn: mat-palette($mat-red, 700, 100, 800);
+$my-app-primary: mat-palette($_rhombus-primary, 500, 100, 800);
+$my-app-accent:  mat-palette($_rhombus-accent, 500, 100, 800);
+$my-app-warn: mat-palette($mat-red, 500, 100, 800);
 
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 @include rhombus-shell-theme($my-app-theme);
