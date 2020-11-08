@@ -25,6 +25,8 @@ export class IntroComponent implements OnInit {
     {text: '', cols: 8, rows: 1, color: 'grey'},
   ];
 
+  subtitle = '<rhombus-shell>';
+
   constructor(public media: MediaObserver) { }
 
   ngOnInit(): void {

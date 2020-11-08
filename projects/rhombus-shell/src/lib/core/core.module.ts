@@ -21,6 +21,7 @@ import { ShellContactComponent } from './components/shell-contact/shell-contact.
 import { RhombusShellDonateComponent } from './components/shell-donate/shell-donate.component';
 import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
 import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
+import { RhombusShellSelectedListItemDirective } from './components/shell-nav/shell-nav.directive';
 import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
 import { RhombusShellApplicationInfoService } from './services/application-info.service';
 import { RhombusShellThemeService } from './services/theme.service';
@@ -52,6 +53,8 @@ import { RhombusShellThemeService } from './services/theme.service';
     RhombusShellAboutComponent,
     RhombusShellDonateComponent,
     ShellContactComponent,
+
+    RhombusShellSelectedListItemDirective,
   ],
   entryComponents: [
     RhombusShellAboutComponent,
@@ -61,6 +64,7 @@ import { RhombusShellThemeService } from './services/theme.service';
   exports: [
     RhombusShellWrapperComponent,
     RhombusShellConfigurationModule,
+    RhombusShellSelectedListItemDirective,
   ],
   providers: [
     RhombusShellApplicationInfoService,
