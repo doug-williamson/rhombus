@@ -3,7 +3,7 @@ import { RhombusShellApplicationInfoService } from '../../services/application-i
 import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
-  selector: 'rhombus-shell-about',
+  selector: 'rh-shell-about',
   templateUrl: './shell-about.component.html',
   styleUrls: ['./shell-about.component.scss'],
 })

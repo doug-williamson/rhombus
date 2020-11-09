@@ -9,7 +9,7 @@ import { RhombusShellThemeService } from '../../services/theme.service';
 import { BreadCrumb } from './breadcrumb';
 
 @Component({
-  selector: 'rhombus-shell-wrapper',
+  selector: 'rh-shell-wrapper',
   templateUrl: './shell-wrapper.component.html',
   styleUrls: ['./shell-wrapper.component.scss'],
 })

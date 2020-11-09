@@ -1,9 +1,9 @@
 <div fxLayout="column" fxFlexFill [ngClass]="_themeClassName$ | async" class="app__container">
-    <rhombus-shell-header [title]="title" [breadcrumbs]="_breadcrumbs$ | async"></rhombus-shell-header>
+    <rh-shell-header [title]="title" [breadcrumbs]="_breadcrumbs$ | async"></rh-shell-header>
 
     <mat-drawer-container fxFlex>
         <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened" (closedStart)="closedSidenav()">
-            <rhombus-shell-nav [navEntries]="navEntries"></rhombus-shell-nav>
+            <rh-shell-nav [navEntries]="navEntries"></rh-shell-nav>
         </mat-drawer>
         <mat-drawer-content>
             <div class="router-outlet" fxFlex>

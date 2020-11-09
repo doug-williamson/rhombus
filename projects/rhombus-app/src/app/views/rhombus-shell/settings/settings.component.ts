@@ -8,7 +8,7 @@ import { MediaObserver } from '@angular/flex-layout';
 })
 export class SettingsComponent implements OnInit {
 
-  subtitle = '<rhombus-shell-settings>';
+  subtitle = '<rh-shell-settings>';
   
   constructor(public media: MediaObserver) { }
 

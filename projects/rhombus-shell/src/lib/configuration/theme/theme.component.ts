@@ -3,7 +3,7 @@ import { RhombusShellRootConfigurationComponent } from '../_models/root-configur
 import { RhombusShellTheme } from '../../core/models/theme';
 
 @Component({
-  selector: 'rhombus-shell-theme',
+  selector: 'rh-shell-theme',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
