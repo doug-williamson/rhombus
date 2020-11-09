@@ -19,7 +19,7 @@ export class SidenavComponent implements OnInit {
     {text: '', cols: 8, rows: 1, color: 'grey'},
   ];
 
-  subtitle = '<rhombus-shell-sidenav>';
+  subtitle = '<rh-shell-sidenav>';
   
   constructor(public media: MediaObserver) { }
 

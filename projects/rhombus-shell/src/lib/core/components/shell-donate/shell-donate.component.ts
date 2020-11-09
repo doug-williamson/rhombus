@@ -4,7 +4,7 @@ import { RhombusShellApplicationInfoService } from '../../services/application-i
 import { IShellDonate, ShellDonateService } from './shell-donate.service';
 
 @Component({
-  selector: 'rhombus-shell-shell-donate',
+  selector: 'rh-shell-shell-donate',
   templateUrl: './shell-donate.component.html',
   styleUrls: ['./shell-donate.component.scss']
 })

@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     {text: '', cols: 8, rows: 1, color: 'grey'},
   ];
 
-  subtitle = '<rhombus-shell-header>';
+  subtitle = '<rh-shell-header>';
 
   constructor(public media: MediaObserver) { }
 

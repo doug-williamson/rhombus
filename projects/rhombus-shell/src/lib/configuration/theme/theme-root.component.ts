@@ -6,7 +6,7 @@ import { RhombusShellRootConfigurationComponent } from '../_models/root-configur
 import { RhombusShellThemeComponent } from '../theme/theme.component';
 
 @Component({
-  selector: 'rhombus-shell-themes',
+  selector: 'rh-shell-themes',
   template: '',
   providers: [
     {

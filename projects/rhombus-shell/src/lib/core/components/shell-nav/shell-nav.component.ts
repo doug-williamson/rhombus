@@ -5,7 +5,7 @@ import { RhombusShellNavEntry, RhombusShellNavItem } from '../../models/shell-na
 import { RhombusShellNavService } from '../../services/nav.service';
 
 @Component({
-  selector: 'rhombus-shell-nav',
+  selector: 'rh-shell-nav',
   templateUrl: './shell-nav.component.html',
   styleUrls: ['./shell-nav.component.scss'],
 })

@@ -6,7 +6,7 @@ import { RhombusShellThemeService } from '../../../services/theme.service';
 
 
 @Component({
-  selector: 'rhombus-shell-dark-mode',
+  selector: 'rh-shell-dark-mode',
   templateUrl: './dark-mode.component.html',
   styleUrls: ['./dark-mode.component.scss'],
 })

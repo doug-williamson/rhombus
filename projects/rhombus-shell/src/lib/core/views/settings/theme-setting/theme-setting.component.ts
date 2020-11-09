@@ -5,7 +5,7 @@ import { RhombusShellTheme } from '../../../models/theme';
 import { RhombusShellThemeService } from '../../../services/theme.service';
 
 @Component({
-  selector: 'rhombus-shell-theme-setting',
+  selector: 'rh-shell-theme-setting',
   templateUrl: './theme-setting.component.html',
   styleUrls: ['./theme-setting.component.scss'],
 })
