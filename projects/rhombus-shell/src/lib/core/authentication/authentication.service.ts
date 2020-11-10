@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
-import { auth } from 'firebase/app';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { User } from '../models/user';
@@ -28,11 +26,11 @@ export class AuthenticationService {
     );
   }
 
-  async googleSignIn() {
-    const provider = new auth.GoogleAuthProvider();
-    const credential = await this.angularFireAuth.auth.signInWithPopup(provider);
-    return this.updateUserData(credential.user);
-  }
+  // async googleSignIn() {
+  //   const provider = new auth.GoogleAuthProvider();
+  //   const credential = await this.angularFireAuth.auth.signInWithPopup(provider);
+  //   return this.updateUserData(credential.user);
+  // }
 
   // /* Sign up */
   // signUp(email: string, password: string) {
@@ -63,7 +61,7 @@ export class AuthenticationService {
 
   /* Sign out */
   async signOut() {
-    await this.angularFireAuth.auth.signOut();
+    // await this.angularFireAuth.auth.signOut();
   }
 
   private updateUserData(user: User) {
