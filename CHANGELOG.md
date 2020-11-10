@@ -6,6 +6,21 @@ All notable changes to Rhombus software will be documented in this location. See
 
 https://rhombus.space
 
+<a name="1.0.0-beta.10"></a>
+# 1.0.0-beta.10 (2020-11-09)
+
+### Features
+* rh-shell: Added selected state to sidenav
+* rh-shell: Added nav toolbar above base router-outlet
+
+### Bug Fixes
+* rh-shell: Added 'overflow: hidden' to base router-outlet
+
+
+### BREAKING CHANGES
+* rh-shell: Selectors changed from 'rhombus-shell' to 'rh-shell'
+* rh-shell: upgrade to Angular 10
+
 <a name="1.0.0-beta.9"></a>
 # 1.0.0-beta.9 (2020-11-01)
 
