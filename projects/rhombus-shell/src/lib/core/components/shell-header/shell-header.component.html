@@ -2,12 +2,12 @@
     <button mat-icon-button style="margin-right: 16px;" (click)="toggleNav()">
         <mat-icon>menu</mat-icon>
     </button>
-    <ng-container *ngFor="let breadcrumb of breadcrumbs; last as isLast;" class="breadcrumb-item">
-        <span *ngIf="isLast">
-            {{ breadcrumb.label }}
-        </span>
-    </ng-container>
-    <div fxFlex></div>
+    <button mat-button class="shell-header__title" [routerLink]="''">{{ title }}</button>
+    <span fxFlex></span>
+    <span style="font-size: 14px">
+        {{ dateTimeStamp | date: 'fullDate' }}
+    </span>
+    <span fxFlex></span>
     <ng-container *ngIf="auth.user$ | async as user; else anonymous">
         <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>person</mat-icon>

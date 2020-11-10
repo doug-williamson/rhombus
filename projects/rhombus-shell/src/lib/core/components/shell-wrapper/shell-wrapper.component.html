@@ -1,16 +1,23 @@
-<mat-drawer-container fxFlex>
-    <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened" (closedStart)="closedSidenav()">
-        <mat-toolbar color="primary">
-            <button mat-button class="shell-header__title" [routerLink]="''">{{ title }}</button>
-        </mat-toolbar>
-        <rhombus-shell-nav [navEntries]="navEntries"></rhombus-shell-nav>
-    </mat-drawer>
-    <mat-drawer-content>
-        <div fxLayout="column" fxFlexFill [ngClass]="_themeClassName$ | async" class="app__container">
-            <rhombus-shell-header [breadcrumbs]="_breadcrumbs$ | async"></rhombus-shell-header>
-            <div fxFlex>
+<div fxLayout="column" fxFlexFill [ngClass]="_themeClassName$ | async" class="app__container">
+    <rh-shell-header [title]="title" [breadcrumbs]="_breadcrumbs$ | async"></rh-shell-header>
+
+    <mat-drawer-container fxFlex>
+        <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened" (closedStart)="closedSidenav()">
+            <rh-shell-nav [navEntries]="navEntries"></rh-shell-nav>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="router-outlet" fxFlex>
+                <mat-toolbar class="shell-wrapper__nav-toolbar"> 
+                    <ng-container *ngIf="(_breadcrumbs$ | async) as breadcrumbs">
+                        <ng-container *ngFor="let breadcrumb of breadcrumbs; last as isLast;" class="breadcrumb-item">
+                            <span *ngIf="isLast">
+                                {{ breadcrumb.label }}
+                            </span>
+                        </ng-container>
+                    </ng-container>
+                </mat-toolbar>
                 <router-outlet></router-outlet>
             </div>
-        </div>
-    </mat-drawer-content>
-</mat-drawer-container>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

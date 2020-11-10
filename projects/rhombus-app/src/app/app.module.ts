@@ -43,7 +43,7 @@ import { RhombusModule } from './views/rhombus/rhombus.module';
     RhombusShellModule.forRoot({
       applicationInfo: {
         name: 'Rhombus Software',
-        version: '1.0.0-beta.9',
+        version: '1.0.0-beta.10',
         logoUrl: '/assets/rhombus-icon.png',
         logoLetters: undefined,
         twitterUrl: 'https://twitter.com/ngRhombus',

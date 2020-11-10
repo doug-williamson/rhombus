@@ -9,11 +9,16 @@ import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.compon
 import { BreadCrumb } from '../shell-wrapper/breadcrumb';
 
 @Component({
-  selector: 'rhombus-shell-header',
+  selector: 'rh-shell-header',
   templateUrl: './shell-header.component.html',
   styleUrls: ['./shell-header.component.scss'],
 })
 export class RhombusShellHeaderComponent implements OnInit {
+  timer;
+  dateTimeStamp: Date = new Date();
+
+  @Input()
+  title: string;
 
   @Input()
   breadcrumbs: Observable<BreadCrumb[]>;
@@ -24,7 +29,9 @@ export class RhombusShellHeaderComponent implements OnInit {
     public auth: AuthenticationService) { }
 
   ngOnInit() {
-
+    this.timer = setInterval(() => {
+      this.dateTimeStamp = new Date();
+    });
   }
 
   toggleNav() {

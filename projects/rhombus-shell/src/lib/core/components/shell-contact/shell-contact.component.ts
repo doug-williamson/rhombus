@@ -4,7 +4,7 @@ import { RhombusShellApplicationInfoService } from '../../services/application-i
 import { IShellContact, ShellContactService } from './shell-contact.service';
 
 @Component({
-  selector: 'rhombus-shell-contact',
+  selector: 'rh-shell-contact',
   templateUrl: './shell-contact.component.html',
   styleUrls: ['./shell-contact.component.scss'],
 })

@@ -17,7 +17,6 @@ export class RhombusShellNavService {
   }
 
   toggle() {
-    console.log(this._isOpened);
     this._isOpened = !this._isOpened;
     this.showSidenav$.next(this._isOpened);
   }

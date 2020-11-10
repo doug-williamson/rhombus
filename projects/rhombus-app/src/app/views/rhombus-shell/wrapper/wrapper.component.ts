@@ -19,7 +19,7 @@ export class WrapperComponent implements OnInit {
     {text: '', cols: 8, rows: 1, color: 'grey'},
   ];
 
-  subtitle = '<rhombus-shell-wrapper>';
+  subtitle = '<rh-shell-wrapper>';
   
   constructor(public media: MediaObserver) { }
 

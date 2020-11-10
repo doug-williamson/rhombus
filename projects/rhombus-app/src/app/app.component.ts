@@ -14,20 +14,24 @@ export class RhombusAppComponent implements OnInit {
 
   navEntries: RhombusShellNavEntry[] = [
     {
+      name: 'Home',
+      route: 'home',
+    },
+    {
       name: 'Getting Started',
       route: 'getting-started',
     },
+    // {
+    //   name: 'Rhombus',
+    //   children: [
+    //     {
+    //       name: 'Introduction',
+    //       route: 'rhombus/intro',
+    //     },
+    //   ],
+    // },
     {
-      name: 'Rhombus',
-      children: [
-        {
-          name: 'Introduction',
-          route: 'rhombus/intro',
-        },
-      ],
-    },
-    {
-      name: 'Rhombus Shell',
+      name: 'Rhombus Shell Components',
       children: [
         {
           name: 'Introduction',
