@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -19,11 +19,6 @@ import { RhombusAppComponent } from './app.component';
 import { RhombusAppRoutingModule } from './app.routing';
 import { GettingStartedComponent } from './views/getting-started/getting-started.component';
 import { RhombusAppHomeComponent } from './views/home/home.component';
-import { HeaderComponent } from './views/rhombus-shell/header/header.component';
-import { SettingsComponent } from './views/rhombus-shell/settings/settings.component';
-import { SidenavComponent } from './views/rhombus-shell/sidenav/sidenav.component';
-import { WrapperComponent } from './views/rhombus-shell/wrapper/wrapper.component';
-import { IntroComponent } from './views/rhombus/intro/intro.component';
 import { RhombusModule } from './views/rhombus/rhombus.module';
 
 @NgModule({
@@ -44,6 +39,7 @@ import { RhombusModule } from './views/rhombus/rhombus.module';
 
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
 
     RhombusShellModule.forRoot({
       applicationInfo: {
