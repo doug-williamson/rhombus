@@ -6,6 +6,9 @@
     right: 0;
 }
 
-.router-outlet {
-    overflow: hidden;
+.shell-wrapper__nav-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
 }

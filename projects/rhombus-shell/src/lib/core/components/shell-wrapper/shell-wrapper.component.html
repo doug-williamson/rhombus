@@ -6,7 +6,7 @@
             <rh-shell-nav [navEntries]="navEntries"></rh-shell-nav>
         </mat-drawer>
         <mat-drawer-content>
-            <div class="router-outlet" fxFlex>
+            <div fxLayout="column" fxLayoutAlign="start stretch" class="shell-wrapper__nav-wrapper">
                 <mat-toolbar class="shell-wrapper__nav-toolbar"> 
                     <ng-container *ngIf="(_breadcrumbs$ | async) as breadcrumbs">
                         <ng-container *ngFor="let breadcrumb of breadcrumbs; last as isLast;" class="breadcrumb-item">
