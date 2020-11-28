@@ -6,6 +6,11 @@ All notable changes to Rhombus software will be documented in this location. See
 
 https://rhombus.space
 
+<a name="1.0.0-beta.11"></a>
+# 1.0.0-beta.10 (2020-11-21)
+
+### Fetures
+
 <a name="1.0.0-beta.10"></a>
 # 1.0.0-beta.10 (2020-11-09)
 

@@ -2,6 +2,7 @@
  * Public API Surface of rhombus
  */
 
-export * from './lib/widgets/widgets.module';
-export * from './lib/widgets/grid/grid.component';
-export * from './lib/widgets/list/list.component';
+export * from './lib/components/components.module';
+export * from './lib/components/backlog/backlog.component';
+export * from './lib/components/latest-news/latest-news';
+export * from './lib/components/latest-news/latest-news.component';

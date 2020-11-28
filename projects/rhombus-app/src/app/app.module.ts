@@ -12,8 +12,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RhombusWidgetsModule } from '@dougwilliamson/rhombus';
 import { RhombusShellModule } from '@dougwilliamson/rhombus-shell';
+import { RhombusComponentsModule } from 'projects/rhombus/src/public_api';
 import { environment } from '../environments/environment';
 import { RhombusAppComponent } from './app.component';
 import { RhombusAppRoutingModule } from './app.routing';
@@ -35,8 +35,6 @@ import { RhombusModule } from './views/rhombus/rhombus.module';
     MatIconModule,
     MatToolbarModule,
 
-    RhombusWidgetsModule,
-
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -56,7 +54,7 @@ import { RhombusModule } from './views/rhombus/rhombus.module';
     }),
 
     RhombusModule,
-    RhombusShellModule,
+    RhombusComponentsModule,
     RhombusAppRoutingModule,
   ],
   declarations: [

@@ -1,0 +1,79 @@
+<ng-container *ngIf="backlog">
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxFill style="margin: 16px">
+        <ng-container *ngIf="media.isActive('xs'); else desktopView">
+            <mat-list>
+                <ng-container *ngFor="let item of backlog">
+                    <mat-list-item>
+                        <ng-container [ngSwitch]="item.status">
+                            <ng-container *ngSwitchCase="1">
+                                <mat-icon class="backlog__icon-mobile"></mat-icon>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="2">
+                                <mat-icon class="backlog__icon-mobile" color="accent">hourglass_empty</mat-icon>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="3">
+                                <mat-icon class="backlog__icon-mobile" color="primary">done</mat-icon>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container [ngSwitch]="item.status">
+                            <ng-container *ngSwitchCase="1">
+                                <span>{{ item.text }}</span>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="2">
+                                <span>{{ item.text }}</span>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="3">
+                                <i><s><span>{{ item.text }}</span></s></i>
+                            </ng-container>
+                        </ng-container>
+                    </mat-list-item>
+                    <mat-divider *ngIf="!last"></mat-divider>
+                </ng-container>
+            </mat-list>
+        </ng-container>
+        <ng-template #desktopView>
+            <mat-toolbar *ngIf="media.isActive('gt-xs')">Backlog</mat-toolbar>
+            <table mat-table [dataSource]="backlog" fxFlex>
+                    
+                <!-- Status Column -->
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <ng-container [ngSwitch]="element.status">
+                            <ng-container *ngSwitchCase="1">
+    
+                            </ng-container>
+                            <ng-container *ngSwitchCase="2">
+                                <mat-icon color="accent">hourglass_empty</mat-icon>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="3">
+                                <mat-icon color="primary">done</mat-icon>
+                            </ng-container>
+                        </ng-container>
+                    </td>
+                </ng-container>
+    
+                <!-- Text Column-->
+                <ng-container matColumnDef="text">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element">
+                        <ng-container [ngSwitch]="element.status">
+                            <ng-container *ngSwitchCase="1">
+                                <span>{{ element.text }}</span>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="2">
+                                <span>{{ element.text }}</span>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="3">
+                                <i><s><span>{{ element.text }}</span></s></i>
+                            </ng-container>
+                        </ng-container>
+                    </td>
+                </ng-container>
+        
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </ng-template>
+    </div>
+</ng-container>

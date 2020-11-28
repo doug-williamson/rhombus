@@ -5,21 +5,10 @@
             <mat-card-subtitle>Rhombus is a front-end Angular platform, created to house a virtual portfolio as well as provide reusable components and services for site creation.</mat-card-subtitle>    
         </mat-card-header>
     </mat-card>
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Rhombus Shell</mat-card-title>
-            <mat-card-subtitle>Want to create your own website? Use the Rhombus Shell to stand up your own application, preconfigured with routing.</mat-card-subtitle>
-        </mat-card-header>
-    </mat-card>
 
-    <!-- <mat-card>
-        <mat-card-header>
-            <mat-card-title>Rhombus UI</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <div>Want to add Rhombus components to your existing application? Use Rhombus UI components directly.</div>
-        </mat-card-content>
-    </mat-card> -->
-
+    <div fxLayout fxLayoutAlign="start stretch" fxFlex>
+        <rh-latest-news [latestNews]="latestNews" fxFlex="65"></rh-latest-news>
+        <rh-backlog [backlog]="backlog" fxFlex></rh-backlog>
+    </div>
 </div>
       

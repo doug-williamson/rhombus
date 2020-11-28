@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "rhombus",
+      "rh",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "rhombus",
+      "rh",
       "kebab-case"
     ]
   }

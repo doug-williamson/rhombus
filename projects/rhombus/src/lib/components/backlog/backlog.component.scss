@@ -1,0 +1,17 @@
+:host {
+    margin: 16px;
+}
+
+mat-card {
+    padding: 16px 0;
+}
+
+.backlog__table-container {
+    position: relative;
+    // max-height: 250px;
+    overflow: auto;
+}
+
+.backlog__icon-mobile {
+    margin-right: 16px;
+}
