@@ -21,15 +21,23 @@ export class RhombusAppComponent implements OnInit {
       name: 'Getting Started',
       route: 'getting-started',
     },
-    // {
-    //   name: 'Rhombus',
-    //   children: [
-    //     {
-    //       name: 'Introduction',
-    //       route: 'rhombus/intro',
-    //     },
-    //   ],
-    // },
+    {
+      name: 'Rhombus',
+      children: [
+        {
+          name: 'Introduction',
+          route: 'rhombus/intro',
+        },
+        {
+            name: 'Backlog',
+            route: 'rhombus/backlog',
+        },
+        {
+            name: 'Latest News',
+            route: 'rhombus/latest-news',
+        },
+      ],
+    },
     {
       name: 'Rhombus Shell Components',
       children: [

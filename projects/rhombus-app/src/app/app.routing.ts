@@ -23,13 +23,13 @@ const routes: Routes = [
       breadcrumb: 'Getting Started',
     },
   },
-  // {
-  //   path: 'rhombus',
-  //   loadChildren: () => import('./views/rhombus/rhombus.module').then(m => m.RhombusModule),
-  //   data: {
-  //     breadcrumb: 'Rhombus',
-  //   },
-  // },
+  {
+    path: 'rhombus',
+    loadChildren: () => import('./views/rhombus/rhombus.module').then(m => m.RhombusModule),
+    data: {
+      breadcrumb: 'Rhombus',
+    },
+  },
   {
     path: 'rhombus-shell',
     loadChildren: () => import('./views/rhombus-shell/rhombus-shell.module').then(m => m.RhombusShellModule),

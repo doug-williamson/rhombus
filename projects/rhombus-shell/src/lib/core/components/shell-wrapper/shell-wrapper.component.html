@@ -1,4 +1,4 @@
-<div fxLayout="column" fxFlexFill [ngClass]="_themeClassName$ | async" class="app__container">
+<div fxLayout="column" fxFlexFill [ngClass]="_themeClassName$ | async" class="mat-app-background mat-typography">
     <rh-shell-header [title]="title" [breadcrumbs]="_breadcrumbs$ | async"></rh-shell-header>
 
     <mat-drawer-container fxFlex>
@@ -6,18 +6,7 @@
             <rh-shell-nav [navEntries]="navEntries"></rh-shell-nav>
         </mat-drawer>
         <mat-drawer-content>
-            <div fxLayout="column" fxLayoutAlign="start stretch" class="shell-wrapper__nav-wrapper">
-                <mat-toolbar class="shell-wrapper__nav-toolbar"> 
-                    <ng-container *ngIf="(_breadcrumbs$ | async) as breadcrumbs">
-                        <ng-container *ngFor="let breadcrumb of breadcrumbs; last as isLast;" class="breadcrumb-item">
-                            <span *ngIf="isLast">
-                                {{ breadcrumb.label }}
-                            </span>
-                        </ng-container>
-                    </ng-container>
-                </mat-toolbar>
-                <router-outlet></router-outlet>
-            </div>
+            <router-outlet></router-outlet>
         </mat-drawer-content>
     </mat-drawer-container>
 </div>
