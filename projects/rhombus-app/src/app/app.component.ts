@@ -36,6 +36,10 @@ export class RhombusAppComponent implements OnInit {
             name: 'Latest News',
             route: 'rhombus/latest-news',
         },
+        {
+            name: 'Dynasties',
+            route: 'rhombus/dynasties',
+        },
       ],
     },
     {

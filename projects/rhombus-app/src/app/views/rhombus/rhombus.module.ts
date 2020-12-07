@@ -6,9 +6,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RhombusComponentsModule } from 'projects/rhombus/src/lib/components/components.module';
 import { BacklogComponent } from './backlog/backlog.component';
+import { RhAppDynastiesComponent } from './dynasties/dynasties.component';
 import { IntroComponent } from './intro/intro.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { RhombusViewsRouting } from './rhombus.routing';
@@ -18,6 +18,7 @@ import { RhombusViewsRouting } from './rhombus.routing';
     IntroComponent,
     BacklogComponent,
     LatestNewsComponent,
+    RhAppDynastiesComponent,
   ],
   imports: [
     CommonModule,
