@@ -40,6 +40,10 @@ export class RhombusAppComponent implements OnInit {
             name: 'Dynasties',
             route: 'rhombus/dynasties',
         },
+        {
+            name: 'Blog',
+            route: 'rhombus/blog',
+        },
       ],
     },
     {
