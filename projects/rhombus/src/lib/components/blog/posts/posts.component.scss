@@ -1,0 +1,27 @@
+.posts__timestamp {
+    margin-right: 16px;
+}
+
+.posts__wrapper {
+    padding: 16px;
+
+    &-header {
+        padding-bottom: 16px;
+    }
+
+    &-image {
+        background-position: center;
+        background-size: cover;
+        width: 100px;
+        height: 100px;
+    }
+
+    &-title {
+        font-size: 24px;
+        margin: 20px 0 16px;
+    }
+    
+    &-subtitle {
+        font-size: 18px;
+    }
+}
