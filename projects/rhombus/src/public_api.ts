@@ -11,7 +11,6 @@ export * from './lib/components/dynasties/dynasties.component';
 export * from './lib/components/dynasties/dynasty/dynasty.component';
 export * from './lib/components/dynasties/dynasty/dynasty';
 export * from './lib/components/dynasties/years/years.component';
-export * from './lib/components/dynasties/team/team.component';
 
 export * from './lib/components/blog/blog.module';
 export * from './lib/components/blog/posts/posts.component';

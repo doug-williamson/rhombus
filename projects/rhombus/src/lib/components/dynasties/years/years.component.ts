@@ -1,8 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, Input, OnInit } from '@angular/core';
-import { MediaObserver } from '@angular/flex-layout';
-import { Observable } from 'rxjs/internal/Observable';
-import { DynastiesService } from '../dynasties.service';
 import { IDynastyWeek, IDynastyYear } from '../dynasty/dynasty';
 
 @Component({
@@ -23,20 +21,17 @@ export class RhDynastyYearsComponent implements OnInit {
   displayedColumnsMobile: string[] = ['week', 'opponent', 'home', 'result'];
   expandedWeek: IDynastyWeek | null;
 
+  weeksComponent: ComponentPortal<any>;
+
   @Input()
   years: IDynastyYear[] = undefined;
 
   _selectedYear: IDynastyYear = undefined;
-  dynastyYears$: Observable<IDynastyYear[]>;
-  dynastyWeeks: IDynastyWeek[];
 
-  constructor(public media: MediaObserver, private dynastiesService: DynastiesService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.dynastyYears$ = this.dynastiesService.getDynastyMarkYears$();
-    this.dynastiesService.getIDynastyWeeks$().subscribe(data => {
-      this.dynastyWeeks = data as IDynastyWeek[];
-    })
+
   }
 
   goToLink(url: string) {

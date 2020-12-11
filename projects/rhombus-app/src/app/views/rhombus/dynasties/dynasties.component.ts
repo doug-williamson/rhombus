@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IDynastyWeek, IDynastyYear } from 'projects/rhombus/src/public_api';
+import { RhAppDynastiesService } from './dynasties.service';
 
 @Component({
   selector: 'rh-app-dynasties',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RhAppDynastiesComponent implements OnInit {
 
-  constructor() { }
+    years: IDynastyYear[] = undefined;
+    weeks: IDynastyWeek[] = undefined;
 
-  ngOnInit(): void {
-  }
+    constructor(private dynastiesService: RhAppDynastiesService) { }
+
+    ngOnInit(): void {
+        this.dynastiesService.getDynastyMarkYears$().subscribe(res => {
+            this.years = res;
+            console.log(res);
+        });
+
+        this.dynastiesService.getIDynastyWeeks$().subscribe(res => {
+            this.weeks = res;
+            console.log(res);
+        })
+    }
 
 }

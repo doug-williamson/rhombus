@@ -13,6 +13,7 @@ import { RhDynastyComponent } from './dynasties/dynasty/dynasty.component';
 import { RhDynastyTeamComponent } from './dynasties/team/team.component';
 import { RhDynastyYearsComponent } from './dynasties/years/years.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
+import { RhDynastyWeeksComponent } from './dynasties/weeks/weeks.component';
 
 @NgModule({
     imports: [
@@ -33,6 +34,7 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
         RhDynastyComponent,
         RhDynastyYearsComponent,
         RhDynastyTeamComponent,
+        RhDynastyWeeksComponent,
     ],
     exports: [
         BacklogComponent,
@@ -41,6 +43,7 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
         RhDynastyComponent,
         RhDynastyYearsComponent,
         RhDynastyTeamComponent,
+        RhDynastyWeeksComponent,
     ],
 })
 export class RhombusComponentsModule { }
