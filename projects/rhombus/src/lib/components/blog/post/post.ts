@@ -5,7 +5,7 @@ export interface IPostParagraph {
 
 export interface IPost {
     id: number;
-    timestamp: string;
+    timestamp: any;
     title: string;
     paragraphs: Array<IPostParagraph>[];
 }

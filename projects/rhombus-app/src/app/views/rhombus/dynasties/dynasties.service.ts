@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { IDynasty, IDynastyMark, IDynastyYear, IDynastyWeek } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { IDynasty, IDynastyMark, IDynastyWeek, IDynastyYear } from './dynasty/dynasty';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DynastiesService {
+export class RhAppDynastiesService {
 
   dynastyCollection: AngularFirestoreCollection<IDynasty>;
   dynastyMarkCollection: AngularFirestoreCollection<IDynastyMark>;
@@ -35,7 +35,7 @@ export class DynastiesService {
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as IDynastyMark;
         const id = a.payload.doc.id;
-        console.log(data);
+
         return { id, ...data };
       })));
   }
@@ -47,7 +47,7 @@ export class DynastiesService {
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as IDynastyYear;
         const id = a.payload.doc.id;
-        console.log(data);
+
         return { id, ...data };
       })));
   }

@@ -15,7 +15,7 @@ export class RhDynastyTeamComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-        console.log(this.year);
+
     }
 
 }

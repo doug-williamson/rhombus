@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DynastiesService } from './dynasties.service';
+import { RhAppDynastiesService } from './dynasties.service';
 
-describe('DynastiesService', () => {
-  let service: DynastiesService;
+describe('RhAppDynastiesService', () => {
+  let service: RhAppDynastiesService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DynastiesService);
+    service = TestBed.inject(RhAppDynastiesService);
   });
 
   it('should be created', () => {

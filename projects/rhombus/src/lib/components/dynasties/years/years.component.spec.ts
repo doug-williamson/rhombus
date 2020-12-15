@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { YearsComponent } from './years.component';
+import { RhDynastyYearsComponent } from './years.component';
 
-describe('YearsComponent', () => {
-  let component: YearsComponent;
-  let fixture: ComponentFixture<YearsComponent>;
+describe('RhDynastyYearsComponent', () => {
+  let component: RhDynastyYearsComponent;
+  let fixture: ComponentFixture<RhDynastyYearsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ YearsComponent ]
+      declarations: [ RhDynastyYearsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(YearsComponent);
+    fixture = TestBed.createComponent(RhDynastyYearsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

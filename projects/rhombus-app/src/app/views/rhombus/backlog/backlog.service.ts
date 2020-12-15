@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
-import { IBacklog } from 'projects/rhombus/src/lib/components/backlog/backlog';
+import { IBacklog } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -15,13 +15,13 @@ export class BacklogService {
 
   getBacklog$(): Observable<IBacklog[]> {
     this.backlogCollection = this.firestore.collection<IBacklog>('backlog', ref => ref.orderBy('status', 'desc'));
-  
+
     return this.backlogCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as IBacklog;
         const id = a.payload.doc.id;
 
         return { id, ...data };
-      }))); 
+      })));
   }
 }

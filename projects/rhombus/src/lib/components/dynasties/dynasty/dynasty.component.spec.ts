@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DynastyComponent } from './dynasty.component';
+import { RhDynastyComponent } from './dynasty.component';
 
-describe('DynastyComponent', () => {
-  let component: DynastyComponent;
-  let fixture: ComponentFixture<DynastyComponent>;
+describe('RhDynastyComponent', () => {
+  let component: RhDynastyComponent;
+  let fixture: ComponentFixture<RhDynastyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DynastyComponent ]
+      declarations: [ RhDynastyComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DynastyComponent);
+    fixture = TestBed.createComponent(RhDynastyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

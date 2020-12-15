@@ -1,7 +1,6 @@
 import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { DynastiesService } from '../dynasties.service';
 import { IDynasty, IDynastyMark } from './dynasty';
 
 @Component({
@@ -19,10 +18,10 @@ export class RhDynastyComponent implements OnInit {
     _selectedMark: IDynastyMark;
     dynastyMark$: Observable<IDynastyMark[]>;
 
-    constructor(private dynastiesService: DynastiesService) {}
+    constructor() {}
 
     ngOnInit() {
-        this.dynastyMark$ = this.dynastiesService.getDynastyMark$();
+
     }
 
     clickClose() {

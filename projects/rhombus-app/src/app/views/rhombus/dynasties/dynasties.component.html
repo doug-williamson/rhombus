@@ -1,5 +1,6 @@
 <div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
-    <mat-toolbar>Dynasties</mat-toolbar>
-    <rh-dynasties fxFlex></rh-dynasties>
+    <rh-dynasty-years [years]="years">
+        <rh-dynasty-weeks [weeks]="weeks"></rh-dynasty-weeks>
+    </rh-dynasty-years>
 </div>
       

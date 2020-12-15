@@ -22,9 +22,9 @@ export class RhombusShellNavComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(() => {
       // close sidenav on routing
-      if (this.media.isActive('xs')) {
-        this.navService.close();
-      }
+    //   if (this.media.isActive('xs')) {
+    //     this.navService.close();
+    //   }
     });
   }
 

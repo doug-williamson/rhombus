@@ -1,18 +1,18 @@
 <div fxLayout="column" fxLayoutAlign="start stretch" fxFill class="posts__wrapper">
-    <ng-container *ngIf="(mobile$ | async); else desktopView">
+    <ng-container *ngIf="(compact$ | async); else desktopView">
         <mat-list fxFlex>
             <ng-container *ngFor="let post of posts">
                 <mat-list-item *ngIf="post" [routerLink]="post.id">
                     <div mat-line>{{ post.title }}</div>
                     <div mat-line>{{ post.timestamp.seconds * 1000 | date:'MM/dd' }}</div>
                 </mat-list-item>
-                <mat-divider *ngIf="!last"></mat-divider>
+                <mat-divider></mat-divider>
             </ng-container>
         </mat-list>
     </ng-container>
     <ng-template #desktopView>
         <table mat-table [dataSource]="posts" multiTemplateDataRows>
-            
+
             <!-- Date Column -->
             <ng-container matColumnDef="date">
                 <th mat-header-cell *matHeaderCellDef> Date </th>
