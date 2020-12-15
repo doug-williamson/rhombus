@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RhombusShellApplicationInfoService } from '../../services/application-info.service';
 import { MediaObserver } from '@angular/flex-layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { RhombusShellApplicationInfoService } from '../../services/application-info.service';
 
 @Component({
   selector: 'rh-shell-about',
