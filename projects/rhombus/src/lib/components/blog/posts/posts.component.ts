@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IPost } from '../post/post';
@@ -19,20 +18,15 @@ export class RhBlogPostsComponent implements OnInit {
 
     @Input()
     posts: IPost[];
-    
-    mobile$!: Observable<boolean>;
 
-    _selectedPost: IPost = {
-        id: 1,
-        timestamp: '1585972800',
-        title: "Doug's Opening Thoughts and stuff",
-        paragraphs: [],
-    };
+    compact$!: Observable<boolean>;
+
+    _selectedPost: IPost = undefined;
 
     constructor(private media: MediaObserver) {}
 
     ngOnInit() {
-        this.mobile$ = this.media.asObservable().pipe(
+        this.compact$ = this.media.asObservable().pipe(
             map(mediaMatch => {
                 return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
             }),

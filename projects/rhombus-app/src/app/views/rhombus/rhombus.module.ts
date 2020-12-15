@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RhombusComponentsModule } from 'projects/rhombus/src/lib/components/components.module';
+import { RhombusComponentsModule } from '@dougwilliamson/rhombus';
 import { BacklogComponent } from './backlog/backlog.component';
 import { RhAppDynastiesComponent } from './dynasties/dynasties.component';
 import { IntroComponent } from './intro/intro.component';

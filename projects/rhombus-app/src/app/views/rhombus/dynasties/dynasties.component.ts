@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IDynastyWeek, IDynastyYear } from 'projects/rhombus/src/public_api';
+import { IDynastyWeek, IDynastyYear } from '@dougwilliamson/rhombus';
 import { RhAppDynastiesService } from './dynasties.service';
 
 @Component({

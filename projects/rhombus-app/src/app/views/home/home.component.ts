@@ -2,7 +2,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { ILatestNews } from '@dougwilliamson/rhombus';
-import { IBacklog } from 'projects/rhombus/src/lib/components/backlog/backlog';
+import { IBacklog } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { BacklogService } from '../rhombus/backlog/backlog.service';

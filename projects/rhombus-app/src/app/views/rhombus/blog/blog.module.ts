@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { RhBlogModule } from 'projects/rhombus/src/public_api';
+import { RhBlogModule } from '@dougwilliamson/rhombus';
 import { RhAppBlogRoutingModule } from './blog.routing';
 import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';

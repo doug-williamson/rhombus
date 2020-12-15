@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:rhombus": "ng build @dougwilliamson/rhombus",
+    "build:rhombus": "ng build --prod @dougwilliamson/rhombus",
     "build:rhombus-shell": "ng build --prod @dougwilliamson/rhombus-shell && scss-bundle -c projects/rhombus-shell/scss-bundle.config.json",
     "package:rhombus": "npm pack ./dist/dougwilliamson/rhombus",
     "package:rhombus-shell": "npm pack ./dist/dougwilliamson/rhombus-shell",

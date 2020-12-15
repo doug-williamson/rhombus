@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { DynastiesService } from './dynasties.service';
 import { IDynasty } from './dynasty/dynasty';
 
 @Component({
