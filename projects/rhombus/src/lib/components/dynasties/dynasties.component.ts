@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { DynastiesService } from './dynasties.service';
 import { IDynasty } from './dynasty/dynasty';
 
@@ -10,15 +12,21 @@ import { IDynasty } from './dynasty/dynasty';
 })
 export class RhDynastiesComponent implements OnInit {
 
-    @Input()
-    dynasties: IDynasty[];
-    
-    _selectedDynasty: IDynasty = undefined;
+  compact$: Observable<boolean>;
 
-    constructor(public media: MediaObserver) {}
+  @Input()
+  dynasties: IDynasty[];
 
-    ngOnInit() {
+  _selectedDynasty: IDynasty = undefined;
 
-    }
+  constructor(private media: MediaObserver) {}
+
+  ngOnInit() {
+    this.compact$ = this.media.asObservable().pipe(
+      map(mediaMatch => {
+        return !mediaMatch.find(change => change.mqAlias === 'lt-sm');
+      }),
+    );
+  }
 
 }

@@ -2,13 +2,18 @@
     <mat-card>
         <mat-card-header>
             <mat-card-title>Welcome to Rhombus UI!</mat-card-title>
-            <mat-card-subtitle>Rhombus is a front-end Angular platform, created to house a virtual portfolio as well as provide reusable components and services for site creation.</mat-card-subtitle>    
+            <mat-card-subtitle>Rhombus is a front-end Angular platform, created to house a virtual portfolio as well as provide reusable components and services for site creation.</mat-card-subtitle>
         </mat-card-header>
     </mat-card>
 
-    <div fxLayout fxLayoutAlign="start stretch" fxFlex>
+    <ng-container *ngIf="(compact$ | async); else desktopView">
+      <div fxLayout fxLayoutAlign="start stretch" fxFlex>
         <rh-latest-news [latestNews]="latestNews" fxFlex="65"></rh-latest-news>
         <rh-backlog [backlog]="backlog" fxFlex></rh-backlog>
     </div>
+    </ng-container>
+    <ng-template #desktopView>
+Doug
+    </ng-template>
+
 </div>
-      

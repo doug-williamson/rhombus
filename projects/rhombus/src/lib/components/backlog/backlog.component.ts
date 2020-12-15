@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { IBacklog } from './backlog';
 
 @Component({
@@ -9,13 +11,19 @@ import { IBacklog } from './backlog';
 })
 export class BacklogComponent implements OnInit {
 
-    displayedColumns: string[] = ['status', 'text'];
+  compact$: Observable<boolean>;
+  displayedColumns: string[] = ['status', 'text'];
 
-    @Input()
-    backlog: IBacklog[];
-  
-    constructor(public media: MediaObserver) {}
-  
-    ngOnInit() {}
+  @Input()
+  backlog: IBacklog[];
 
+  constructor(private media: MediaObserver) {}
+
+  ngOnInit() {
+    this.compact$ = this.media.asObservable().pipe(
+      map(mediaMatch => {
+        return !mediaMatch.find(change => change.mqAlias === 'lt-sm');
+      }),
+    );
+  }
 }

@@ -1,6 +1,6 @@
 <ng-container *ngIf="latestNews">
     <div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
-    
+
         <ng-container *ngIf="media.isActive('xs'); else desktopView">
             <mat-list>
                 <ng-container *ngFor="let item of latestNews">
@@ -13,9 +13,9 @@
             </mat-list>
         </ng-container>
         <ng-template #desktopView>
-            <mat-toolbar *ngIf="media.isActive('gt-xs')">Latest News</mat-toolbar>
+            <mat-toolbar *ngIf="(compact$ | async)">Latest News</mat-toolbar>
             <table mat-table [dataSource]="latestNews" multiTemplateDataRows>
-    
+
                 <!-- Timestamp Column -->
                 <ng-container matColumnDef="timestamp">
                     <th mat-header-cell *matHeaderCellDef>Date</th>
@@ -23,7 +23,7 @@
                         {{ element.timestamp.seconds * 1000 | date: 'MM/dd' }}
                     </td>
                 </ng-container>
-        
+
                 <!-- Title Column -->
                 <ng-container matColumnDef="title">
                     <th mat-header-cell *matHeaderCellDef>TItle</th>
@@ -31,7 +31,7 @@
                         {{ element.title }}
                     </td>
                 </ng-container>
-        
+
                 <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
                 <ng-container matColumnDef="expandedDetail">
                     <td mat-cell *matCellDef="let element" [attr.colspan]="displayColumns.length">
@@ -43,7 +43,7 @@
                         </div>
                     </td>
                 </ng-container>
-        
+
                 <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
                 <tr mat-row *matRowDef="let element; columns: displayColumns;"
                     class="example-element-row"
@@ -53,6 +53,6 @@
                 <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
             </table>
         </ng-template>
-        
+
     </div>
 </ng-container>

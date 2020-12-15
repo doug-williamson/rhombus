@@ -1,6 +1,8 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ILatestNews } from './latest-news';
 
 @Component({
@@ -17,15 +19,21 @@ import { ILatestNews } from './latest-news';
 })
 export class LatestNewsComponent implements OnInit {
 
-    displayColumns: string[] = ['timestamp', 'title'];
-    expandedLatestNews: ILatestNews | null;
+  compact$: Observable<boolean>;
 
-    @Input()
-    latestNews: ILatestNews[];
+  displayColumns: string[] = ['timestamp', 'title'];
+  expandedLatestNews: ILatestNews | null;
 
-    constructor(public media: MediaObserver) {}
+  @Input()
+  latestNews: ILatestNews[];
 
-    ngOnInit() {
-    }
+  constructor(private media: MediaObserver) {}
 
+  ngOnInit() {
+    this.compact$ = this.media.asObservable().pipe(
+      map(mediaMatch => {
+        return !mediaMatch.find(change => change.mqAlias === 'lt-sm');
+      }),
+    );
+  }
 }

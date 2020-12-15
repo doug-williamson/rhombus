@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { IDynastyWeek } from '../dynasty/dynasty';
 
 @Component({
@@ -9,12 +11,19 @@ import { IDynastyWeek } from '../dynasty/dynasty';
 })
 export class RhDynastyWeeksComponent implements OnInit {
 
-    @Input()
-    weeks: IDynastyWeek[] = undefined;
+  compact$: Observable<boolean>;
 
-    constructor(public media: MediaObserver) { }
+  @Input()
+  weeks: IDynastyWeek[] = undefined;
 
-    ngOnInit(): void {
-    }
+  constructor(private media: MediaObserver) { }
+
+  ngOnInit(): void {
+    this.compact$ = this.media.asObservable().pipe(
+      map(mediaMatch => {
+        return !mediaMatch.find(change => change.mqAlias === 'lt-sm');
+      }),
+    );
+  }
 
 }

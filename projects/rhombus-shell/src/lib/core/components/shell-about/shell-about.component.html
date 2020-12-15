@@ -1,8 +1,8 @@
 <mat-card class="shell-about__card" fxFlex>
   <mat-card-header class="shell-about__header">
-    <img *ngIf="media.isActive('gt-xs') && _appLogoUrl; else logoLetters" mat-card-avatar [src]="_appLogoUrl" class="shell-about__url">
+    <img *ngIf="(compact$ | async) && _appLogoUrl; else logoLetters" mat-card-avatar [src]="_appLogoUrl" class="shell-about__url">
     <ng-template #logoLetters>
-      <div *ngIf="media.isActive('gt-xs')" mat-card-avatar class="shell-about__letters" fxLayout fxLayoutAlign="center center">{{ _appLogoLetters }}</div>
+      <div *ngIf="(compact$ | async)" mat-card-avatar class="shell-about__letters" fxLayout fxLayoutAlign="center center">{{ _appLogoLetters }}</div>
     </ng-template>
     <mat-card-title class="shell-about__title">{{ _appName }}</mat-card-title>
     <mat-card-subtitle class="shell-about__subtitle">

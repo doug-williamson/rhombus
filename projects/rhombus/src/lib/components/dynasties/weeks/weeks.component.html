@@ -1,4 +1,4 @@
-<ng-container *ngIf="media.isActive('gt-xs'); else desktopView">
+<ng-container *ngIf="(compact$ | async); else desktopView">
     <table mat-table [dataSource]="weeks" fxFlex>
 
         <!-- Rank Column -->
@@ -33,7 +33,7 @@
         <!-- Results Column -->
         <ng-container matColumnDef="result">
             <th mat-header-cell *matHeaderCellDef> Result </th>
-            <td mat-cell *matCellDef="let element" > 
+            <td mat-cell *matCellDef="let element" >
                 {{ element.result }}
             </td>
         </ng-container>
@@ -41,7 +41,7 @@
         <!-- Description Column -->
         <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element"> 
+            <td mat-cell *matCellDef="let element">
                 <ng-container *ngIf="element.description">
                     {{ element.description }}
                     <!-- <button mat-button color="accent" (click)="goToLink(element.link)">{{ element.description }}</button> -->
@@ -52,13 +52,13 @@
         <!-- Link Column -->
         <ng-container matColumnDef="link">
             <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element"> 
+            <td mat-cell *matCellDef="let element">
                 <ng-container *ngIf="element.link">
                     <button mat-button color="accent" (click)="goToLink(element.link)">WATCH</button>
                 </ng-container>
             </td>
         </ng-container>
-      
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
@@ -99,7 +99,7 @@
             <!-- Results Column -->
             <ng-container matColumnDef="result">
                 <th mat-header-cell *matHeaderCellDef> Result </th>
-                <td mat-cell *matCellDef="let element" > 
+                <td mat-cell *matCellDef="let element" >
                     {{ element.result }}
                 </td>
             </ng-container>
@@ -116,7 +116,7 @@
                   </div>
                 </td>
               </ng-container>
-          
+
             <tr mat-header-row *matHeaderRowDef="displayedColumnsMobile"></tr>
             <tr mat-row *matRowDef="let element; columns: displayedColumnsMobile"
                 class="example-element-row"
@@ -126,5 +126,5 @@
             <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
         </table>
     </ng-container>
-    
+
 </ng-template>
