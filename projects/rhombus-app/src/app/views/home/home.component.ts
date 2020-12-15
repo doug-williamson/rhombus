@@ -28,7 +28,7 @@ export class RhombusAppHomeComponent implements OnInit {
   ngOnInit() {
     this.compact$ = this.media.asObservable().pipe(
       map(mediaMatch => {
-        return !mediaMatch.find(change => change.mqAlias === 'lt-sm');
+        return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
       }),
     );
 

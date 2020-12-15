@@ -1,6 +1,6 @@
 <ng-container *ngIf="backlog">
     <div fxLayout="column" fxLayoutAlign="start stretch" fxFill style="margin: 16px">
-        <ng-container *ngIf="media.isActive('xs'); else desktopView">
+        <ng-container *ngIf="(compact$ | async); else desktopView">
             <mat-list>
                 <ng-container *ngFor="let item of backlog">
                     <mat-list-item>
@@ -32,7 +32,7 @@
             </mat-list>
         </ng-container>
         <ng-template #desktopView>
-            <mat-toolbar *ngIf="(compact$ | async)">Backlog</mat-toolbar>
+            <mat-toolbar>Backlog</mat-toolbar>
             <table mat-table [dataSource]="backlog" fxFlex>
 
                 <!-- Status Column -->

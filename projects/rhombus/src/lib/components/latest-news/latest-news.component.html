@@ -1,7 +1,7 @@
 <ng-container *ngIf="latestNews">
     <div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
 
-        <ng-container *ngIf="media.isActive('xs'); else desktopView">
+        <ng-container *ngIf="(compact$ | async); else desktopView">
             <mat-list>
                 <ng-container *ngFor="let item of latestNews">
                     <mat-list-item>
@@ -13,7 +13,7 @@
             </mat-list>
         </ng-container>
         <ng-template #desktopView>
-            <mat-toolbar *ngIf="(compact$ | async)">Latest News</mat-toolbar>
+            <mat-toolbar>Latest News</mat-toolbar>
             <table mat-table [dataSource]="latestNews" multiTemplateDataRows>
 
                 <!-- Timestamp Column -->

@@ -17,12 +17,10 @@ export class RhAppDynastiesComponent implements OnInit {
     ngOnInit(): void {
         this.dynastiesService.getDynastyMarkYears$().subscribe(res => {
             this.years = res;
-            console.log(res);
         });
 
         this.dynastiesService.getIDynastyWeeks$().subscribe(res => {
             this.weeks = res;
-            console.log(res);
         })
     }
 
