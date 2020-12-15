@@ -6,6 +6,19 @@ All notable changes to Rhombus software will be documented in this location. See
 
 https://rhombus.space
 
+<a name="1.0.0-beta.11"></a>
+# 1.0.0-beta.10 (2020-12-15)
+
+### Features
+
+* Backlog: Created shareable component
+* Blog: Created shareable components for Post(s)
+* Dynasties: Created shareable components for Dynasty Mark, Years, Weeks
+* Latest News: Created shareable component
+
+### Bug Fixes
+* rh-shell: Fixed router-outlet issue
+
 <a name="1.0.0-beta.10"></a>
 # 1.0.0-beta.10 (2020-11-09)
 

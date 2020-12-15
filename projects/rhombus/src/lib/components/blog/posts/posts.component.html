@@ -1,0 +1,32 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFill class="posts__wrapper">
+    <ng-container *ngIf="(compact$ | async); else desktopView">
+        <mat-list fxFlex>
+            <ng-container *ngFor="let post of posts">
+                <mat-list-item *ngIf="post" [routerLink]="post.id">
+                    <div mat-line>{{ post.title }}</div>
+                    <div mat-line>{{ post.timestamp.seconds * 1000 | date:'MM/dd' }}</div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </ng-container>
+        </mat-list>
+    </ng-container>
+    <ng-template #desktopView>
+        <table mat-table [dataSource]="posts" multiTemplateDataRows>
+
+            <!-- Date Column -->
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{ element.timestamp.seconds * 1000 | date:'MM/dd' }} </td>
+            </ng-container>
+
+            <!-- Title Column -->
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Title </th>
+                <td mat-cell *matCellDef="let element"> {{ element.title }} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="row.id"></tr>
+        </table>
+    </ng-template>
+  </div>

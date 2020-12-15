@@ -1,16 +1,16 @@
 {
   "name": "@dougwilliamson/rhombus-shell",
-  "version": "1.0.0-beta.34",
+  "version": "1.0.0-beta.36",
   "author": "Doug Williamson",
   "license": "MIT",
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/cdk": "^8.0.0",
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0",
-    "@angular/flex-layout": "^8.0.0",
-    "@angular/material": "^8.0.0"
+    "@angular/cdk": "^9.0.0 || ^10.0.0",
+    "@angular/common": "^9.0.0 || ^10.0.0",
+    "@angular/core": "^9.0.0 || ^10.0.0",
+    "@angular/flex-layout": "^9.0.0 || ^10.0.0",
+    "@angular/material": "^9.0.0 || ^10.0.0"
   }
 }

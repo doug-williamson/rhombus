@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "rhombus-app",
+      "rh-app",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "rhombus-app",
+      "rh-app",
       "kebab-case"
     ]
   }

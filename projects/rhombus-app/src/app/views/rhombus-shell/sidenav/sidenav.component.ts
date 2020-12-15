@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Tile } from '../intro/intro.component';
 
 @Component({
@@ -8,6 +10,8 @@ import { Tile } from '../intro/intro.component';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
+
+  compact$: Observable<boolean>;
 
   tiles: Tile[] = [
     {text: 'Wrapper', cols: 8, rows: 1, color: 'grey'},
@@ -20,10 +24,16 @@ export class SidenavComponent implements OnInit {
   ];
 
   subtitle = '<rh-shell-sidenav>';
-  
-  constructor(public media: MediaObserver) { }
+
+  constructor(private media: MediaObserver) { }
 
   ngOnInit(): void {
+    this.compact$ = this.media.asObservable().pipe(
+      map(mediaMatch => {
+        return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
+      }),
+    );
+
   }
 
 }

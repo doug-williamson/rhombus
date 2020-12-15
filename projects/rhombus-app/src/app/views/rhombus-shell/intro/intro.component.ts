@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface Tile {
   color: string;
@@ -9,11 +11,13 @@ export interface Tile {
 }
 
 @Component({
-  selector: 'rhombus-app-shell-intro',
+  selector: 'rh-app-shell-intro',
   templateUrl: './intro.component.html',
   styleUrls: ['./intro.component.scss'],
 })
 export class IntroComponent implements OnInit {
+
+  compact$: Observable<boolean>;
 
   tiles: Tile[] = [
     {text: 'Wrapper', cols: 8, rows: 1, color: 'grey'},
@@ -27,9 +31,14 @@ export class IntroComponent implements OnInit {
 
   subtitle = '<rh-shell>';
 
-  constructor(public media: MediaObserver) { }
+  constructor(private media: MediaObserver) { }
 
   ngOnInit(): void {
+    this.compact$ = this.media.asObservable().pipe(
+      map(mediaMatch => {
+        return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
+      }),
+    );
   }
 
   goToLink(url: string) {
