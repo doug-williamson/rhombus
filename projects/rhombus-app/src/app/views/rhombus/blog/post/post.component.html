@@ -1,1 +1,11 @@
-<rh-blog-post [post]="post"></rh-blog-post>
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
+    <mat-toolbar>Blog Post</mat-toolbar>
+    <mat-card fxFlex style="overflow-y: auto">
+        <mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex style="overflow-y: auto">
+                <rh-blog-post [post]="post"></rh-blog-post>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+      

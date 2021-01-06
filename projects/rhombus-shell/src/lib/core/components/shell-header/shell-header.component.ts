@@ -25,7 +25,6 @@ export class RhombusShellHeaderComponent implements OnInit {
 
   constructor(
     private navService: RhombusShellNavService,
-    private dialog: MatDialog,
     public auth: AuthenticationService) { }
 
   ngOnInit() {
@@ -38,37 +37,4 @@ export class RhombusShellHeaderComponent implements OnInit {
     this.navService.toggle();
   }
 
-  showAbout(): void {
-    const dialogRef = this.dialog.open(RhombusShellAboutComponent, {
-      width: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      // console.log('The dialog was closed');
-    });
-  }
-
-  showContact(): void {
-    const dialogRef = this.dialog.open(ShellContactComponent, {
-      width: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      // console.log('The dialog was closed');
-    });
-  }
-
-  showDonate(): void {
-    const dialogRef = this.dialog.open(RhombusShellDonateComponent, {
-      width: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      // console.log('The dialog was closed');
-    });
-  }
-
-  signOut() {
-    this.auth.signOut();
-  }
 }
