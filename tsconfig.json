@@ -25,6 +25,7 @@
       "@dougwilliamson/rhombus": [
         "./projects/rhombus"
       ],
-    }
+    },
+    "allowSyntheticDefaultImports": true,
   }
 }

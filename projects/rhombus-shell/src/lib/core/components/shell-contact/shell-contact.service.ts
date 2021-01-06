@@ -23,8 +23,9 @@ export class ShellContactService {
     return this.contactCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as IShellContact;
-        const id = a.payload.doc.id;
 
+        const id = a.payload.doc.id;
+        
         return { id, ...data };
       })));
   }

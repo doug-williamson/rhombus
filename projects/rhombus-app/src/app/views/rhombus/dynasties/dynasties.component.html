@@ -1,6 +1,13 @@
 <div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
-    <rh-dynasty-years [years]="years">
-        <rh-dynasty-weeks [weeks]="weeks"></rh-dynasty-weeks>
-    </rh-dynasty-years>
+    <mat-toolbar>Dynasty</mat-toolbar>
+    <mat-card fxFlex style="overflow-y: auto">
+        <mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex style="overflow-y: auto">
+                <rh-dynasty-years [years]="years">
+                    <rh-dynasty-weeks [weeks]="weeks"></rh-dynasty-weeks>
+                </rh-dynasty-years>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>
       

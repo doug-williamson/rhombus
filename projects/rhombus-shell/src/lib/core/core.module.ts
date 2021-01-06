@@ -16,6 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
 import { RhombusShellSettingsModule } from '../configuration/public_api';
+import { RhombusShellAuthComponent } from './components/auth/auth.component';
 import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
 import { ShellContactComponent } from './components/shell-contact/shell-contact.component';
 import { RhombusShellDonateComponent } from './components/shell-donate/shell-donate.component';
@@ -47,6 +48,7 @@ import { RhombusShellThemeService } from './services/theme.service';
     ClipboardModule,
   ],
   declarations: [
+    RhombusShellAuthComponent,
     RhombusShellWrapperComponent,
     RhombusShellHeaderComponent,
     RhombusShellNavComponent,
