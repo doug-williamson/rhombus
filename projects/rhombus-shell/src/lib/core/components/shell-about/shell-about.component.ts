@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AppService } from '../../services/app.service';
 import { RhombusShellApplicationInfoService } from '../../services/application-info.service';
 
 @Component({
@@ -20,13 +21,8 @@ export class RhombusShellAboutComponent implements OnInit {
   _appTwitterUrl?: string;
   _appChangelogUrl?: string;
 
-  constructor(private applicationInfo: RhombusShellApplicationInfoService, private media: MediaObserver) {
-    this._appName = this.applicationInfo.name;
-    this._appVersion = this.applicationInfo.version;
-    this._appLogoLetters = this.applicationInfo.logoLetters;
-    this._appLogoUrl = this.applicationInfo.logoUrl;
-    this._appTwitterUrl = this.applicationInfo.twitterUrl;
-    this._appChangelogUrl = this.applicationInfo.changelogUrl;
+  constructor(private applicationInfo: RhombusShellApplicationInfoService, private media: MediaObserver, private appService: AppService) {
+
   }
 
   ngOnInit() {
@@ -35,6 +31,15 @@ export class RhombusShellAboutComponent implements OnInit {
         return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
       }),
     );
+
+    this.appService.getAppMetadata$('HkxoJ5pwH1mTEGh3FWww').subscribe(res => {
+      this._appName = res.app_name;
+      this._appVersion = res.app_version;
+      this._appLogoLetters = this.applicationInfo.logoLetters;
+      this._appLogoUrl = this.applicationInfo.logoUrl;
+      this._appTwitterUrl = res.twitter_url;
+      this._appChangelogUrl = res.app_changelog;
+    });
   }
 
   goToLink(url: string) {

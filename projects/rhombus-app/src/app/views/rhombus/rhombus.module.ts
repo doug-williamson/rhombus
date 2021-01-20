@@ -12,6 +12,7 @@ import { RhAppDynastiesComponent } from './dynasties/dynasties.component';
 import { IntroComponent } from './intro/intro.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { RhombusViewsRouting } from './rhombus.routing';
+import { ComponentsComponent } from './components/components.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RhombusViewsRouting } from './rhombus.routing';
     BacklogComponent,
     LatestNewsComponent,
     RhAppDynastiesComponent,
+    ComponentsComponent,
   ],
   imports: [
     CommonModule,

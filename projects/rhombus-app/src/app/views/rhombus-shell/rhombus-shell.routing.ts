@@ -5,43 +5,52 @@ import { SettingsComponent } from '../rhombus-shell/settings/settings.component'
 import { SidenavComponent } from '../rhombus-shell/sidenav/sidenav.component';
 import { WrapperComponent } from '../rhombus-shell/wrapper/wrapper.component';
 import { IntroComponent } from './intro/intro.component';
+import { ComponentsComponent } from '../rhombus/components/components.component';
+import { CoreComponent } from './core/core.component';
 
 const routes: Routes = [
-  {
-    path: 'intro',
-    component: IntroComponent,
-    data: {
-      breadcrumb: 'Intro',
-    },
-  },
-  {
-    path: 'wrapper',
-    component: WrapperComponent,
-    data: {
-      breadcrumb: 'Wrapper',
-    },
-  },
-  {
-    path: 'header',
-    component: HeaderComponent,
-    data: {
-      breadcrumb: 'Header',
-    },
-  },
-  {
-    path: 'sidenav',
-    component: SidenavComponent,
-    data: {
-      breadcrumb: 'Sidenav',
-    },
-  },
-  {
-    path: 'settings',
-    component: SettingsComponent,
-    data: {
-      breadcrumb: 'Settings',
-    },
-  },
+//   {
+//     path: 'intro',
+//     component: IntroComponent,
+//     data: {
+//       breadcrumb: 'Intro',
+//     },
+//   },
+//   {
+//     path: 'wrapper',
+//     component: WrapperComponent,
+//     data: {
+//       breadcrumb: 'Wrapper',
+//     },
+//   },
+//   {
+//     path: 'header',
+//     component: HeaderComponent,
+//     data: {
+//       breadcrumb: 'Header',
+//     },
+//   },
+//   {
+//     path: 'sidenav',
+//     component: SidenavComponent,
+//     data: {
+//       breadcrumb: 'Sidenav',
+//     },
+//   },
+//   {
+//     path: 'settings',
+//     component: SettingsComponent,
+//     data: {
+//       breadcrumb: 'Settings',
+//     },
+//   },
+    {
+        path: 'core',
+        component: CoreComponent,
+        data: {
+            breadcrumb: 'Rhombus Shell Core',
+        },
+    }
 ];
 
 @NgModule({

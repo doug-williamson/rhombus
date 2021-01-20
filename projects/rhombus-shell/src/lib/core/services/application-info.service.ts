@@ -10,36 +10,12 @@ export class RhombusShellApplicationInfoService {
     @Optional() @Inject(RHOMBUS_SHELL_APPLICATION_INFORMATION) private info?: RhombusShellApplicationInformation,
   ) { }
 
-  get name(): string {
-    return this.info && this.info.name;
-  }
-
-  get version(): string {
-    return this.info && this.info.version;
-  }
-
   get logoLetters(): string {
     return this.info && this.info.logoLetters;
   }
 
   get logoUrl(): string {
     return this.info && this.info.logoUrl;
-  }
-
-  get twitterUrl(): string {
-    return this.info && this.info.twitterUrl;
-  }
-
-  get changelogUrl(): string {
-    return this.info && this.info.changelogUrl;
-  }
-
-  get donateUrl(): string {
-    return this.info && this.info.donateUrl;
-  }
-
-  get contactUsLink(): string {
-    return this.info && this.info.contactUsLink;
   }
 
   get firebaseConfig(): FirebaseOptions {

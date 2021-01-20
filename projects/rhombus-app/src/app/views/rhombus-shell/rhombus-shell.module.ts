@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { CoreComponent } from './core/core.component';
 import { HeaderComponent } from './header/header.component';
 import { IntroComponent } from './intro/intro.component';
 import { RhombusShellViewsRouting } from './rhombus-shell.routing';
@@ -20,6 +21,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
     HeaderComponent,
     SidenavComponent,
     SettingsComponent,
+    CoreComponent,
   ],
   imports: [
     CommonModule,

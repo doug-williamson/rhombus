@@ -1,24 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GettingStartedComponent } from './views/getting-started/getting-started.component';
-import { RhombusAppHomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'getting-started',
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    component: RhombusAppHomeComponent,
-    data: {
-      breadcrumb: 'Home',
-    },
-  },
-  {
     path: 'getting-started',
-    component: GettingStartedComponent,
+    loadChildren: () => import('./views/getting-started/getting-started.module').then(m => m.GettingStartedModule),
     data: {
       breadcrumb: 'Getting Started',
     },

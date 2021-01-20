@@ -3,79 +3,56 @@ import { RhombusShellNavEntry, RhombusShellThemeService } from 'projects/rhombus
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'rhombus-app-root',
+  selector: 'rh-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class RhombusAppComponent implements OnInit {
 
-  _darkMode$: Observable<boolean>;
-  title = 'Rhombus';
+    _darkMode$: Observable<boolean>;
+    title = 'Rhombus';
 
-  navEntries: RhombusShellNavEntry[] = [
-    {
-      name: 'Home',
-      route: 'home',
-    },
-    {
-      name: 'Getting Started',
-      route: 'getting-started',
-    },
-    {
-      name: 'Rhombus',
-      children: [
+    navEntries: RhombusShellNavEntry[] = [
         {
-          name: 'Introduction',
-          route: 'rhombus/intro',
+            name: 'Getting Started',
+            children: [
+                {
+                    name: 'Home',
+                    route: 'getting-started/home',
+                },
+                {
+                    name: 'Rhombus',
+                    route: 'getting-started/rhombus',
+                },
+                {
+                    name: 'Rhombus Shell',
+                    route: 'getting-started/rhombus-shell',
+                },
+            ],
         },
         {
-            name: 'Backlog',
-            route: 'rhombus/backlog',
+            name: 'Rhombus',
+            children: [
+                {
+                    name: 'Components',
+                    route: 'rhombus/components',
+                },
+            ],
         },
         {
-            name: 'Latest News',
-            route: 'rhombus/latest-news',
+            name: 'Rhombus Shell',
+            children: [
+                {
+                    name: 'Core',
+                    route: 'rhombus-shell/core',
+                },
+            ],
         },
-        {
-            name: 'Dynasties',
-            route: 'rhombus/dynasties',
-        },
-        {
-            name: 'Blog',
-            route: 'rhombus/blog',
-        },
-      ],
-    },
-    {
-      name: 'Rhombus Shell Components',
-      children: [
-        {
-          name: 'Introduction',
-          route: 'rhombus-shell/intro',
-        },
-        {
-          name: 'Wrapper',
-          route: 'rhombus-shell/wrapper',
-        },
-        {
-          name: 'Header',
-          route: 'rhombus-shell/header',
-        },
-        {
-          name: 'Sidenav',
-          route: 'rhombus-shell/sidenav',
-        },
-        {
-          name: 'Settings',
-          route: 'rhombus-shell/settings',
-        },
-      ],
-    },
-  ];
+    ];
 
-  constructor(private themeService: RhombusShellThemeService) {
-    this._darkMode$ = this.themeService.darkMode$;
-   }
+    constructor(private themeService: RhombusShellThemeService) {
+        this._darkMode$ = this.themeService.darkMode$;
+    }
 
-  ngOnInit() {}
+    ngOnInit() {}
 }

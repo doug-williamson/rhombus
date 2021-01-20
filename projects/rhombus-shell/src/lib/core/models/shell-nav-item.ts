@@ -2,7 +2,7 @@ export type RhombusShellNavEntry = RhombusShellNavGroup | RhombusShellNavItem;
 
 export interface RhombusShellNavGroup {
     name: string;
-    children: RhombusShellNavItem[];
+    children: RhombusShellNavEntry[];
 }
 
 export interface RhombusShellNavItem {
