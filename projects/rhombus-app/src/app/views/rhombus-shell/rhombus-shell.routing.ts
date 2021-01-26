@@ -1,11 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderComponent } from '../rhombus-shell/header/header.component';
-import { SettingsComponent } from '../rhombus-shell/settings/settings.component';
-import { SidenavComponent } from '../rhombus-shell/sidenav/sidenav.component';
-import { WrapperComponent } from '../rhombus-shell/wrapper/wrapper.component';
-import { IntroComponent } from './intro/intro.component';
-import { ComponentsComponent } from '../rhombus/components/components.component';
 import { CoreComponent } from './core/core.component';
 
 const routes: Routes = [
@@ -50,7 +44,7 @@ const routes: Routes = [
         data: {
             breadcrumb: 'Rhombus Shell Core',
         },
-    }
+    },
 ];
 
 @NgModule({

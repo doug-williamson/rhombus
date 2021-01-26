@@ -3,6 +3,10 @@
     padding-top: 0;
 }
 
-.mat-expansion-panel-body {
+::ng-deep .mat-expansion-panel-body {
     padding: 0 !important;
+}
+
+::ng-deep div.mat-list-item-content {
+  padding: 0 40px !important;
 }

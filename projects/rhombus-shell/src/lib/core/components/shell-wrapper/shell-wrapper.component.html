@@ -3,7 +3,7 @@
 
     <mat-drawer-container fxFlex>
         <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened" (closedStart)="closedSidenav()">
-            <rh-shell-nav [navEntries]="navEntries"></rh-shell-nav>
+            <rh-shell-nav [navCollection]="navCollection"></rh-shell-nav>
         </mat-drawer>
         <mat-drawer-content>
             <router-outlet></router-outlet>

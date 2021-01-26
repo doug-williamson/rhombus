@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RhombusShellNavEntry, RhombusShellThemeService } from 'projects/rhombus-shell';
+import { RhombusShellNavCollection, RhombusShellThemeService } from 'projects/rhombus-shell';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,39 +12,73 @@ export class RhombusAppComponent implements OnInit {
     _darkMode$: Observable<boolean>;
     title = 'Rhombus';
 
-    navEntries: RhombusShellNavEntry[] = [
+    navCollection: RhombusShellNavCollection[] = [
         {
-            name: 'Getting Started',
-            children: [
+            label: 'Getting Started',
+            navEntries: [
                 {
                     name: 'Home',
                     route: 'getting-started/home',
                 },
                 {
-                    name: 'Rhombus',
+                    name: 'Rhombus UI',
                     route: 'getting-started/rhombus',
                 },
                 {
-                    name: 'Rhombus Shell',
+                    name: 'Rhombus Shell UI',
                     route: 'getting-started/rhombus-shell',
                 },
             ],
         },
         {
-            name: 'Rhombus',
-            children: [
-                {
-                    name: 'Components',
-                    route: 'rhombus/components',
-                },
+            label: 'Rhombus UI',
+            navEntries: [
+              {
+                name: 'Components',
+                children: [
+                  {
+                    name: 'Backlog',
+                    route: 'rhombus/backlog',
+                  },
+                  {
+                    name: 'Blog',
+                    route: 'rhombus/blog',
+                  },
+                  {
+                    name: 'Dynasties',
+                    route: 'rhombus/dynasties',
+                  },
+                  {
+                    name: 'Latest News',
+                    route: 'rhombus/latest-news',
+                  },
+                ],
+              },
             ],
         },
         {
-            name: 'Rhombus Shell',
-            children: [
+            label: 'Rhombus Shell UI',
+            navEntries: [
                 {
                     name: 'Core',
-                    route: 'rhombus-shell/core',
+                    children: [
+                      {
+                        name: 'Wrapper',
+                        route: 'rhombus-shell/wrapper',
+                      },
+                      {
+                        name: 'Header',
+                        route: 'rhombus-shell/header',
+                      },
+                      {
+                        name: 'Sidenav',
+                        route: 'rhombus-shell/sidenav',
+                      },
+                      {
+                        name: 'Modals',
+                        route: 'rhombus-shell/modals',
+                      },
+                    ]
                 },
             ],
         },

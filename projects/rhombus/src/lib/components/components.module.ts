@@ -13,6 +13,7 @@ import { RhDynastiesComponent } from './dynasties/dynasties.component';
 import { RhDynastyComponent } from './dynasties/dynasty/dynasty.component';
 import { RhDynastyTeamComponent } from './dynasties/team/team.component';
 import { RhDynastyWeeksComponent } from './dynasties/weeks/weeks.component';
+import { RhDynastyYearComponent } from './dynasties/year/year.component';
 import { RhDynastyYearsComponent } from './dynasties/years/years.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 
@@ -37,6 +38,7 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
         RhDynastyYearsComponent,
         RhDynastyTeamComponent,
         RhDynastyWeeksComponent,
+        RhDynastyYearComponent,
     ],
     exports: [
         BacklogComponent,

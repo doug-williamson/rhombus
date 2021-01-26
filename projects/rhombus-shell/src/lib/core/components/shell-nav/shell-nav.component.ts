@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MediaObserver } from '@angular/flex-layout';
 import { Router } from '@angular/router';
-import { RhombusShellNavEntry, RhombusShellNavItem } from '../../models/shell-nav-item';
-import { RhombusShellNavService } from '../../services/nav.service';
+import { RhombusShellNavCollection } from '../../models/shell-nav-item';
 
 @Component({
   selector: 'rh-shell-nav',
@@ -12,12 +10,10 @@ import { RhombusShellNavService } from '../../services/nav.service';
 export class RhombusShellNavComponent implements OnInit {
 
   @Input()
-  navEntries: RhombusShellNavEntry[];
+  navCollection: RhombusShellNavCollection[];
 
   constructor(
-    private router: Router,
-    private navService: RhombusShellNavService,
-    private media: MediaObserver) { }
+    private router: Router) { }
 
   ngOnInit() {
     this.router.events.subscribe(() => {
