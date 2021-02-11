@@ -4,7 +4,7 @@ import { MediaObserver } from '@angular/flex-layout';
 import { IBacklog, ILatestNews } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { BacklogService } from '../../rhombus/backlog/backlog.service';
+import { BacklogService } from '../../../../../../rhombus/src/lib/components/backlog/backlog.service';
 import { LatestNewsService } from '../../rhombus/latest-news/latest-news.service';
 
 @Component({
@@ -20,25 +20,25 @@ export class HomeComponent implements OnInit {
     _columns = 1;
     _headerText = 'Coming Soon';
     _color = 'primary';
-  
+
     // tslint:disable-next-line:max-line-length
     constructor(private media: MediaObserver, private breakpointObserver: BreakpointObserver, private backlogService: BacklogService, private latestNewsService: LatestNewsService) { }
-  
+
     ngOnInit() {
       this.compact$ = this.media.asObservable().pipe(
         map(mediaMatch => {
           return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
         }),
       );
-  
+
       this.backlogService.getBacklog$().subscribe(res => {
           this.backlog = res;
       });
-  
+
       this.latestNewsService.getLatestNews$().subscribe(res => {
           this.latestNews = res;
       });
-  
+
       this.breakpointObserver.observe([Breakpoints.XSmall])
         .subscribe((state: BreakpointState) => {
         if (state.matches) {
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
         }
       });
     }
-  
+
     goToLink(url: string) {
         window.open(url, '_blank');
     }

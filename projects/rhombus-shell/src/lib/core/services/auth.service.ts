@@ -1,43 +1,84 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { auth } from 'firebase/app';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RhShellAuthService {
 
-    userData: any;
+  user$: Observable<User>;
 
-    constructor(private authService: AngularFireAuth) {
-        this.authService.authState.subscribe(user => {
-            if (user) {
-              this.userData = user;
-              localStorage.setItem('user', JSON.stringify(this.userData));
-              JSON.parse(localStorage.getItem('user'));
-            } else {
-              localStorage.setItem('user', null);
-              JSON.parse(localStorage.getItem('user'));
-            }
-          });
-     }
+  constructor(private angularFireAuth: AngularFireAuth, private angularFirestore: AngularFirestore) {
+    this.user$ = this.angularFireAuth.authState.pipe(
+      switchMap(user => {
+        if (user) {
+          return this.angularFirestore.doc<User>(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      }),
+    );
+  }
 
-    // Auth logic to run auth providers
-    login() {
-        return this.authService.signInWithPopup(new auth.GoogleAuthProvider())
-            .then((result) => {
-                this.userData = result.user;
-                localStorage.setItem('user', JSON.stringify(result.user));
-                JSON.parse(localStorage.getItem('user'));
-            }).catch((error) => {
-                console.log(error);
-        });
+  // Auth logic to run auth providers
+  async login() {
+    const provider = new auth.GoogleAuthProvider();
+    const credential = await this.angularFireAuth.signInWithPopup(provider);
+    return this.updateUserData(credential.user);
+  }
+
+  async signOut() {
+    return this.angularFireAuth.signOut().then(() => {
+      localStorage.setItem('user', null);
+    });
+  }
+
+  canRead(user: User): boolean {
+    const allowed = ['admin', 'editor', 'subscriber'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canEdit(user: User): boolean {
+    const allowed = ['admin', 'editor'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canDelete(user: User): boolean {
+    const allowed = ['admin'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  // determines if user has matching role
+  private checkAuthorization(user: User, allowedRoles: string[]): boolean {
+    if (!user) { return false; }
+
+    for (const role of allowedRoles) {
+      if (user.roles[role]) {
+        return true;
+      }
     }
+    return false;
+  }
 
-    signOut() {
-        return this.authService.signOut().then(() => {
-            localStorage.setItem('user', null);
-            this.userData = undefined;
-        });
-    }
+  private updateUserData(user: firebase.User) {
+    console.log(user);
+    const userRef: AngularFirestoreDocument<User> = this.angularFirestore.doc(`users/${user.uid}`);
+
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      roles: {
+        subscriber: true,
+      },
+    };
+
+    return userRef.set(data, { merge: true});
+  }
 }

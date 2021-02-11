@@ -1,6 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
-    <mat-toolbar>Backlog</mat-toolbar>
-    <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex style="overflow-y: auto">
-      <rh-backlog [backlog]="backlog" fxFlex></rh-backlog>
+  <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex style="overflow-y: auto">
+    <rh-backlog [canEdit]="canEdit"></rh-backlog>
   </div>
 </div>

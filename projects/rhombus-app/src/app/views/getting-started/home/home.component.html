@@ -1,26 +1,27 @@
 <div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Welcome to Rhombus Software!</mat-card-title>
-            <mat-card-subtitle>Rhombus is a front-end Angular platform, created to help streamers and gamers spin up their own websites through the use of a library of reusable components and services.</mat-card-subtitle>
-        </mat-card-header>
-    </mat-card>
-
+  <mat-toolbar>Welcome</mat-toolbar>
+  <mat-card>
+      <mat-card-header>
+          <mat-card-title style="padding-bottom: 4px;">This is Rhombus Software!</mat-card-title>
+          <mat-card-subtitle>Rhombus is a front-end Angular platform, created to help streamers and gamers spin up their own websites through the use of a library of reusable components and services.</mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+  <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex style="overflow-y: auto">
     <ng-container *ngIf="(compact$ | async); else desktopView">
-        <mat-tab-group mat-stretch-tabs>
-            <mat-tab label="Latest News">
-                <rh-latest-news [latestNews]="latestNews" fxFlex="65"></rh-latest-news>
-            </mat-tab>
-            <mat-tab label="Backlog">
-                <rh-backlog [backlog]="backlog" fxFlex></rh-backlog>
-            </mat-tab>
-        </mat-tab-group>
+      <mat-tab-group mat-stretch-tabs>
+          <mat-tab label="Latest News">
+            <rh-latest-news [latestNews]="latestNews" fxFlex="65"></rh-latest-news>
+          </mat-tab>
+          <mat-tab label="Backlog">
+            <rh-backlog [backlog]="backlog" fxFlex></rh-backlog>
+          </mat-tab>
+      </mat-tab-group>
     </ng-container>
     <ng-template #desktopView>
-        <div fxLayout fxLayoutAlign="start stretch" fxFlex>
-            <rh-latest-news [latestNews]="latestNews" fxFlex="65"></rh-latest-news>
-            <rh-backlog [backlog]="backlog" fxFlex></rh-backlog>
-        </div>
+      <div fxLayout fxLayoutAlign="start stretch" fxFlex>
+        <rh-latest-news [latestNews]="latestNews" fxFlex="65"></rh-latest-news>
+        <rh-backlog [backlog]="backlog" [canEdit]="false" fxFlex></rh-backlog>
+      </div>
     </ng-template>
-
+  </div>
 </div>

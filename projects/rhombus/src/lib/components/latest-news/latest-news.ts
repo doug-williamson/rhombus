@@ -1,5 +1,5 @@
 export interface ILatestNews {
-    timestamp: any,
-    title: string,
+    timestamp: any;
+    title: string;
     description: string;
   }

@@ -66,7 +66,7 @@ export class RhombusShellWrapperComponent implements OnInit {
     });
 
     this.appService.getAppMetadata$('HkxoJ5pwH1mTEGh3FWww').subscribe(res => {
-      console.log(res);
+      // console.log(res);
     });
   }
 

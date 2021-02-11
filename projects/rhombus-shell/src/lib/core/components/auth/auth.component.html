@@ -1,4 +1,12 @@
-<ng-container *ngIf="authService.userData; else anonymous">
+<ng-container *ngIf="authService.user$ | async; then authenticated else anonymous">
+
+</ng-container>
+
+<ng-template #authenticated>
+  <div *ngIf="authService.user$ | async as user">
+    <ng-container *ngIf="!(compact$ | async)">
+      <div class="auth__displayName" fxLayoutAlign="end center">{{ user.displayName }}</div>
+    </ng-container>
 
     <div fxLayout fxLayoutAlign="center stretch" fxFlex>
         <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -11,12 +19,14 @@
             <button mat-menu-item (click)="showContact()">Contact</button>
             <button mat-menu-item (click)="showDonate()">Donate</button>
             <mat-divider></mat-divider>
-            <button mat-menu-item (click)="authService.signOut()">Sign Out</button>
+            <button mat-menu-item (click)="signOut()">Sign Out</button>
         </mat-menu>
     </div>
-</ng-container>
+  </div>
+</ng-template>
+
 <ng-template #anonymous>
-    <button mat-button (click)="authService.login()">
+    <button mat-button (click)="login()">
         <mat-icon>login</mat-icon>
         Google
     </button>

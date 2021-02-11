@@ -61,24 +61,25 @@ export class RhombusAppComponent implements OnInit {
             navEntries: [
                 {
                     name: 'Core',
-                    children: [
-                      {
-                        name: 'Wrapper',
-                        route: 'rhombus-shell/wrapper',
-                      },
-                      {
-                        name: 'Header',
-                        route: 'rhombus-shell/header',
-                      },
-                      {
-                        name: 'Sidenav',
-                        route: 'rhombus-shell/sidenav',
-                      },
-                      {
-                        name: 'Modals',
-                        route: 'rhombus-shell/modals',
-                      },
-                    ]
+                    route: 'rhombus-shell/core',
+                    // children: [
+                    //   {
+                    //     name: 'Wrapper',
+                    //     route: 'rhombus-shell/wrapper',
+                    //   },
+                    //   {
+                    //     name: 'Header',
+                    //     route: 'rhombus-shell/header',
+                    //   },
+                    //   {
+                    //     name: 'Sidenav',
+                    //     route: 'rhombus-shell/sidenav',
+                    //   },
+                    //   {
+                    //     name: 'Modals',
+                    //     route: 'rhombus-shell/modals',
+                    //   },
+                    // ]
                 },
             ],
         },
