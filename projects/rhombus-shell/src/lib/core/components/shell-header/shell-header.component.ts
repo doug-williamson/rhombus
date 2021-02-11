@@ -1,11 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { AuthenticationService } from '../../authentication/authentication.service';
 import { RhombusShellNavService } from '../../services/nav.service';
-import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
-import { ShellContactComponent } from '../shell-contact/shell-contact.component';
-import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.component';
 import { BreadCrumb } from '../shell-wrapper/breadcrumb';
 
 @Component({
@@ -24,8 +19,7 @@ export class RhombusShellHeaderComponent implements OnInit {
   breadcrumbs: Observable<BreadCrumb[]>;
 
   constructor(
-    private navService: RhombusShellNavService,
-    public auth: AuthenticationService) { }
+    private navService: RhombusShellNavService) { }
 
   ngOnInit() {
     this.timer = setInterval(() => {

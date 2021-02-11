@@ -3,7 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { RhombusShellNavEntry } from '../../models/shell-nav-item';
+import { RhombusShellNavCollection } from '../../models/shell-nav-item';
+import { AppService } from '../../services/app.service';
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellThemeService } from '../../services/theme.service';
 import { BreadCrumb } from './breadcrumb';
@@ -25,14 +26,15 @@ export class RhombusShellWrapperComponent implements OnInit {
   title: string;
 
   @Input()
-  navEntries: RhombusShellNavEntry[];
+  navCollection: RhombusShellNavCollection[];
 
   constructor(
     private navService: RhombusShellNavService,
     private themeService: RhombusShellThemeService,
     private breakpointObserver: BreakpointObserver,
     private router: Router,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute,
+    private appService: AppService) {
       this._themeClassName$ = this.themeService.currentTheme$.pipe(
         map(theme => theme ? theme.className : ''),
       );
@@ -45,7 +47,7 @@ export class RhombusShellWrapperComponent implements OnInit {
 
     this._breadcrumbs$ = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
-      map(event => this.buildBreadCrumb(this.activatedRoute.root)));
+      map(() => this.buildBreadCrumb(this.activatedRoute.root)));
 
     this.breakpointObserver.observe([Breakpoints.XSmall])
     .subscribe((state: BreakpointState) => {
@@ -61,6 +63,10 @@ export class RhombusShellWrapperComponent implements OnInit {
         this.navService.setState(true);
         this._isMobile = false;
       }
+    });
+
+    this.appService.getAppMetadata$('HkxoJ5pwH1mTEGh3FWww').subscribe(res => {
+      // console.log(res);
     });
   }
 

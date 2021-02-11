@@ -10,7 +10,8 @@ export interface IDynastyWeek {
 }
 
 export interface IDynastyYear {
-    id: number;
+    id: string;
+    year: number;
     team: string;
     weeks: IDynastyWeek[];
     positionId: number;

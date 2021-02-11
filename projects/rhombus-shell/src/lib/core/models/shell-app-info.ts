@@ -8,13 +8,7 @@ export declare interface FirebaseOptions {
 }
 
 export interface RhombusShellApplicationInformation {
-    name: string;
-    version: string;
     logoLetters?: string;
     logoUrl?: string;
-    twitterUrl?: string;
-    changelogUrl?: string;
-    donateUrl?: string;
-    contactUsLink?: string;
     firebaseConfig?: FirebaseOptions;
 }

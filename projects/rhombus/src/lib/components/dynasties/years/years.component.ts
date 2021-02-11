@@ -15,9 +15,6 @@ export class RhDynastyYearsComponent implements OnInit {
   @Input()
   years: IDynastyYear[] = undefined;
 
-  @Input()
-  weeks: IDynastyWeek[] = undefined;
-
   _selectedYear: IDynastyYear = undefined;
 
   constructor() {}

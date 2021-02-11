@@ -41,7 +41,7 @@ export class RhAppDynastiesService {
   }
 
   getDynastyMarkYears$(): Observable<IDynastyYear[]> {
-    this.dynastyMarkYearsCollection = this.firestore.collection<IDynasty>('dynasties').doc('1L6rf7Migy5soEJihIOd').collection<IDynastyMark>('mark').doc('uRxdyQNHoh4nsLinmReR').collection<IDynastyYear>('years');
+    this.dynastyMarkYearsCollection = this.firestore.collection<IDynasty>('dynasties').doc('1L6rf7Migy5soEJihIOd').collection<IDynastyMark>('mark').doc('uRxdyQNHoh4nsLinmReR').collection<IDynastyYear>('years', ref => ref.orderBy('year', 'desc'));
 
     return this.dynastyMarkYearsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -52,8 +52,8 @@ export class RhAppDynastiesService {
       })));
   }
 
-  getIDynastyWeeks$(): Observable<IDynastyWeek[]> {
-    this.dynastyMarkYearWeeksCollection = this.firestore.collection<IDynasty>('dynasties').doc('1L6rf7Migy5soEJihIOd').collection<IDynastyMark>('mark').doc('uRxdyQNHoh4nsLinmReR').collection<IDynastyYear>('years').doc('4U2DDgQ5zNzLlhjeveOc').collection<IDynastyWeek>('weeks', ref => ref.orderBy('week'));
+  getIDynastyWeeks$(year: string): Observable<IDynastyWeek[]> {
+    this.dynastyMarkYearWeeksCollection = this.firestore.collection<IDynasty>('dynasties').doc('1L6rf7Migy5soEJihIOd').collection<IDynastyMark>('mark').doc('uRxdyQNHoh4nsLinmReR').collection<IDynastyYear>('years', ref => ref.orderBy('year')).doc(year).collection<IDynastyWeek>('weeks', ref => ref.orderBy('week'));
 
     return this.dynastyMarkYearWeeksCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {

@@ -4,8 +4,7 @@ export enum IBacklogStatus {
     DONE = 3,
 }
 
-export interface IBacklog {
-    id: number;
+export class IBacklog {
     text: string;
     status: IBacklogStatus;
 }

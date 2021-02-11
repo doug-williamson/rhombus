@@ -1,19 +1,18 @@
 <div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
     <ng-container *ngIf="years">
         <mat-accordion>
-            <mat-expansion-panel *ngFor="let year of years" expanded>
+            <mat-expansion-panel *ngFor="let year of years; let isFirst = first" [expanded]="isFirst">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
-                        Year {{ year.id }}
+                        Year {{ year.year }}
                     </mat-panel-title>
                     <mat-panel-description>
                         <rh-dynasty-team [year]="year"></rh-dynasty-team>
                     </mat-panel-description>
                 </mat-expansion-panel-header>
-                
-                <!-- <rh-dynasty-weeks [weeks]="weeks"></rh-dynasty-weeks> -->
-                <ng-content></ng-content>
-          
+
+                <rh-dynasty-year [year]="year"></rh-dynasty-year>
+
             </mat-expansion-panel>
           </mat-accordion>
     </ng-container>

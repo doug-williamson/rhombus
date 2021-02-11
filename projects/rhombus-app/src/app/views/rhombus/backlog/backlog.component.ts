@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IBacklog } from '@dougwilliamson/rhombus';
-import { BacklogService } from './backlog.service';
+import { RhShellAuthService } from 'projects/rhombus-shell/src/lib/core/services/auth.service';
 
 @Component({
   selector: 'rh-app-backlog',
@@ -9,14 +8,14 @@ import { BacklogService } from './backlog.service';
 })
 export class BacklogComponent implements OnInit {
 
-    backlog: IBacklog[];
+  canEdit: boolean;
 
-    constructor(private backlogService: BacklogService) {}
+  constructor(private authService: RhShellAuthService) { }
 
-    ngOnInit() {
-      this.backlogService.getBacklog$().subscribe(res => {
-        this.backlog = res;
-      });
-    }
+  ngOnInit() {
+    this.authService.user$.subscribe(res => {
+      this.canEdit = this.authService.canEdit(res);
+    });
+  }
 
 }

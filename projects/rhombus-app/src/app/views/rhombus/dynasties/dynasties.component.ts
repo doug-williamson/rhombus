@@ -10,7 +10,6 @@ import { RhAppDynastiesService } from './dynasties.service';
 export class RhAppDynastiesComponent implements OnInit {
 
     years: IDynastyYear[] = undefined;
-    weeks: IDynastyWeek[] = undefined;
 
     constructor(private dynastiesService: RhAppDynastiesService) { }
 
@@ -18,10 +17,6 @@ export class RhAppDynastiesComponent implements OnInit {
         this.dynastiesService.getDynastyMarkYears$().subscribe(res => {
             this.years = res;
         });
-
-        this.dynastiesService.getIDynastyWeeks$().subscribe(res => {
-            this.weeks = res;
-        })
     }
 
 }
