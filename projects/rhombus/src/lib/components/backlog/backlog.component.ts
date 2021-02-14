@@ -3,6 +3,7 @@ import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { RhAuthService } from '../../services/auth.service';
 import { RhBacklogAddEditComponent } from './add-edit/add-edit.component';
 import { IBacklog } from './backlog';
 import { BacklogService } from './backlog.service';
@@ -25,14 +26,14 @@ export interface DeleteDialogData {
 export class BacklogComponent implements OnInit {
 
   @Input()
-  canEdit: boolean;
+  readOnly = true;
 
   backlog: IBacklog[];
   compact$: Observable<boolean>;
-  displayedColumnsAdmin: string[] = ['text', 'status', 'admin'];
-  displayedColumns: string[] = ['text', 'status'];
+  displayedColumns: string[] = ['text', 'status', 'admin'];
 
-  constructor(private media: MediaObserver, private dialog: MatDialog, private backlogService: BacklogService) {}
+  // tslint:disable-next-line:max-line-length
+  constructor(private media: MediaObserver, private dialog: MatDialog, private backlogService: BacklogService, private authService: RhAuthService) {}
 
   ngOnInit() {
     this.compact$ = this.media.asObservable().pipe(
@@ -43,6 +44,10 @@ export class BacklogComponent implements OnInit {
 
     this.backlogService.getBacklog$().subscribe(res => {
       this.backlog = res;
+    });
+
+    this.authService.user$.subscribe(res => {
+      this.readOnly = !this.authService.canEdit(res);
     });
   }
 
@@ -68,7 +73,6 @@ export class BacklogComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.backlogService.updateBacklogItem(element.id, result);
       }

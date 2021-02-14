@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { IDynasty, IDynastyMark, IDynastyWeek, IDynastyYear } from 'dist/dougwilliamson/rhombus/public-api';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { IDynasty, IDynastyMark, IDynastyWeek, IDynastyYear } from '../dynasty/dynasty';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class YearService {
   constructor(private firestore: AngularFirestore) {}
 
   getIDynastyWeeks$(year: string): Observable<IDynastyWeek[]> {
-    console.log(year);
+    // tslint:disable-next-line:max-line-length
     this.dynastyMarkYearWeeksCollection = this.firestore.collection<IDynasty>('dynasties').doc('1L6rf7Migy5soEJihIOd').collection<IDynastyMark>('mark').doc('uRxdyQNHoh4nsLinmReR').collection<IDynastyYear>('years').doc(year).collection<IDynastyWeek>('weeks', ref => ref.orderBy('week'));
 
     return this.dynastyMarkYearWeeksCollection.snapshotChanges().pipe(
