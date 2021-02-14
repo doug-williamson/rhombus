@@ -23,6 +23,8 @@ import { RhDynastyTeamComponent } from './dynasties/team/team.component';
 import { RhDynastyWeeksComponent } from './dynasties/weeks/weeks.component';
 import { RhDynastyYearComponent } from './dynasties/year/year.component';
 import { RhDynastyYearsComponent } from './dynasties/years/years.component';
+import { RhLatestNewsAddEditComponent } from './latest-news/add-edit/add-edit.component';
+import { RhLatestNewsDeleteComponent } from './latest-news/delete/delete.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 
 @NgModule({
@@ -55,6 +57,8 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
     RhDynastyYearComponent,
     RhBacklogAddEditComponent,
     RhBacklogDeleteComponent,
+    RhLatestNewsAddEditComponent,
+    RhLatestNewsDeleteComponent,
   ],
   exports: [
     BacklogComponent,

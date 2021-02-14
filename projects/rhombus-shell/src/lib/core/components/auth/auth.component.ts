@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'firebase';
+import { RhAuthService } from 'projects/rhombus/src/lib/services/auth.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
-import { RhShellAuthService } from '../../services/auth.service';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';
 import { ShellContactComponent } from '../shell-contact/shell-contact.component';
 import { RhombusShellDonateComponent } from '../shell-donate/shell-donate.component';
@@ -19,7 +19,7 @@ export class RhombusShellAuthComponent implements OnInit {
   displayName!: User;
   compact$: Observable<boolean>;
 
-  constructor(private media: MediaObserver, private dialog: MatDialog, public authService: RhShellAuthService) {
+  constructor(private media: MediaObserver, private dialog: MatDialog, public authService: RhAuthService) {
     this.compact$ = this.media.asObservable().pipe(
       map(mediaMatch => {
         return !mediaMatch.find(change => change.mqAlias === 'gt-xs');

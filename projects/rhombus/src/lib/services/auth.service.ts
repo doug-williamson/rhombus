@@ -9,7 +9,7 @@ import { User } from '../models/user';
 @Injectable({
   providedIn: 'root',
 })
-export class RhShellAuthService {
+export class RhAuthService {
 
   user$: Observable<User>;
 
@@ -66,7 +66,6 @@ export class RhShellAuthService {
   }
 
   private updateUserData(user: firebase.User) {
-    console.log(user);
     const userRef: AngularFirestoreDocument<User> = this.angularFirestore.doc(`users/${user.uid}`);
 
     const data = {

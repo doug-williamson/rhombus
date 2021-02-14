@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RhShellAuthService } from './auth.service';
+import { LatestNewsService } from './latest-news.service';
 
-describe('RhShellAuthService', () => {
-  let service: RhShellAuthService;
+describe('LatestNewsService', () => {
+  let service: LatestNewsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(RhShellAuthService);
+    service = TestBed.inject(LatestNewsService);
   });
 
   it('should be created', () => {

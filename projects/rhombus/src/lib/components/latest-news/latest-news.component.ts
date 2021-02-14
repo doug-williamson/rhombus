@@ -1,9 +1,24 @@
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { RhAuthService } from '../../services/auth.service';
+import { RhLatestNewsAddEditComponent } from './add-edit/add-edit.component';
+import { RhLatestNewsDeleteComponent } from './delete/delete.component';
 import { ILatestNews } from './latest-news';
+import { LatestNewsService } from './latest-news.service';
+
+export interface LNAddEditDialogData {
+  timestamp: string;
+  title: string;
+  description: string;
+}
+
+export interface LNDeleteDialogData {
+  message: string;
+}
 
 @Component({
   selector: 'rh-latest-news',
@@ -19,15 +34,16 @@ import { ILatestNews } from './latest-news';
 })
 export class LatestNewsComponent implements OnInit {
 
-  compact$: Observable<boolean>;
-
-  displayColumns: string[] = ['timestamp', 'title'];
-  expandedLatestNews: ILatestNews | null;
-
   @Input()
-  latestNews: ILatestNews[];
+  readOnly = true;
 
-  constructor(private media: MediaObserver) {}
+  latestNews: ILatestNews[];
+  expandedLatestNews: ILatestNews | null;
+  compact$: Observable<boolean>;
+  displayedColumns: string[] = ['timestamp', 'title', 'admin'];
+
+  // tslint:disable-next-line:max-line-length
+  constructor(private media: MediaObserver, private dialog: MatDialog, private latestNewsService: LatestNewsService, private authService: RhAuthService) {}
 
   ngOnInit() {
     this.compact$ = this.media.asObservable().pipe(
@@ -35,5 +51,58 @@ export class LatestNewsComponent implements OnInit {
         return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
       }),
     );
+
+    this.latestNewsService.getLatestNews$().subscribe(res => {
+      this.latestNews = res;
+    });
+
+    console.log(new Date());
+
+    this.authService.user$.subscribe(res => {
+      this.readOnly = !this.authService.canEdit(res);
+    });
+  }
+
+  addNew() {
+    const dialogRef = this.dialog.open(RhLatestNewsAddEditComponent, {
+      width: '250px',
+      data: { timestamp: new Date(), title: null, description: null },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if (result) {
+        this.latestNewsService.createLatestNewsItem(result);
+      }
+
+    });
+  }
+
+  edit(element) {
+    const dialogRef = this.dialog.open(RhLatestNewsAddEditComponent, {
+      width: '250px',
+      data: { timestamp: element.timestamp, title: element.title, description: element.description },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.latestNewsService.updateLatestNewsItem(element.id, result);
+      }
+
+    });
+  }
+
+  delete(element) {
+    const dialogRef = this.dialog.open(RhLatestNewsDeleteComponent, {
+      width: '350px',
+      data: { message: 'Are you sure you want to delete: ' + element.title + '?' },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.latestNewsService.deleteLatestNewsItem(element.id);
+      }
+
+    });
   }
 }

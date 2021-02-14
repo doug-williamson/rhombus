@@ -1,11 +1,7 @@
-:host {
-    margin: 16px;
-}
-
 table {
     width: 100%;
 }
-  
+
 tr.example-detail-row {
   height: 0;
 }
@@ -49,4 +45,9 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-description-attribution {
   opacity: 0.5;
 }
-  
+
+@media (min-width: 600px) {
+  .latest-news__wrapper {
+    margin: 16px;
+  }
+}

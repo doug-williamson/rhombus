@@ -1,10 +1,5 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { MediaObserver } from '@angular/flex-layout';
-import { ILatestNews } from '@dougwilliamson/rhombus';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { LatestNewsService } from './latest-news.service';
+import { RhAuthService } from 'projects/rhombus/src/lib/services/auth.service';
 
 @Component({
   selector: 'rh-app-latest-news',
@@ -13,25 +8,14 @@ import { LatestNewsService } from './latest-news.service';
 })
 export class LatestNewsComponent implements OnInit {
 
-  compact$: Observable<boolean>;
+  canEdit: boolean;
 
-  displayColumns: string[] = ['timestamp', 'title'];
-  expandedLatestNews: ILatestNews | null;
-
-  latestNews: ILatestNews[];
-
-  constructor(private media: MediaObserver, private latestNewsService: LatestNewsService) {}
+  constructor(private authService: RhAuthService) { }
 
   ngOnInit() {
-    this.latestNewsService.getLatestNews$().subscribe(res => {
-        this.latestNews = res;
+    this.authService.user$.subscribe(res => {
+      this.canEdit = this.authService.canEdit(res);
     });
-
-    this.compact$ = this.media.asObservable().pipe(
-      map(mediaMatch => {
-        return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
-      }),
-    );
   }
 
 }

@@ -16,13 +16,9 @@ export class RhBacklogAddEditComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: AddEditDialogData) {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
   ngOnInit(): void {
     this.backlogForm = new FormGroup({
-      status: new FormControl('1'),
+      status: new FormControl(this.data.status),
       text: new FormControl(this.data.text, [Validators.required, Validators.minLength(4), Validators.maxLength(100)]),
     });
    }

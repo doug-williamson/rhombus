@@ -1,0 +1,21 @@
+<form [formGroup]="latestNewsForm" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title>Latest News</h1>
+  <div mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="start stretch">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput required placeholder="Placeholder" formControlName="title" >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput required placeholder="Placeholder" formControlName="description" ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions fxLayoutAlign="end center">
+    <button mat-button [mat-dialog-close]="">Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="!latestNewsForm.valid" type="submit">Save</button>
+  </div>
+</form>
+

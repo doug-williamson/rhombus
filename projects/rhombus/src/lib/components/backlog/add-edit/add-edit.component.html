@@ -19,7 +19,7 @@
     </div>
   </div>
   <div mat-dialog-actions fxLayoutAlign="end center">
-    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="">Cancel</button>
     <button mat-raised-button color="primary" [disabled]="!backlogForm.valid" type="submit">Save</button>
   </div>
 </form>
