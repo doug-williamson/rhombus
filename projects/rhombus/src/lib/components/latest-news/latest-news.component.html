@@ -1,12 +1,8 @@
-
-
-
-
 <div fxLayout="column" fxLayoutAlign="start stretch" class="latest-news__wrapper">
   <mat-toolbar>
     <span>Latest News</span>
     <span fxFlex></span>
-    <ng-container *ngIf="!readOnly">
+    <ng-container *ngIf="readOnly !== true">
       <button mat-icon-button (click)="addNew()">
         <mat-icon>add</mat-icon>
       </button>

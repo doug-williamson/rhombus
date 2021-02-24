@@ -18,7 +18,7 @@ export class RhLatestNewsAddEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.latestNewsForm = new FormGroup({
-      timestamp: new FormControl(new Date(this.data.timestamp)),
+      timestamp: new FormControl(new Date(this.data.timestamp.seconds * 1000)),
       title: new FormControl(this.data.title, [Validators.required, Validators.minLength(4), Validators.maxLength(100)]),
       description: new FormControl(this.data.description, [Validators.required, Validators.minLength(4)]),
     });

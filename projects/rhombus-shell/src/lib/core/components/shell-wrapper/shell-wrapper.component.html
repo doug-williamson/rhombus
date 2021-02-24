@@ -1,12 +1,12 @@
 <div fxLayout="column" fxFlexFill [ngClass]="_themeClassName$ | async" class="mat-app-background mat-typography">
-    <rh-shell-header [title]="title" [breadcrumbs]="_breadcrumbs$ | async"></rh-shell-header>
+  <rh-shell-header [title]="title" ></rh-shell-header>
 
-    <mat-drawer-container fxFlex>
-        <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened" (closedStart)="closedSidenav()">
-            <rh-shell-nav [navCollection]="navCollection"></rh-shell-nav>
-        </mat-drawer>
-        <mat-drawer-content>
-            <router-outlet></router-outlet>
-        </mat-drawer-content>
-    </mat-drawer-container>
+  <mat-drawer-container fxFlex>
+    <mat-drawer #drawer [mode]="_isMobile ? 'over' : 'side'" [(opened)]="_isOpened" (closedStart)="closedSidenav()">
+      <rh-shell-nav [navCollection]="navCollection"></rh-shell-nav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>

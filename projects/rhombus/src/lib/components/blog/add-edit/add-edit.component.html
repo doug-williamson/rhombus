@@ -1,0 +1,44 @@
+<form [formGroup]="blogPostForm" (ngSubmit)="onSubmit()">
+  <h2 mat-dialog-title>Blog Post</h2>
+  <mat-dialog-content class="mat-typography add-edit__dialog-content" fxLayout="column">
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput required placeholder="Placeholder" formControlName="title" >
+    </mat-form-field>
+
+    <!-- <div fxLayout fxLayoutAlign="start center" fxFlex class="add-edit__paragraphs">
+      <span fxFlex>Paragraphs</span>
+      <button mat-mini-fab (click)="addTab(); $event.stopPropagation(); false" color="primary">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div> -->
+
+    <mat-form-field appearance="outline">
+      <mat-label>Paragraphs</mat-label>
+      <mat-tab-group [selectedIndex] = "selectedIndex">
+        <ng-container formArrayName="paragraphs" *ngFor="let paragraph of blogPostForm.get('paragraphs')['controls']; let i = index;">
+          <ng-container [formGroupName]="i">
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <div style="padding: 0 16px">{{ i + 1 }}</div>
+                <button mat-icon-button (click)="removeTab(i); $event.stopPropagation(); false" *ngIf="paragraphs.length > 1">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </ng-template>
+              <textarea class="add-edit__textarea" matInput placeholder="Type here..." formControlName="text" required fxFlex></textarea>
+            </mat-tab>
+          </ng-container>
+        </ng-container>
+      </mat-tab-group>
+    </mat-form-field>
+
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayoutAlign="start center">
+    <button mat-button (click)="addTab(); $event.stopPropagation(); false" color="primary">
+      Add Paragraph
+    </button>
+    <span fxFlex></span>
+    <button mat-button [mat-dialog-close]="">Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="!blogPostForm.valid" type="submit">Save</button>
+  </mat-dialog-actions>
+</form>

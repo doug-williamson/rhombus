@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -13,10 +14,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 import { RhBacklogAddEditComponent } from './backlog/add-edit/add-edit.component';
 import { BacklogComponent } from './backlog/backlog.component';
 import { RhBacklogDeleteComponent } from './backlog/delete/delete.component';
+import { RhBlogAddEditComponent } from './blog/add-edit/add-edit.component';
+import { RhBlogComponent } from './blog/blog.component';
 import { RhDynastiesComponent } from './dynasties/dynasties.component';
 import { RhDynastyComponent } from './dynasties/dynasty/dynasty.component';
 import { RhDynastyTeamComponent } from './dynasties/team/team.component';
@@ -26,6 +31,8 @@ import { RhDynastyYearsComponent } from './dynasties/years/years.component';
 import { RhLatestNewsAddEditComponent } from './latest-news/add-edit/add-edit.component';
 import { RhLatestNewsDeleteComponent } from './latest-news/delete/delete.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
+import { RhBlogPostComponent } from './blog/read/read.component';
+import { RhBlogDeleteComponent } from './blog/delete/delete.component';
 
 @NgModule({
   imports: [
@@ -34,6 +41,7 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
     FlexLayoutModule,
 
     MatButtonModule,
+    MatCardModule,
     MatDialogModule,
     MatDividerModule,
     MatFormFieldModule,
@@ -43,6 +51,7 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
     MatMenuModule,
     MatSelectModule,
     MatTableModule,
+    MatTabsModule,
     MatToolbarModule,
     MatExpansionModule,
   ],
@@ -59,10 +68,16 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
     RhBacklogDeleteComponent,
     RhLatestNewsAddEditComponent,
     RhLatestNewsDeleteComponent,
+
+    RhBlogComponent,
+    RhBlogAddEditComponent,
+    RhBlogPostComponent,
+    RhBlogDeleteComponent,
   ],
   exports: [
     BacklogComponent,
     LatestNewsComponent,
+    RhBlogComponent,
     RhDynastiesComponent,
     RhDynastyComponent,
     RhDynastyYearsComponent,

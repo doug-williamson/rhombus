@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddEditDialogData } from '../backlog.component';
 
 @Component({
-  selector: 'rh-backlog-add-edit',
+  selector: 'rh-blog-add-edit',
   templateUrl: './add-edit.component.html',
   styleUrls: ['./add-edit.component.scss'],
 })

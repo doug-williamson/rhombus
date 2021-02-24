@@ -10,7 +10,7 @@ import { DeleteDialogData } from '../backlog.component';
 export class RhBacklogDeleteComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<RhBacklogAddEditComponent>,
+    public dialogRef: MatDialogRef<RhBacklogDeleteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DeleteDialogData) {
     }
 

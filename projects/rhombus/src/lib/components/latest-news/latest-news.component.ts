@@ -11,7 +11,7 @@ import { ILatestNews } from './latest-news';
 import { LatestNewsService } from './latest-news.service';
 
 export interface LNAddEditDialogData {
-  timestamp: string;
+  timestamp: any;
   title: string;
   description: string;
 }
@@ -35,7 +35,7 @@ export interface LNDeleteDialogData {
 export class LatestNewsComponent implements OnInit {
 
   @Input()
-  readOnly = true;
+  readOnly: boolean = undefined;
 
   latestNews: ILatestNews[];
   expandedLatestNews: ILatestNews | null;
@@ -56,10 +56,10 @@ export class LatestNewsComponent implements OnInit {
       this.latestNews = res;
     });
 
-    console.log(new Date());
-
     this.authService.user$.subscribe(res => {
-      this.readOnly = !this.authService.canEdit(res);
+      if (this.readOnly === undefined) {
+        this.readOnly = !this.authService.canEdit(res);
+      }
     });
   }
 
@@ -70,7 +70,6 @@ export class LatestNewsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.latestNewsService.createLatestNewsItem(result);
       }

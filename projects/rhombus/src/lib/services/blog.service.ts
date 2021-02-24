@@ -1,26 +1,22 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { IPost } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { IPost } from '../models/post';
 
 @Injectable({
   providedIn: 'root',
 })
-export class RhAppBlogService {
+export class RhBlogService {
 
   postCollection: AngularFirestoreCollection<IPost>;
-
   postDocument: AngularFirestoreDocument<IPost>;
-  // postParagraphCollection: AngularFirestoreCollection<postParagraph>;
 
   constructor(private firestore: AngularFirestore) {
     this.postCollection = this.firestore.collection<IPost>('blog');
-    // this.postParagraphCollection = this.firestore.collection<post>('blog').doc().collection('paragraphs');
   }
 
   getPosts$(): Observable<IPost[]>{
-
     return this.postCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as IPost;
@@ -34,5 +30,17 @@ export class RhAppBlogService {
     this.postDocument = this.firestore.collection('blog').doc(id);
 
     return this.postDocument.valueChanges();
+  }
+
+  createBlogPost(item: IPost) {
+    this.postCollection.add(item);
+  }
+
+  updateBlogPost(id: string, item: IPost) {
+    this.postCollection.doc(id).update(item);
+  }
+
+  deleteBlogPost(id: string) {
+    this.postCollection.doc(id).delete();
   }
 }

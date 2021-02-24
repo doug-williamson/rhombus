@@ -25,7 +25,7 @@ export class ShellContactService {
         const data = a.payload.doc.data() as IShellContact;
 
         const id = a.payload.doc.id;
-        
+
         return { id, ...data };
       })));
   }

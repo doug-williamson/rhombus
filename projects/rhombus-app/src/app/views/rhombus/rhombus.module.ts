@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RhombusComponentsModule } from '@dougwilliamson/rhombus';
 import { BacklogComponent } from './backlog/backlog.component';
+import { RhAppBlogComponent } from './blog/blog.component';
 import { RhAppDynastiesComponent } from './dynasties/dynasties.component';
 import { IntroComponent } from './intro/intro.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
@@ -20,6 +21,7 @@ import { RhombusViewsRouting } from './rhombus.routing';
     BacklogComponent,
     LatestNewsComponent,
     RhAppDynastiesComponent,
+    RhAppBlogComponent,
   ],
   imports: [
     CommonModule,
