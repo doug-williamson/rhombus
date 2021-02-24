@@ -2,10 +2,10 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { IBacklog, ILatestNews } from '@dougwilliamson/rhombus';
+import { LatestNewsService } from 'projects/rhombus/src/lib/components/latest-news/latest-news.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { BacklogService } from '../../../../../../rhombus/src/lib/components/backlog/backlog.service';
-import { LatestNewsService } from '../../rhombus/latest-news/latest-news.service';
 
 @Component({
   selector: 'rhombus-app-home',

@@ -26,7 +26,7 @@ export interface DeleteDialogData {
 export class BacklogComponent implements OnInit {
 
   @Input()
-  readOnly = true;
+  readOnly: boolean = undefined;
 
   backlog: IBacklog[];
   compact$: Observable<boolean>;
@@ -47,7 +47,9 @@ export class BacklogComponent implements OnInit {
     });
 
     this.authService.user$.subscribe(res => {
-      this.readOnly = !this.authService.canEdit(res);
+      if (this.readOnly === undefined) {
+        this.readOnly = !this.authService.canEdit(res);
+      }
     });
   }
 
@@ -58,7 +60,6 @@ export class BacklogComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.backlogService.createBacklogItem(result);
       }
