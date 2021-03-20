@@ -1,0 +1,19 @@
+.dynasty__wrapper {
+    margin: 16px;
+}
+
+.dynasty__card-wrapper {
+  padding: 32px;
+}
+
+:host ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+:host ::ng-deep .mat-card-title {
+  margin-bottom: 24px !important;
+}
+
+:host ::ng-deep .mat-card-subtitle {
+  margin-bottom: 24px !important;
+}

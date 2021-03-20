@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
+import { RhAuthService } from '@dougwilliamson/rhombus';
 import { User } from 'firebase';
-import { RhAuthService } from 'projects/rhombus/src/lib/services/auth.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
 import { RhombusShellAboutComponent } from '../shell-about/shell-about.component';

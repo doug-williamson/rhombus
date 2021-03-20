@@ -8,11 +8,13 @@ import { AppService } from '../../services/app.service';
 import { RhombusShellNavService } from '../../services/nav.service';
 import { RhombusShellThemeService } from '../../services/theme.service';
 import { BreadCrumb } from './breadcrumb';
+import { slideInAnimation } from './shell-wrapper-animation';
 
 @Component({
   selector: 'rh-shell-wrapper',
   templateUrl: './shell-wrapper.component.html',
   styleUrls: ['./shell-wrapper.component.scss'],
+  animations: [slideInAnimation],
 })
 export class RhombusShellWrapperComponent implements OnInit {
 
@@ -57,7 +59,7 @@ export class RhombusShellWrapperComponent implements OnInit {
       }
     });
 
-    this.breakpointObserver.observe([Breakpoints.Large, Breakpoints.XLarge])
+    this.breakpointObserver.observe([Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
     .subscribe((state: BreakpointState) => {
       if (state.matches) {
         this.navService.setState(true);

@@ -1,0 +1,54 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" class="dynasties__wrapper">
+  <mat-toolbar>
+    <span>Dynasties</span>
+    <span fxFlex></span>
+    <ng-container *ngIf="!readOnly">
+      <button mat-icon-button (click)="addNewDynasty()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </ng-container>
+  </mat-toolbar>
+
+  <ng-container *ngIf="(dynasties$ | async) as dynasties">
+    <ng-container *ngIf="(compact$ | async); else desktopView">
+      <div mat-subheader>NCAA Football '14</div>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let dynasty of dynasties">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ dynasty.name }}
+            </mat-panel-title>
+            <mat-panel-description></mat-panel-description>
+          </mat-expansion-panel-header>
+          <div style="margin: 16px">
+            <span>{{ dynasty.description }}</span>
+          </div>
+          <mat-action-row>
+            <rh-dynasty-mark [dynasty]="dynasty"></rh-dynasty-mark>
+            <span fxFlex></span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" (click)="$event.stopPropagation(); false;">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="edit(dynasty)">
+                <mat-icon>update</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="delete(dynasty)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </ng-container>
+    <ng-template #desktopView>
+      <ng-container *ngFor="let dynasty of dynasties">
+        <mat-card>
+
+        </mat-card>
+      </ng-container>
+    </ng-template>
+  </ng-container>
+</div>

@@ -1,0 +1,13 @@
+<div fxLayout>
+  <ng-container [ngSwitch]="positionId">
+    <ng-container *ngSwitchCase="1">
+      <span class="team__position-id">OC</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="2">
+      <span class="team__position-id">DC</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="3">
+      <span class="team__position-id">HC</span>
+    </ng-container>
+  </ng-container>
+</div>

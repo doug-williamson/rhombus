@@ -36,7 +36,7 @@ export class RhBlogComponent implements OnInit {
   routeQueryParams$: Subscription;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private media: MediaObserver, private authService: RhAuthService, private blogService: RhBlogService, private dialog: MatDialog) {
+  constructor(private media: MediaObserver, private dialog: MatDialog, private authService: RhAuthService, private blogService: RhBlogService) {
   }
 
   ngOnInit(): void {
