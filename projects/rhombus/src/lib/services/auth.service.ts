@@ -17,6 +17,7 @@ export class RhAuthService {
     this.user$ = this.angularFireAuth.authState.pipe(
       switchMap(user => {
         if (user) {
+          // console.log(user);
           return this.angularFirestore.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
@@ -38,18 +39,13 @@ export class RhAuthService {
     });
   }
 
-  canRead(user: User): boolean {
-    const allowed = ['admin', 'editor', 'subscriber'];
+  isOwner(user: User): boolean {
+    const allowed = ['owner'];
     return this.checkAuthorization(user, allowed);
   }
 
-  canEdit(user: User): boolean {
-    const allowed = ['admin', 'editor'];
-    return this.checkAuthorization(user, allowed);
-  }
-
-  canDelete(user: User): boolean {
-    const allowed = ['admin'];
+  isSubscriber(user: User): boolean {
+    const allowed = ['subscriber'];
     return this.checkAuthorization(user, allowed);
   }
 

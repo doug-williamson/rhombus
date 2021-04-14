@@ -1,0 +1,28 @@
+<form [formGroup]="dynastyForm" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title>Dynasty</h1>
+  <div mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="start stretch">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput required placeholder="Placeholder" formControlName="name" >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput required placeholder="Placeholder" formControlName="description" >
+      </mat-form-field>
+      <mat-form-field color="primary" appearance="outline">
+        <mat-label>Game</mat-label>
+        <mat-select [value]="gameId">
+          <mat-option *ngFor="let game of games" [value]="game.id">
+            <div>{{ game.name }}</div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions fxLayoutAlign="end center">
+    <button mat-button [mat-dialog-close]="">Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="!dynastyForm.valid" type="submit">Save</button>
+  </div>
+</form>
+

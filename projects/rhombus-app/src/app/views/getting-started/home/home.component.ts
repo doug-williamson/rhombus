@@ -2,10 +2,8 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { IBacklog, ILatestNews } from '@dougwilliamson/rhombus';
-import { LatestNewsService } from 'projects/rhombus/src/lib/components/latest-news/latest-news.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { BacklogService } from '../../../../../../rhombus/src/lib/components/backlog/backlog.service';
 
 @Component({
   selector: 'rhombus-app-home',
@@ -22,7 +20,7 @@ export class HomeComponent implements OnInit {
     _color = 'primary';
 
     // tslint:disable-next-line:max-line-length
-    constructor(private media: MediaObserver, private breakpointObserver: BreakpointObserver, private backlogService: BacklogService, private latestNewsService: LatestNewsService) { }
+    constructor(private media: MediaObserver, private breakpointObserver: BreakpointObserver) { }
 
     ngOnInit() {
       this.compact$ = this.media.asObservable().pipe(
@@ -31,13 +29,13 @@ export class HomeComponent implements OnInit {
         }),
       );
 
-      this.backlogService.getBacklog$().subscribe(res => {
-          this.backlog = res;
-      });
+      // this.backlogService.getBacklog$().subscribe(res => {
+      //     this.backlog = res;
+      // });
 
-      this.latestNewsService.getLatestNews$().subscribe(res => {
-          this.latestNews = res;
-      });
+      // this.latestNewsService.getLatestNews$().subscribe(res => {
+      //     this.latestNews = res;
+      // });
 
       this.breakpointObserver.observe([Breakpoints.XSmall])
         .subscribe((state: BreakpointState) => {

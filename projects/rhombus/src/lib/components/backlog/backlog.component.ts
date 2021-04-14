@@ -25,9 +25,7 @@ export interface DeleteDialogData {
 })
 export class BacklogComponent implements OnInit {
 
-  @Input()
-  readOnly: boolean = undefined;
-
+  isOwner: boolean = false;
   backlog: IBacklog[];
   compact$: Observable<boolean>;
   displayedColumns: string[] = ['text', 'status', 'admin'];
@@ -47,9 +45,7 @@ export class BacklogComponent implements OnInit {
     });
 
     this.authService.user$.subscribe(res => {
-      if (this.readOnly === undefined) {
-        this.readOnly = !this.authService.canEdit(res);
-      }
+      this.isOwner = this.authService.isOwner(res);
     });
   }
 

@@ -16,23 +16,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
 import { RhBacklogAddEditComponent } from './backlog/add-edit/add-edit.component';
 import { BacklogComponent } from './backlog/backlog.component';
 import { RhBacklogDeleteComponent } from './backlog/delete/delete.component';
 import { RhBlogAddEditComponent } from './blog/add-edit/add-edit.component';
 import { RhBlogComponent } from './blog/blog.component';
-import { RhDynastiesComponent } from './dynasties/dynasties.component';
-import { RhDynastyComponent } from './dynasties/dynasty/dynasty.component';
-import { RhDynastyTeamComponent } from './dynasties/team/team.component';
-import { RhDynastyWeeksComponent } from './dynasties/weeks/weeks.component';
-import { RhDynastyYearComponent } from './dynasties/year/year.component';
-import { RhDynastyYearsComponent } from './dynasties/years/years.component';
+import { RhBlogDeleteComponent } from './blog/delete/delete.component';
+import { RhBlogPostComponent } from './blog/read/read.component';
 import { RhLatestNewsAddEditComponent } from './latest-news/add-edit/add-edit.component';
 import { RhLatestNewsDeleteComponent } from './latest-news/delete/delete.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
-import { RhBlogPostComponent } from './blog/read/read.component';
-import { RhBlogDeleteComponent } from './blog/delete/delete.component';
 
 @NgModule({
   imports: [
@@ -58,12 +51,7 @@ import { RhBlogDeleteComponent } from './blog/delete/delete.component';
   declarations: [
     BacklogComponent,
     LatestNewsComponent,
-    RhDynastiesComponent,
-    RhDynastyComponent,
-    RhDynastyYearsComponent,
-    RhDynastyTeamComponent,
-    RhDynastyWeeksComponent,
-    RhDynastyYearComponent,
+
     RhBacklogAddEditComponent,
     RhBacklogDeleteComponent,
     RhLatestNewsAddEditComponent,
@@ -78,11 +66,6 @@ import { RhBlogDeleteComponent } from './blog/delete/delete.component';
     BacklogComponent,
     LatestNewsComponent,
     RhBlogComponent,
-    RhDynastiesComponent,
-    RhDynastyComponent,
-    RhDynastyYearsComponent,
-    RhDynastyTeamComponent,
-    RhDynastyWeeksComponent,
   ],
 })
 export class RhombusComponentsModule { }

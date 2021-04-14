@@ -38,13 +38,18 @@ const routes: Routes = [
 //       breadcrumb: 'Settings',
 //     },
 //   },
-    {
-        path: 'core',
-        component: CoreComponent,
-        data: {
-            breadcrumb: 'Rhombus Shell Core',
-        },
+  {
+    path: '',
+    redirectTo: 'core',
+    pathMatch: 'full',
+  },
+  {
+    path: 'core',
+    component: CoreComponent,
+    data: {
+      breadcrumb: 'Rhombus Shell Core',
     },
+  },
 ];
 
 @NgModule({

@@ -54,6 +54,10 @@ export class RhombusShellThemeService {
     this._darkModeSubject.next(value);
   }
 
+  toggleDarkMode() {
+    this.updateDarkMode(!this._darkModeSubject.value);
+  }
+
   // updateAvailableThemes(themes: RhombusShellTheme[]) {
   //   this._availableThemesSubject.next(themes);
   //   this.setInitialTheme();

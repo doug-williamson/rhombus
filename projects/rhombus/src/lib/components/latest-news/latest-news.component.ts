@@ -34,9 +34,7 @@ export interface LNDeleteDialogData {
 })
 export class LatestNewsComponent implements OnInit {
 
-  @Input()
-  readOnly: boolean = undefined;
-
+  isOwner: boolean = undefined;
   latestNews: ILatestNews[];
   expandedLatestNews: ILatestNews | null;
   compact$: Observable<boolean>;
@@ -57,9 +55,7 @@ export class LatestNewsComponent implements OnInit {
     });
 
     this.authService.user$.subscribe(res => {
-      if (this.readOnly === undefined) {
-        this.readOnly = !this.authService.canEdit(res);
-      }
+      this.isOwner = this.authService.isOwner(res);
     });
   }
 

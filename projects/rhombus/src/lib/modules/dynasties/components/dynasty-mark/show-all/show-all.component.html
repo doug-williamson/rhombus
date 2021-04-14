@@ -1,0 +1,10 @@
+<mat-dialog-content fxLayout="column">
+  <h1 mat-subheader>Versions</h1>
+  <mat-list *ngIf="data">
+    <ng-container *ngFor="let mark of data">
+      <mat-list-item>
+        {{ mark.version }}, {{ mark.id }}
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
+</mat-dialog-content>

@@ -1,0 +1,100 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
+  <mat-toolbar>
+    <button mat-icon-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>{{ dynastyName }}</span>
+  </mat-toolbar>
+  <ng-container *ngIf="years">
+    <ng-container *ngIf="(compact$ | async); else desktopView">
+      <mat-toolbar color="primary">
+        <span fxFlex>Years</span>
+        <ng-container *ngIf="isOwner">
+          <button mat-icon-button (click)="addNew()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </ng-container>
+      </mat-toolbar>
+      <table mat-table [dataSource]="years" multiTemplateDataRows>
+
+        <!-- Year Column -->
+        <ng-container matColumnDef="year">
+          <th mat-header-cell *matHeaderCellDef> Year </th>
+          <td mat-cell *matCellDef="let element"> {{ element.year }} </td>
+        </ng-container>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> Position </th>
+          <td mat-cell *matCellDef="let element">
+            <rh-dynasty-team [positionId]="element.positionId"></rh-dynasty-team>
+          </td>
+        </ng-container>
+
+        <!-- Team Column -->
+        <ng-container matColumnDef="team">
+          <th mat-header-cell *matHeaderCellDef> Team </th>
+          <td mat-cell *matCellDef="let element"> {{ element.team }} </td>
+        </ng-container>
+
+        <!-- Record Column -->
+        <ng-container matColumnDef="record">
+          <th mat-header-cell *matHeaderCellDef> Record </th>
+          <td mat-cell *matCellDef="let element">0 - 0</td>
+        </ng-container>
+
+        <!-- Admin Column-->
+        <ng-container matColumnDef="admin">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center"></th>
+          <td mat-cell *matCellDef="let element" style="text-align: center">
+            <ng-container *ngIf="isOwner">
+              <button mat-button (click)="edit(element)">
+                <span>Edit</span>
+              </button>
+            </ng-container>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </ng-container>
+    <ng-template #desktopView>
+      <mat-toolbar color="primary">
+        <span fxFlex>Years</span>
+        <ng-container *ngIf="isOwner">
+          <button mat-icon-button (click)="addNew()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </ng-container>
+      </mat-toolbar>
+      <div fxLayout fxLayoutAlign="start stretch" fxFlex style="margin: 16px;">
+        <ng-container *ngIf="years">
+          <ng-container *ngFor="let year of years">
+            <div fxFlex="33" style="padding: 16px;">
+              <mat-toolbar>
+                <div fxLayoutAlign="start stretch" fxFlex>
+                  <span fxFlex>{{ year.year }}</span>
+                  <button mat-button (click)="edit(year)">
+                    <span>Edit</span>
+                  </button>
+                </div>
+              </mat-toolbar>
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title>{{ year.team }}</mat-card-title>
+                  <mat-card-subtitle>
+                    <rh-dynasty-team [positionId]="year.positionId"></rh-dynasty-team>
+                  </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <button mat-button (click)="selectYear(year)">0 - 0</button>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </ng-template>
+  </ng-container>
+</div>

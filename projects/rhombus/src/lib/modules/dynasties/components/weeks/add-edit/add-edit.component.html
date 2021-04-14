@@ -1,0 +1,30 @@
+<form [formGroup]="dynastyMarkYearWeekForm" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title>Week {{ data.week }}</h1>
+  <div mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="start stretch">
+      <mat-form-field appearance="outline">
+        <mat-label>Opponent</mat-label>
+        <input matInput required placeholder="Opponent" formControlName="opponent" >
+      </mat-form-field>
+      <mat-label>Home Game</mat-label>
+      <mat-slide-toggle formControlName="home"></mat-slide-toggle>
+      <mat-form-field appearance="outline">
+        <mat-label>Our Score</mat-label>
+        <input matInput placeholder="Our Score" formControlName="ourScore" >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Their Score</mat-label>
+        <input matInput placeholder="Their SCore" formControlName="theirScore" >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Result</mat-label>
+        <input matInput placeholder="Result" formControlName="result" >
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions fxLayoutAlign="end center">
+    <button mat-button [mat-dialog-close]="">Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="!dynastyMarkYearWeekForm.valid" type="submit">Save</button>
+  </div>
+</form>
+

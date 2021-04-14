@@ -10,17 +10,17 @@
     <ng-container *ngIf="(compact$ | async); else desktopView">
       <mat-tab-group mat-stretch-tabs>
           <mat-tab label="Latest News">
-            <rh-latest-news [readOnly]="true" fxFlex="65"></rh-latest-news>
+            <rh-latest-news fxFlex="65"></rh-latest-news>
           </mat-tab>
           <mat-tab label="Backlog">
-            <rh-backlog [readOnly]="true" fxFlex></rh-backlog>
+            <rh-backlog fxFlex></rh-backlog>
           </mat-tab>
       </mat-tab-group>
     </ng-container>
     <ng-template #desktopView>
       <div fxLayout fxLayoutAlign="start stretch" fxFlex>
-        <rh-latest-news [readOnly]="true" fxFlex="65"></rh-latest-news>
-        <rh-backlog [readOnly]="true" fxFlex></rh-backlog>
+        <rh-latest-news fxFlex="65"></rh-latest-news>
+        <rh-backlog fxFlex></rh-backlog>
       </div>
     </ng-template>
   </div>
