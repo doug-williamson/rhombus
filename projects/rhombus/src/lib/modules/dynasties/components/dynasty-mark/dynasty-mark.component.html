@@ -1,5 +1,17 @@
 <div fxLayoutAlign="start stretch" fxFlex>
-  <button mat-button (click)="goToCurrentMark()">Current</button>
-  <button mat-button (click)="addNewMark()">New</button>
-  <button mat-button (click)="getMark()">See All</button>
+  <mat-toolbar color="accent">
+    <ng-container *ngIf="(dynastyMarkCollection$ | async) as version">
+      <ng-container *ngIf="version.length">
+        <button mat-button (click)="goToCurrentMark()">Version {{ version[0].version }}</button>
+        <button mat-button (click)="showAll()">See All</button>
+      </ng-container>
+    </ng-container>
+
+    <span fxFlex></span>
+    <button mat-icon-button *ngIf="isOwner" (click)="addNew()">
+      <mat-icon>
+        add_new
+      </mat-icon>
+    </button>
+  </mat-toolbar>
 </div>

@@ -26,7 +26,8 @@ export class RhDynastiesAddEditComponent implements OnInit {
   ngOnInit(): void {
     this.dynastyForm = new FormGroup({
       name: new FormControl(this.data.name),
-      description: new FormControl(this.data.description, [Validators.required, Validators.minLength(4), Validators.maxLength(100)]),
+      description: new FormControl(this.data.description, [Validators.required, Validators.minLength(4), Validators.maxLength(200)]),
+      gameId: new FormControl(this.data.gameId),
     });
    }
 

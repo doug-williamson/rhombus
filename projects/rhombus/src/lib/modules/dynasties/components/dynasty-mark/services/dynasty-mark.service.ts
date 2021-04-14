@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { IDynasty, IDynastyMark } from '../models/dynasty';
+import { IDynasty, IDynastyMark } from '../../../models/dynasty';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +15,8 @@ export class RhDynastyMarkService {
   constructor(private firestore: AngularFirestore) { }
 
   getDynastyMarkCollection$(dynastyId: string): Observable<IDynastyMark[]>{
-
     this.dynastyMarkCollection = this.firestore.collection<IDynasty>('dynasties')
-        .doc(dynastyId).collection<IDynastyMark>('mark', ref => ref.orderBy('version', 'desc'));
+      .doc(dynastyId).collection<IDynastyMark>('mark', ref => ref.orderBy('version', 'desc'));
 
     return this.dynastyMarkCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -34,16 +33,12 @@ export class RhDynastyMarkService {
     return this.dynastyMarkDocument.valueChanges();
   }
 
-  // getCurrentDynastyMark$(dynastyId: string): Observable<IDynastyMark[]> {
-  //   this.dynastyMarkCollection = this.firestore.collection<IDynasty>('dynasties')
-  //   .doc(dynastyId).collection<IDynastyMark>('mark', ref => ref.orderBy('version', 'desc').limit(1));
+  createDynastyMark(item: IDynastyMark) {
 
-  //   return this.dynastyMarkCollection.snapshotChanges().pipe(
-  //     map(actions => actions.map(a => {
-  //       const data = a.payload.doc.data() as IDynastyMark;
-  //       const id = a.payload.doc.id;
+    this.dynastyMarkCollection.add(item);
+  }
 
-  //       return { id, ...data };
-  //     })));
-  // }
+  updateDynastyMark(id: string, item: IDynasty) {
+    this.dynastyMarkCollection.doc(id).update(item);
+  }
 }

@@ -1,130 +1,104 @@
-<ng-container *ngIf="(compact$ | async); else desktopView">
-    <ng-container *ngIf="displayedColumnsMobile">
-        <table mat-table [dataSource]="weeks" multiTemplateDataRows>
-
-            <!-- Rank Column -->
-            <ng-container matColumnDef="week">
-                <th mat-header-cell *matHeaderCellDef> Week </th>
-                <td mat-cell *matCellDef="let element"> {{ element.week }} </td>
-            </ng-container>
-
-            <!-- Team Column -->
-            <ng-container matColumnDef="opponent">
-                <th mat-header-cell *matHeaderCellDef> Opponent </th>
-                <td mat-cell *matCellDef="let element">
-                    <ng-container *ngIf="element.opponent; else byeWeek">
-                        {{ element.opponent }}
-                    </ng-container>
-                    <ng-template #byeWeek>
-                        BYE
-                    </ng-template>
-                </td>
-            </ng-container>
-
-            <!-- isHome Column-->
-            <ng-container matColumnDef="home">
-                <th mat-header-cell *matHeaderCellDef> Home </th>
-                <td mat-cell *matCellDef="let element">
-                    <ng-container *ngIf="element.home === true && element.opponent">
-                        <mat-icon>home</mat-icon>
-                    </ng-container>
-                </td>
-            </ng-container>
-
-            <!-- Results Column -->
-            <ng-container matColumnDef="result">
-                <th mat-header-cell *matHeaderCellDef> Result </th>
-                <td mat-cell *matCellDef="let element" >
-                    {{ element.result }}
-                </td>
-            </ng-container>
-
-            <ng-container matColumnDef="expandedDetail">
-                <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumnsMobile.length">
-                  <div class="example-element-detail"
-                       [@detailExpand]="element == expandedWeek ? 'expanded' : 'collapsed'">
-                       <div class="example-element-description" fxLayoutAlign="center center" fxFlex>
-                           <span>{{ element.description }}</span>
-                           <span fxFlex></span>
-                            <button mat-button color="accent" (click)="goToLink(element.link)" *ngIf="element.link">WATCH</button>
-                       </div>
-                  </div>
-                </td>
-              </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumnsMobile"></tr>
-            <tr mat-row *matRowDef="let element; columns: displayedColumnsMobile"
-                class="example-element-row"
-                [class.example-expanded-row]="expandedWeek === element"
-                (click)="expandedWeek = expandedWeek === element ? null : element">
-            </tr>
-            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-        </table>
-    </ng-container>
-</ng-container>
-<ng-template #desktopView>
-    <table mat-table [dataSource]="weeks">
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFlex>
+  <mat-toolbar>
+    <button mat-icon-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span fxFlex>Year 1</span>
+      <ng-container *ngIf="isOwner">
+        <button mat-icon-button (click)="addNew()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </ng-container>
+  </mat-toolbar>
+  <ng-container *ngIf="(compact$ | async); else desktopView">
+    <ng-container *ngIf="displayedColumns">
+      <table mat-table [dataSource]="weeks" multiTemplateDataRows>
 
         <!-- Rank Column -->
         <ng-container matColumnDef="week">
-            <th mat-header-cell *matHeaderCellDef> Week </th>
-            <td mat-cell *matCellDef="let element"> {{ element.week }} </td>
+          <th mat-header-cell *matHeaderCellDef> Week </th>
+          <td mat-cell *matCellDef="let element"> {{ element.week }} </td>
         </ng-container>
 
-        <!-- Team Column -->
+        <!-- Opponent Column -->
         <ng-container matColumnDef="opponent">
-            <th mat-header-cell *matHeaderCellDef> Opponent </th>
-            <td mat-cell *matCellDef="let element">
-                <ng-container *ngIf="element.opponent; else byeWeek">
-                    {{ element.opponent }}
-                </ng-container>
-                <ng-template #byeWeek>
-                    BYE
-                </ng-template>
-            </td>
+          <th mat-header-cell *matHeaderCellDef> Opponent </th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngIf="element.opponent; else byeWeek">
+              {{ element.opponent }}
+            </ng-container>
+            <ng-template #byeWeek>
+              BYE
+            </ng-template>
+          </td>
         </ng-container>
 
         <!-- isHome Column-->
         <ng-container matColumnDef="home">
-            <th mat-header-cell *matHeaderCellDef> Home </th>
-            <td mat-cell *matCellDef="let element">
-                <ng-container *ngIf="element.home === true && element.opponent">
-                    <mat-icon>home</mat-icon>
-                </ng-container>
-            </td>
+          <th mat-header-cell *matHeaderCellDef> Home </th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngIf="element.home === true && element.opponent">
+              <mat-icon>home</mat-icon>
+            </ng-container>
+          </td>
         </ng-container>
 
         <!-- Results Column -->
         <ng-container matColumnDef="result">
-            <th mat-header-cell *matHeaderCellDef> Result </th>
-            <td mat-cell *matCellDef="let element" >
-                {{ element.result }}
-            </td>
+          <th mat-header-cell *matHeaderCellDef> Result </th>
+          <td mat-cell *matCellDef="let element" >
+            {{ element.result }}
+          </td>
         </ng-container>
 
-        <!-- Description Column -->
-        <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element">
-                <ng-container *ngIf="element.description">
-                    {{ element.description }}
-                    <!-- <button mat-button color="accent" (click)="goToLink(element.link)">{{ element.description }}</button> -->
-                </ng-container>
-            </td>
-        </ng-container>
-
-        <!-- Link Column -->
-        <ng-container matColumnDef="link">
-            <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element">
-                <ng-container *ngIf="element.link">
-                    <button mat-button color="accent" (click)="goToLink(element.link)">WATCH</button>
-                </ng-container>
-            </td>
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+            <div class="example-element-detail" [@detailExpand]="element == expandedWeek ? 'expanded' : 'collapsed'">
+              <div class="example-element-description" fxLayoutAlign="center center" fxFlex>
+                <span>{{ element.description }}</span>
+                <span fxFlex></span>
+                <button mat-button color="accent" (click)="goToLink(element.link)" *ngIf="element.link">WATCH</button>
+              </div>
+            </div>
+          </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedWeek === element"
+            (click)="expandedWeek = expandedWeek === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+      </table>
+    </ng-container>
+  </ng-container>
+  <ng-template #desktopView>
+    <div fxLayout fxLayoutAlign="start stretch" fxFlex style="margin: 16px;">
+      <ng-container *ngIf="weeks">
+        <ng-container *ngFor="let week of weeks">
+          <div fxFlex="33" style="padding: 16px;">
+            <mat-toolbar>
+              <div fxLayoutAlign="center stretch" fxFlex>
+                <span>{{ week.week }}</span>
+                <span fxFlex></span>
+                <button mat-button (click)="edit(week)">
+                  <span>Edit</span>
+                </button>
+              </div>
+            </mat-toolbar>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>{{ week.opponent }}</mat-card-title>
+                <mat-card-subtitle>{{ week.home ? 'Home' : '@' }}</mat-card-subtitle>
+                <mat-card-subtitle>{{ week.ourScore }}</mat-card-subtitle>
+                <mat-card-subtitle>{{ week.theirScore }}</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </ng-template>
+</div>
 
-</ng-template>

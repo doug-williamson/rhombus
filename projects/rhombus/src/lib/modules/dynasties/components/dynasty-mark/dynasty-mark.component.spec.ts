@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DynastyMarkComponent } from './dynasty-mark.component';
+import { RhDynastyMarkComponent } from './dynasty-mark.component';
 
-describe('DynastyMarkComponent', () => {
-  let component: DynastyMarkComponent;
-  let fixture: ComponentFixture<DynastyMarkComponent>;
+describe('RhDynastyMarkComponent', () => {
+  let component: RhDynastyMarkComponent;
+  let fixture: ComponentFixture<RhDynastyMarkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DynastyMarkComponent ]
+      declarations: [ RhDynastyMarkComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DynastyMarkComponent);
+    fixture = TestBed.createComponent(RhDynastyMarkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

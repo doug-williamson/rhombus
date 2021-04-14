@@ -1,13 +1,22 @@
-import { ComponentPortal } from '@angular/cdk/portal';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
-import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IDynastyMark, IDynastyYear } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
-import { RhDynastyMarkService } from '../../services/dynasty-mark.service';
-import { RhDynastyYearsService } from '../../services/years.service';
+import { RhAuthService } from '../../../../services/auth.service';
+import { RhDynastyMarkYearsService } from '../../services/years.service';
+import { RhDynastyMarkService } from '../dynasty-mark/services/dynasty-mark.service';
+import { RhDynastyMarkYearAddComponent } from './add/add.component';
+
+export interface DynastyMarkYearAddData {
+  year: number;
+  team: string;
+  weeks: undefined,
+  positionId: number;
+}
 
 @Component({
   selector: 'rh-dynasty-years',
@@ -17,18 +26,26 @@ import { RhDynastyYearsService } from '../../services/years.service';
 export class RhDynastyYearsComponent implements OnInit {
 
   @Input()
-  readOnly: boolean = undefined;
+  dynastyName: string;
 
+  isOwner: boolean;
   dynastyMark: IDynastyMark;
   dynastyId: string;
   markId: string;
-  displayedColumns: string[] = ['year', 'position', 'team', 'record'];
+  displayedColumns: string[] = ['year', 'position', 'team', 'record', 'admin'];
   years: IDynastyYear[] = undefined;
   compact$: Observable<boolean>;
   _selectedYear: IDynastyYear = undefined;
 
-  // tslint:disable-next-line:max-line-length
-  constructor(private media: MediaObserver, private route: ActivatedRoute, private dynastyMarkService: RhDynastyMarkService, private dynastyYearsService: RhDynastyYearsService) {}
+  constructor(
+    private media: MediaObserver,
+    private router: Router,
+    private route: ActivatedRoute,
+    private dynastyMarkService: RhDynastyMarkService,
+    private dynastyYearsService: RhDynastyMarkYearsService,
+    private dialog: MatDialog,
+    private authService: RhAuthService) {
+  }
 
   ngOnInit(): void {
     this.compact$ = this.media.asObservable().pipe(
@@ -45,9 +62,13 @@ export class RhDynastyYearsComponent implements OnInit {
         this.dynastyMark = res;
       });
 
-      this.dynastyYearsService.getDynastyYears$(this.dynastyId, this.markId).subscribe(res => {
+      this.dynastyYearsService.getYears$(this.dynastyId, this.markId).subscribe(res => {
         this.years = res;
       });
+    });
+
+    this.authService.user$.subscribe(res => {
+      this.isOwner = this.authService.isOwner(res);
     });
   }
 
@@ -55,54 +76,48 @@ export class RhDynastyYearsComponent implements OnInit {
     window.open(url, '_blank');
   }
 
-  readPost(post) {
-    // const dialogRef = this.dialog.open(RhBlogPostComponent, {
-    //   data: { timestamp: post.timestamp, title: post.title, paragraphs: post.paragraphs },
-    // });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   //
-    // });
+  selectYear(year) {
+    this.router.navigate([`./years/${year.id}`], { relativeTo: this.route });
   }
 
   addNew() {
-    // const dialogRef = this.dialog.open(RhBlogAddEditComponent, {
-    //   data: { timestamp: new Date(), title: null, paragraphs: null },
-    // });
+    const newYear: IDynastyYear = {
+      id: undefined,
+      positionId: '1',
+      team: '',
+      year: this.years.length ? this.years.length + 1 : 1,
+      weeks: [],
+    };
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if (result) {
-    //     this.blogService.createBlogPost(result);
-    //   }
+    const dialogRef = this.dialog.open(RhDynastyMarkYearAddComponent, {
+      width: '250px',
+      data: newYear,
+    });
 
-    // });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dynastyYearsService.createYear(result);
+      }
+    });
   }
 
-  delete(element) {
-    // const dialogRef = this.dialog.open(RhBlogDeleteComponent, {
-    //   width: '350px',
-    //   data: { message: 'Are you sure you want to delete: ' + element.title + '?' },
-    // });
+  edit(year) {
+    const dialogRef = this.dialog.open(RhDynastyMarkYearAddComponent, {
+      width: '250px',
+      data: year,
+    });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if (result) {
-    //     this.blogService.deleteBlogPost(element.id);
-    //   }
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dynastyYearsService.updateYear(year.id, result);
+      }
 
-    // });
+    });
   }
 
-  editPost(post) {
-    // const dialogRef = this.dialog.open(RhBlogAddEditComponent, {
-    //   data: { timestamp: post.timestamp, title: post.title, paragraphs: post.paragraphs },
-    // });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if (result) {
-    //     this.blogService.updateBlogPost(post.id, result);
-    //   }
-
-    // });
+  goBack() {
+    // TODO: better comment on why we're routing up two levels
+    this.router.navigate(['../../..'], { relativeTo: this.route });
   }
 
 }

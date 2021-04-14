@@ -27,9 +27,7 @@ export interface BlogDeleteDialogData {
 })
 export class RhBlogComponent implements OnInit {
 
-  @Input()
-  readOnly: boolean = undefined;
-
+  isOwner: boolean = false;
   displayedColumns: string[] = ['timestamp', 'title', 'admin'];
   posts: IPost[];
   compact$: Observable<boolean>;
@@ -37,6 +35,7 @@ export class RhBlogComponent implements OnInit {
 
   // tslint:disable-next-line:max-line-length
   constructor(private media: MediaObserver, private dialog: MatDialog, private authService: RhAuthService, private blogService: RhBlogService) {
+
   }
 
   ngOnInit(): void {
@@ -47,9 +46,7 @@ export class RhBlogComponent implements OnInit {
     );
 
     this.authService.user$.subscribe(res => {
-      if (this.readOnly === undefined) {
-        this.readOnly = !this.authService.canEdit(res);
-      }
+      this.isOwner = this.authService.isOwner(res);
     });
 
     this.blogService.getPosts$().subscribe(res => {

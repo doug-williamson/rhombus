@@ -3,14 +3,15 @@ import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { RhAuthService } from '../../../../services/auth.service';
 import { IDynasty } from '../../models/dynasty';
 import { RhDynastiesService } from '../../services/dynasties.service';
 import { RhDynastiesAddEditComponent } from './add-edit/add-edit.component';
-import { RhDynastiesDeleteComponent } from './delete/delete.component';
 
 export interface DynastiesAddEditDialogData {
   name: string;
   description: string;
+  gameId: number;
 }
 
 export interface DynastiesDeleteDialogData {
@@ -25,14 +26,13 @@ export interface DynastiesDeleteDialogData {
 })
 export class RhDynastiesComponent implements OnInit {
 
-  @Input()
-  readOnly: boolean = undefined;
-
+  isOwner: boolean;
   panelOpenState = false;
   compact$: Observable<boolean>;
   dynasties$: Observable<IDynasty[]>;
 
-  constructor(private media: MediaObserver, private dialog: MatDialog, private dynastiesService: RhDynastiesService) {}
+  // tslint:disable-next-line:max-line-length
+  constructor(private media: MediaObserver, private dialog: MatDialog, private authService: RhAuthService, private dynastiesService: RhDynastiesService) {}
 
   ngOnInit() {
     this.compact$ = this.media.asObservable().pipe(
@@ -41,13 +41,17 @@ export class RhDynastiesComponent implements OnInit {
       }),
     );
 
+    this.authService.user$.subscribe(res => {
+      this.isOwner = this.authService.isOwner(res);
+    });
+
     this.dynasties$ = this.dynastiesService.getDynasties$();
   }
 
-  addNewDynasty() {
+  addNew() {
     const dialogRef = this.dialog.open(RhDynastiesAddEditComponent, {
       width: '250px',
-      data: { status: '1', text: null },
+      data: { name: null, description: null, gameId: '1' },
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -61,28 +65,13 @@ export class RhDynastiesComponent implements OnInit {
   edit(element) {
     const dialogRef = this.dialog.open(RhDynastiesAddEditComponent, {
       width: '250px',
-      data: { name: element.name, description: element.description },
+      data: { name: element.name, description: element.description, gameId: element.gameId },
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.dynastiesService.updateDynasty(element.id, result);
       }
-
-    });
-  }
-
-  delete(element) {
-    const dialogRef = this.dialog.open(RhDynastiesDeleteComponent, {
-      width: '350px',
-      data: { message: 'Are you sure you want to delete: ' + element.name + '?' },
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.dynastiesService.deleteDynasty(element.id);
-      }
-
     });
   }
 

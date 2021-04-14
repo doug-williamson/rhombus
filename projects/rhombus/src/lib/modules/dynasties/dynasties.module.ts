@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -13,26 +13,25 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { RhDynastiesAddEditComponent } from './components/dynasties/add-edit/add-edit.component';
-import { RhDynastiesDeleteComponent } from './components/dynasties/delete/delete.component';
 import { RhDynastiesComponent } from './components/dynasties/dynasties.component';
-import { RhDynastyComponent } from './components/dynasty/dynasty.component';
+import { RhDynastyMarkModule } from './components/dynasty-mark/dynasty-mark.module';
 import { RhDynastyTeamComponent } from './components/team/team.component';
+import { RhDynastyMarkYearWeekAddEditComponent } from './components/weeks/add-edit/add-edit.component';
 import { RhDynastyWeeksComponent } from './components/weeks/weeks.component';
-import { RhDynastyYearComponent } from './components/year/year.component';
+import { RhDynastyMarkYearAddComponent } from './components/years/add/add.component';
 import { RhDynastyYearsComponent } from './components/years/years.component';
-import { DynastyMarkComponent } from './components/dynasty-mark/dynasty-mark.component';
-import { AddEditComponent } from './components/years/add-edit/add-edit.component';
-import { DeleteComponent } from './components/years/delete/delete.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
     ReactiveFormsModule,
 
     MatButtonModule,
@@ -45,10 +44,13 @@ import { DeleteComponent } from './components/years/delete/delete.component';
     MatListModule,
     MatMenuModule,
     MatSelectModule,
+    MatSlideToggleModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
     MatExpansionModule,
+
+    RhDynastyMarkModule,
 
     RouterModule.forChild([
       {
@@ -72,7 +74,14 @@ import { DeleteComponent } from './components/years/delete/delete.component';
             path: ':id/mark/:markId',
             component: RhDynastyYearsComponent,
             data: {
-              animation: 'Dynasty',
+              animation: 'Dynasties',
+            },
+          },
+          {
+            path: ':id/mark/:markId/years/:yearId',
+            component: RhDynastyWeeksComponent,
+            data: {
+              animation: 'Dynasties',
             },
           },
         ],
@@ -81,16 +90,12 @@ import { DeleteComponent } from './components/years/delete/delete.component';
   ],
   declarations: [
     RhDynastiesComponent,
-    RhDynastyComponent,
     RhDynastyYearsComponent,
-    RhDynastyYearComponent,
     RhDynastyTeamComponent,
     RhDynastyWeeksComponent,
     RhDynastiesAddEditComponent,
-    RhDynastiesDeleteComponent,
-    DynastyMarkComponent,
-    AddEditComponent,
-    DeleteComponent,
+    RhDynastyMarkYearAddComponent,
+    RhDynastyMarkYearWeekAddEditComponent,
   ],
   exports: [
     RouterModule,

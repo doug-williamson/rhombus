@@ -13,8 +13,3 @@ export * from './lib/components/backlog/backlog.component';
 export * from './lib/components/backlog/backlog';
 export * from './lib/components/latest-news/latest-news';
 export * from './lib/components/latest-news/latest-news.component';
-export * from './lib/modules/dynasties/components/years/years.component';
-export * from './lib/modules/dynasties/components/weeks/weeks.component';
-export * from './lib/modules/dynasties/components/team/team.component';
-
-

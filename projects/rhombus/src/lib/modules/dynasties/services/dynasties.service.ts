@@ -22,7 +22,7 @@ export class RhDynastiesService {
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as IDynasty;
         const id = a.payload.doc.id;
-        console.log({ id, ...data });
+
         return { id, ...data };
       })));
   }
@@ -39,10 +39,6 @@ export class RhDynastiesService {
 
   updateDynasty(id: string, item: IDynasty) {
     this.dynastyCollection.doc(id).update(item);
-  }
-
-  deleteDynasty(id: string) {
-    this.dynastyCollection.doc(id).delete();
   }
 
 }

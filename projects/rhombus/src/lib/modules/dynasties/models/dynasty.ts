@@ -1,4 +1,5 @@
 export interface IDynastyWeek {
+  id: string;
   week: number;
   home: boolean;
   opponent: string;
@@ -6,7 +7,6 @@ export interface IDynastyWeek {
   theirScore: number;
   link: string;
   result: string;
-  description: string;
 }
 
 export interface IDynastyYear {
@@ -14,13 +14,12 @@ export interface IDynastyYear {
   year: number;
   team: string;
   weeks: IDynastyWeek[];
-  positionId: number;
+  positionId: string;
 }
 
 export interface IDynastyMark {
   id: string;
   version: number;
-  name: string;
 }
 
 export interface IDynasty {

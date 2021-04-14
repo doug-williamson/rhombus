@@ -2,8 +2,8 @@
   <mat-toolbar>
     <span>Dynasties</span>
     <span fxFlex></span>
-    <ng-container *ngIf="!readOnly">
-      <button mat-icon-button (click)="addNewDynasty()">
+    <ng-container *ngIf="isOwner">
+      <button mat-icon-button (click)="addNew()">
         <mat-icon>add</mat-icon>
       </button>
     </ng-container>
@@ -26,27 +26,29 @@
           <mat-action-row>
             <rh-dynasty-mark [dynasty]="dynasty"></rh-dynasty-mark>
             <span fxFlex></span>
-            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" (click)="$event.stopPropagation(); false;">
-              <mat-icon>more_vert</mat-icon>
+            <button mat-button (click)="edit(dynasty)">
+              <mat-icon>update</mat-icon>
+              <span>Edit</span>
             </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item (click)="edit(dynasty)">
-                <mat-icon>update</mat-icon>
-                <span>Edit</span>
-              </button>
-              <button mat-menu-item (click)="delete(dynasty)">
-                <mat-icon>delete</mat-icon>
-                <span>Delete</span>
-              </button>
-            </mat-menu>
           </mat-action-row>
         </mat-expansion-panel>
       </mat-accordion>
     </ng-container>
     <ng-template #desktopView>
       <ng-container *ngFor="let dynasty of dynasties">
-        <mat-card>
-
+        <mat-card fxFlex>
+          <mat-toolbar>
+            <span fxFlex>{{ dynasty.name }}</span>
+            <button mat-button (click)="edit(dynasty)">
+              <span>Edit</span>
+            </button>
+          </mat-toolbar>
+          <div style="margin: 16px">
+            <span>{{ dynasty.description }}</span>
+          </div>
+          <mat-action-row>
+            <rh-dynasty-mark [dynasty]="dynasty" fxFlex></rh-dynasty-mark>
+          </mat-action-row>
         </mat-card>
       </ng-container>
     </ng-template>

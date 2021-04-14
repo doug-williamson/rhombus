@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteComponent } from './delete.component';
+import { RhDynastyMarkShowAllComponent } from './show-all.component';
 
-describe('DeleteComponent', () => {
-  let component: DeleteComponent;
-  let fixture: ComponentFixture<DeleteComponent>;
+describe('RhDynastyMarkShowAllComponent', () => {
+  let component: RhDynastyMarkShowAllComponent;
+  let fixture: ComponentFixture<RhDynastyMarkShowAllComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteComponent ]
+      declarations: [ RhDynastyMarkShowAllComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteComponent);
+    fixture = TestBed.createComponent(RhDynastyMarkShowAllComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
