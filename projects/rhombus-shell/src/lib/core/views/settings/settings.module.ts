@@ -10,6 +10,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { DarkModeComponent } from './dark-mode/dark-mode.component';
+import { RhShellModulesModule } from './modules/modules.module';
 import { RhombusShellSettingsComponent } from './settings.component';
 import { RhombusShellThemeSettingComponent } from './theme-setting/theme-setting.component';
 
@@ -25,6 +26,8 @@ import { RhombusShellThemeSettingComponent } from './theme-setting/theme-setting
     MatSelectModule,
     MatSlideToggleModule,
     MatToolbarModule,
+
+    RhShellModulesModule,
 
     RouterModule.forChild([
       {

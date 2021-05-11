@@ -1,0 +1,13 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFlex>
+  <mat-toolbar>Modules</mat-toolbar>
+  <ng-container *ngIf="(modules$ | async) as modules">
+    <mat-selection-list #list (selectionChange)="onSelection($event, list.selectedOptions)">
+      <ng-container *ngFor="let module of modules">
+        <mat-list-option [value]="module.name" [selected]="module.enabled">{{ module.name }}</mat-list-option>
+      </ng-container>
+    </mat-selection-list>
+    <p>
+      Options selected: {{ list.selectedOptions.selected.length }}
+    </p>
+  </ng-container>
+</div>
