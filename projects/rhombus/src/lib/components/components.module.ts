@@ -16,6 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RhLoginComponent } from '../modules/auth/login/login.component';
 import { RhBacklogAddEditComponent } from './backlog/add-edit/add-edit.component';
 import { BacklogComponent } from './backlog/backlog.component';
 import { RhBacklogDeleteComponent } from './backlog/delete/delete.component';
@@ -61,11 +62,14 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
     RhBlogAddEditComponent,
     RhBlogPostComponent,
     RhBlogDeleteComponent,
+
+    RhLoginComponent,
   ],
   exports: [
     BacklogComponent,
     LatestNewsComponent,
     RhBlogComponent,
+    RhLoginComponent,
   ],
 })
 export class RhombusComponentsModule { }

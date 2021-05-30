@@ -62,10 +62,6 @@ export class RhombusShellAuthComponent implements OnInit {
     });
   }
 
-  login(): void {
-    this.authService.login();
-  }
-
   signOut(): void {
     this.authService.signOut();
   }

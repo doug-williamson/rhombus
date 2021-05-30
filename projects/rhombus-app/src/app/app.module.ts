@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 import { RhombusAppComponent } from './app.component';
 import { RhombusAppRoutingModule } from './app.routing';
 import { RhombusModule } from './views/rhombus/rhombus.module';
+import { ViewsComponent } from './views/views.component';
 
 @NgModule({
   imports: [
@@ -52,6 +53,7 @@ import { RhombusModule } from './views/rhombus/rhombus.module';
   ],
   declarations: [
     RhombusAppComponent,
+    ViewsComponent,
   ],
   providers: [
     AngularFirestore,
