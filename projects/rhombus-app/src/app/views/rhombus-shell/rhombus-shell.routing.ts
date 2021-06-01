@@ -7,35 +7,35 @@ const routes: Routes = [
 //     path: 'intro',
 //     component: IntroComponent,
 //     data: {
-//       breadcrumb: 'Intro',
+//       title:'Intro',
 //     },
 //   },
 //   {
 //     path: 'wrapper',
 //     component: WrapperComponent,
 //     data: {
-//       breadcrumb: 'Wrapper',
+//       title:'Wrapper',
 //     },
 //   },
 //   {
 //     path: 'header',
 //     component: HeaderComponent,
 //     data: {
-//       breadcrumb: 'Header',
+//       title:'Header',
 //     },
 //   },
 //   {
 //     path: 'sidenav',
 //     component: SidenavComponent,
 //     data: {
-//       breadcrumb: 'Sidenav',
+//       title:'Sidenav',
 //     },
 //   },
 //   {
 //     path: 'settings',
 //     component: SettingsComponent,
 //     data: {
-//       breadcrumb: 'Settings',
+//       title:'Settings',
 //     },
 //   },
   {
@@ -47,7 +47,7 @@ const routes: Routes = [
     path: 'core',
     component: CoreComponent,
     data: {
-      breadcrumb: 'Rhombus Shell Core',
+      title:'Rhombus Shell Core',
     },
   },
 ];

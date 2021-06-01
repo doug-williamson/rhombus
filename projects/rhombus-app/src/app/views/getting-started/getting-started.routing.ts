@@ -14,21 +14,21 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         data: {
-            breadcrumb: 'Getting Started - Home',
+            title: 'Home',
         },
     },
     {
         path: 'rhombus',
         component: RhombusComponent,
         data: {
-            breadcrumb: 'Getting Started - Rhombus',
+            title: 'Rhombus',
         },
     },
     {
         path: 'rhombus-shell',
         component: RhombusShellComponent,
         data: {
-            breadcrumb: 'Getting Started - Rhombus Shell',
+            title: 'Rhombus Shell',
         },
     },
 ];

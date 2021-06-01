@@ -40,16 +40,16 @@ import { ViewsComponent } from './views/views.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
 
-    RhombusShellModule.forRoot({
-      applicationInfo: {
-        logoUrl: '/assets/rhombus-icon.png',
-        firebaseConfig: undefined,
-      },
-    }),
-
     RhombusModule,
     RhombusComponentsModule,
     RhombusAppRoutingModule,
+
+    RhombusShellModule.forRoot({
+        applicationInfo: {
+            logoUrl: '/assets/rhombus-icon.png',
+            firebaseConfig: undefined,
+        },
+    }),
   ],
   declarations: [
     RhombusAppComponent,

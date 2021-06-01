@@ -25,22 +25,11 @@ import { RhombusShellThemeSettingComponent } from './theme-setting/theme-setting
     MatSelectModule,
     MatSlideToggleModule,
     MatToolbarModule,
-
-    RouterModule.forChild([
-      {
-        path: 'settings',
-        component: RhombusShellSettingsComponent,
-        data: {
-          breadcrumb: 'Settings',
-        }
-      },
-    ]),
   ],
   declarations: [
     RhombusShellSettingsComponent,
     RhombusShellThemeSettingComponent,
     DarkModeComponent,
-
   ],
 })
 export class RhombusShellSettingsModule { }

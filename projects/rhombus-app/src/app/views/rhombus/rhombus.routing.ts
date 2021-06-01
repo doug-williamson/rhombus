@@ -5,35 +5,34 @@ import { RhAppBlogComponent } from './blog/blog.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 
 const routes: Routes = [
-  {
-    path: 'backlog',
-    component: BacklogComponent,
-    data: {
-      breadcrumb: 'Backlog',
+    {
+        path: 'backlog',
+        component: BacklogComponent,
+        data: {
+          title: 'Backlog',
+        },
     },
-  },
-  {
-    path: 'blog',
-    component: RhAppBlogComponent,
-    data: {
-      breadcrumb: 'Blog',
+    {
+        path: 'blog',
+        component: RhAppBlogComponent,
+        data: {
+          title: 'Blog',
+        },
     },
-  },
-  {
-    path: 'latest-news',
-    component: LatestNewsComponent,
-    data: {
-      breadcrumb: 'Latest News',
+    {
+        path: 'latest-news',
+        component: LatestNewsComponent,
+        data: {
+          title: 'Latest News',
+        },
     },
-  },
-  {
-    path: 'dynasties',
-    loadChildren: () => import('./dynasties/dynasties.module').then(m => m.RhAppDynastiesModule),
-    data: {
-      breadcrumb: 'Dynasties',
+    {
+        path: 'dynasties',
+        loadChildren: () => import('./dynasties/dynasties.module').then(m => m.RhAppDynastiesModule),
+        data: {
+          title: '',
+        },
     },
-  },
-
 ];
 
 @NgModule({

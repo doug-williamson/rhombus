@@ -28,78 +28,73 @@ import { RhDynastyMarkYearAddComponent } from './components/years/add/add.compon
 import { RhDynastyYearsComponent } from './components/years/years.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-    ReactiveFormsModule,
-
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatSelectModule,
-    MatSlideToggleModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatExpansionModule,
-
-    RhDynastyMarkModule,
-
-    RouterModule.forChild([
-      {
-        path: '',
-        children: [
-          {
-            path: '',
-            component: RhDynastiesComponent,
-            data: {
-              animation: 'Dynasties',
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        FormsModule,
+        ReactiveFormsModule,
+    
+        MatButtonModule,
+        MatCardModule,
+        MatDialogModule,
+        MatDividerModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatListModule,
+        MatMenuModule,
+        MatSelectModule,
+        MatSlideToggleModule,
+        MatTableModule,
+        MatTabsModule,
+        MatToolbarModule,
+        MatExpansionModule,
+    
+        RhDynastyMarkModule,
+    
+        RouterModule.forChild([
+            {
+                path: '',
+                component: RhDynastiesComponent,
+                data: {
+                  title: 'Dynasties',
+                },
             },
-          },
-          {
-            path: ':id',
-            component: RhDynastiesComponent,
-            data: {
-              animation: 'Dynasties',
+            {
+                path: ':id',
+                component: RhDynastiesComponent,
+                data: {
+                    title: 'Dynasty',
+                },
             },
-          },
-          {
-            path: ':id/mark/:markId',
-            component: RhDynastyYearsComponent,
-            data: {
-              animation: 'Dynasties',
+            {
+                path: ':id/mark/:markId',
+                component: RhDynastyYearsComponent,
+                data: {
+                    title: 'Mark',
+                },
             },
-          },
-          {
-            path: ':id/mark/:markId/years/:yearId',
-            component: RhDynastyWeeksComponent,
-            data: {
-              animation: 'Dynasties',
+            {
+                path: ':id/mark/:markId/years/:yearId',
+                component: RhDynastyWeeksComponent,
+                data: {
+                    title: 'Year',
+                },
             },
-          },
-        ],
-      },
-    ]),
-  ],
-  declarations: [
-    RhDynastiesComponent,
-    RhDynastyYearsComponent,
-    RhDynastyTeamComponent,
-    RhDynastyWeeksComponent,
-    RhDynastiesAddEditComponent,
-    RhDynastyMarkYearAddComponent,
-    RhDynastyMarkYearWeekAddEditComponent,
-  ],
-  exports: [
-    RouterModule,
-    RhDynastiesComponent,
-  ],
+        ]),
+    ],
+    declarations: [
+        RhDynastiesComponent,
+        RhDynastyYearsComponent,
+        RhDynastyTeamComponent,
+        RhDynastyWeeksComponent,
+        RhDynastiesAddEditComponent,
+        RhDynastyMarkYearAddComponent,
+        RhDynastyMarkYearWeekAddEditComponent,
+    ],
+    exports: [
+        RouterModule,
+        RhDynastiesComponent,
+    ],
 })
 export class RhDynastiesModule { }

@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RhombusShellCoreModule } from './core/core.module';
-import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation } from './core/models/shell-app-info';
+import { RhombusShellApplicationInformation, RHOMBUS_SHELL_APPLICATION_INFORMATION } from './core/models/shell-app-info';
 
 export interface RhombusShellConfiguration {
   applicationInfo: RhombusShellApplicationInformation;

@@ -1,8 +1,13 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="shell-header__padding-right" (click)="toggleNav()">
+    <!-- <div class="navigation-divider" fxHide fxShow.gt-xs="true">
+        <span>|</span>
+    </div> -->
+    <button mat-icon-button class="shell-header__padding-right" (click)="toggleNav()" fxShow fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
     </button>
-    <button mat-button class="shell-header__title" [routerLink]="''">{{ title }}</button>
+    <div class="navigation-route">
+        <span>{{ title }}</span>
+    </div>
     <span fxFlex></span>
     <rh-shell-auth></rh-shell-auth>
 </mat-toolbar>

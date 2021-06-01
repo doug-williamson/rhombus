@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RhombusShellSettingsComponent } from '../../../rhombus-shell/src/lib/core/views/settings/settings.component';
 import { RhLoginComponent } from '../../../rhombus/src/lib/modules/auth/login/login.component';
 import { RhAuthGuardService } from './services/auth-guard.service';
 import { ViewsComponent } from './views/views.component';
@@ -9,7 +10,7 @@ const routes: Routes = [
         path: 'login',
         component: RhLoginComponent,
         data: {
-            breadcrumb: 'Login',
+            title: 'Login',
         },
     },
     {
@@ -26,29 +27,36 @@ const routes: Routes = [
                 path: 'getting-started',
                 loadChildren: () => import('./views/getting-started/getting-started.module').then(m => m.GettingStartedModule),
                 data: {
-                    breadcrumb: 'Getting Started',
+                    title: '',
                 },
             },
             {
                 path: 'rhombus',
                 loadChildren: () => import('./views/rhombus/rhombus.module').then(m => m.RhombusModule),
                 data: {
-                    breadcrumb: 'Rhombus',
+                    title: '',
                 },
             },
             {
                 path: 'rhombus-shell',
                 loadChildren: () => import('./views/rhombus-shell/rhombus-shell.module').then(m => m.RhombusShellModule),
                 data: {
-                    breadcrumb: 'Rhombus Shell',
+                    title: '',
+                },
+            },
+            {
+                path: 'settings',
+                component: RhombusShellSettingsComponent,
+                data: {
+                    title: 'Settings',
                 },
             },
         ],
-    }
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule],
 })
 export class RhombusAppRoutingModule { }

@@ -9,19 +9,22 @@ import { RhombusShellNavCollection } from '../../models/shell-nav-item';
 })
 export class RhombusShellNavComponent implements OnInit {
 
-  @Input()
-  navCollection: RhombusShellNavCollection[];
+    @Input()
+    title: string;
 
-  constructor(
+    @Input()
+    navCollection: RhombusShellNavCollection[];
+
+    constructor(
     private router: Router) { }
 
-  ngOnInit() {
-    this.router.events.subscribe(() => {
-      // close sidenav on routing
-    //   if (this.media.isActive('xs')) {
-    //     this.navService.close();
-    //   }
-    });
-  }
+    ngOnInit() {
+        this.router.events.subscribe(() => {
+            // close sidenav on routing
+            //   if (this.media.isActive('xs')) {
+            //     this.navService.close();
+            //   }
+        });
+    }
 
 }

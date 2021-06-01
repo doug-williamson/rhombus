@@ -16,3 +16,8 @@
 mat-drawer-content {
   overflow: hidden !important;
 }
+
+
+mat-drawer.mat-drawer-side {
+    border-right: none;
+}
