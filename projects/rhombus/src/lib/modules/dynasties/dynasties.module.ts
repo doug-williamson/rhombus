@@ -33,7 +33,7 @@ import { RhDynastyYearsComponent } from './components/years/years.component';
         FlexLayoutModule,
         FormsModule,
         ReactiveFormsModule,
-    
+
         MatButtonModule,
         MatCardModule,
         MatDialogModule,
@@ -49,9 +49,9 @@ import { RhDynastyYearsComponent } from './components/years/years.component';
         MatTabsModule,
         MatToolbarModule,
         MatExpansionModule,
-    
+
         RhDynastyMarkModule,
-    
+
         RouterModule.forChild([
             {
                 path: '',

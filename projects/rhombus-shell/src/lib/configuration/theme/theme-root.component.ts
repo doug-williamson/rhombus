@@ -2,8 +2,8 @@ import { AfterContentInit, Component, ContentChildren, OnInit, QueryList } from 
 import { startWith } from 'rxjs/operators';
 import { RhombusShellTheme } from '../../core/models/theme';
 import { RhombusShellThemeService } from '../../core/services/theme.service';
-import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
 import { RhombusShellThemeComponent } from '../theme/theme.component';
+import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
 
 @Component({
   selector: 'rh-shell-themes',

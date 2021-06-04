@@ -8,7 +8,7 @@ describe('RhBlogPostComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhBlogPostComponent ]
+      declarations: [ RhBlogPostComponent ],
     })
     .compileComponents();
   });

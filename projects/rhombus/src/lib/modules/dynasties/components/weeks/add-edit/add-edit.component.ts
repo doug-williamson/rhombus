@@ -6,7 +6,7 @@ import { DynastyMarkYearWeekAddData } from '../weeks.component';
 @Component({
   selector: 'rh-dynasty-mark-year-week-add-edit',
   templateUrl: './add-edit.component.html',
-  styleUrls: ['./add-edit.component.scss']
+  styleUrls: ['./add-edit.component.scss'],
 })
 export class RhDynastyMarkYearWeekAddEditComponent implements OnInit {
 

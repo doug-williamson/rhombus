@@ -8,7 +8,7 @@ describe('BacklogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BacklogComponent ]
+      declarations: [ BacklogComponent ],
     })
     .compileComponents();
   });

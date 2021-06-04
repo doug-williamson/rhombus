@@ -5,7 +5,7 @@ import { DeleteDialogData } from '../backlog.component';
 
 @Component({
   templateUrl: './delete.component.html',
-  styleUrls: ['./delete.component.scss']
+  styleUrls: ['./delete.component.scss'],
 })
 export class RhBacklogDeleteComponent implements OnInit {
 

@@ -14,7 +14,7 @@ import { RhDynastyMarkYearAddComponent } from './add/add.component';
 export interface DynastyMarkYearAddData {
   year: number;
   team: string;
-  weeks: undefined,
+  weeks: undefined;
   positionId: number;
 }
 

@@ -25,7 +25,7 @@ export class RhombusShellHeaderComponent implements OnInit {
         private router: Router) {
             this.router.events.subscribe(event => {
                 if (event instanceof NavigationEnd) {
-                    
+
                     this.title = this.getTitle(router.routerState, router.routerState.root).join('-');
                     this.titleService.setTitle(this.title);
                 }

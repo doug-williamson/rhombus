@@ -8,7 +8,7 @@ describe('RhBacklogAddEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhBacklogAddEditComponent ]
+      declarations: [ RhBacklogAddEditComponent ],
     })
     .compileComponents();
   });

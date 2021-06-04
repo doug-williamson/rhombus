@@ -5,7 +5,7 @@ import { LNDeleteDialogData } from '../latest-news.component';
 
 @Component({
   templateUrl: './delete.component.html',
-  styleUrls: ['./delete.component.scss']
+  styleUrls: ['./delete.component.scss'],
 })
 export class RhLatestNewsDeleteComponent implements OnInit {
 

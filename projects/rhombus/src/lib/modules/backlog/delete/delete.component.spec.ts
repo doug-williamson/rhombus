@@ -8,7 +8,7 @@ describe('RhBacklogDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhBacklogDeleteComponent ]
+      declarations: [ RhBacklogDeleteComponent ],
     })
     .compileComponents();
   });

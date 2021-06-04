@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { IBacklog } from './backlog';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BacklogService {
 

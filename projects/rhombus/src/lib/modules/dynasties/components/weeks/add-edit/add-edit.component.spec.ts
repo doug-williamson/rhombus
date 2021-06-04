@@ -8,7 +8,7 @@ describe('RhDynastyMarkYearWeekAddEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhDynastyMarkYearWeekAddEditComponent ]
+      declarations: [ RhDynastyMarkYearWeekAddEditComponent ],
     })
     .compileComponents();
   });

@@ -8,7 +8,7 @@ describe('RhDynastyMarkComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhDynastyMarkComponent ]
+      declarations: [ RhDynastyMarkComponent ],
     })
     .compileComponents();
   });

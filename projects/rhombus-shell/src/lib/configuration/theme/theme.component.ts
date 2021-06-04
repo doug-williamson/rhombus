@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
 import { RhombusShellTheme } from '../../core/models/theme';
+import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
 
 @Component({
   selector: 'rh-shell-theme',

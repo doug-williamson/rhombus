@@ -7,7 +7,7 @@ import { DynastyMarkAddEditData } from '../dynasty-mark.component';
 @Component({
   selector: 'rh-dynasty-mark-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+  styleUrls: ['./add.component.scss'],
 })
 export class RhDynastyMarkAddComponent implements OnInit {
 

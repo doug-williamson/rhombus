@@ -6,7 +6,7 @@ import { IShellDonate, ShellDonateService } from './shell-donate.service';
 @Component({
   selector: 'rh-shell-shell-donate',
   templateUrl: './shell-donate.component.html',
-  styleUrls: ['./shell-donate.component.scss']
+  styleUrls: ['./shell-donate.component.scss'],
 })
 export class RhombusShellDonateComponent implements OnInit {
 

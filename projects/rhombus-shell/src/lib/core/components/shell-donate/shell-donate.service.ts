@@ -25,7 +25,7 @@ export class ShellDonateService {
         const data = a.payload.doc.data() as IShellDonate;
 
         const id = a.payload.doc.id;
-        
+
         return { id, ...data };
       })));
   }

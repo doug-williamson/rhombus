@@ -8,7 +8,7 @@ describe('ShellContactUsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShellContactUsComponent ]
+      declarations: [ ShellContactUsComponent ],
     })
     .compileComponents();
   }));

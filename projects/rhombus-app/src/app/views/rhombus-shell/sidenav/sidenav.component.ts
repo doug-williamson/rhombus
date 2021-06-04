@@ -7,7 +7,7 @@ import { Tile } from '../intro/intro.component';
 @Component({
   selector: 'rhombus-app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
 

@@ -4,7 +4,7 @@ import { RhAuthService } from '../auth.service';
 @Component({
   selector: 'rh-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class RhLoginComponent implements OnInit {
 

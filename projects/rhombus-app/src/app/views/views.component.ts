@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'rhombus-app-views',
   templateUrl: './views.component.html',
-  styleUrls: ['./views.component.scss']
+  styleUrls: ['./views.component.scss'],
 })
 export class ViewsComponent implements OnInit {
 

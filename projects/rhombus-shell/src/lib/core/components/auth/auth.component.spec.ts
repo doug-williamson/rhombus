@@ -8,7 +8,7 @@ describe('RhombusShellAuthComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhombusShellAuthComponent ]
+      declarations: [ RhombusShellAuthComponent ],
     })
     .compileComponents();
   });

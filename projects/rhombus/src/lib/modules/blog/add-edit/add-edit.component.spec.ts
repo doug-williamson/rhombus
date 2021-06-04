@@ -8,7 +8,7 @@ describe('RhBlogAddEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhBlogAddEditComponent ]
+      declarations: [ RhBlogAddEditComponent ],
     })
     .compileComponents();
   });

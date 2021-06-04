@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { IAppMetadata } from '../models/app';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AppService {
 

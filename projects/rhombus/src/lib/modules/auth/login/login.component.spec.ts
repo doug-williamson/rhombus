@@ -8,7 +8,7 @@ describe('RhLoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhLoginComponent ]
+      declarations: [ RhLoginComponent ],
     })
     .compileComponents();
   });

@@ -25,7 +25,7 @@ export interface DeleteDialogData {
 })
 export class BacklogComponent implements OnInit {
 
-  isOwner: boolean = false;
+  isOwner = false;
   backlog: IBacklog[];
   compact$: Observable<boolean>;
   displayedColumns: string[] = ['text', 'status', 'admin'];

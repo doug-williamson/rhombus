@@ -47,7 +47,7 @@ const routes: Routes = [
     path: 'core',
     component: CoreComponent,
     data: {
-      title:'Rhombus Shell Core',
+      title: 'Rhombus Shell Core',
     },
   },
 ];

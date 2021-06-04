@@ -1,5 +1,5 @@
 import { Inject, Injectable, Optional } from '@angular/core';
-import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation, FirebaseOptions } from '../models/shell-app-info';
+import { FirebaseOptions, RhombusShellApplicationInformation, RHOMBUS_SHELL_APPLICATION_INFORMATION } from '../models/shell-app-info';
 
 @Injectable({
   providedIn: 'root',
