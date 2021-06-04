@@ -16,10 +16,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RhBlogAddEditComponent } from '../modules/blog/add-edit/add-edit.component';
-import { RhBlogComponent } from '../modules/blog/blog.component';
-import { RhBlogDeleteComponent } from '../modules/blog/delete/delete.component';
-import { RhBlogPostComponent } from '../modules/blog/read/read.component';
 import { RhLatestNewsAddEditComponent } from '../modules/latest-news/add-edit/add-edit.component';
 import { RhLatestNewsDeleteComponent } from '../modules/latest-news/delete/delete.component';
 import { LatestNewsComponent } from '../modules/latest-news/latest-news.component';
@@ -49,15 +45,9 @@ import { LatestNewsComponent } from '../modules/latest-news/latest-news.componen
     LatestNewsComponent,
     RhLatestNewsAddEditComponent,
     RhLatestNewsDeleteComponent,
-
-    RhBlogComponent,
-    RhBlogAddEditComponent,
-    RhBlogPostComponent,
-    RhBlogDeleteComponent,
   ],
   exports: [
     LatestNewsComponent,
-    RhBlogComponent,
   ],
 })
 export class RhombusComponentsModule { }
