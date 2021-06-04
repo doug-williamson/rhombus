@@ -16,9 +16,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RhBacklogAddEditComponent } from '../modules/backlog/add-edit/add-edit.component';
-import { BacklogComponent } from '../modules/backlog/backlog.component';
-import { RhBacklogDeleteComponent } from '../modules/backlog/delete/delete.component';
 import { RhBlogAddEditComponent } from '../modules/blog/add-edit/add-edit.component';
 import { RhBlogComponent } from '../modules/blog/blog.component';
 import { RhBlogDeleteComponent } from '../modules/blog/delete/delete.component';
@@ -49,11 +46,7 @@ import { LatestNewsComponent } from '../modules/latest-news/latest-news.componen
     MatExpansionModule,
   ],
   declarations: [
-    BacklogComponent,
     LatestNewsComponent,
-
-    RhBacklogAddEditComponent,
-    RhBacklogDeleteComponent,
     RhLatestNewsAddEditComponent,
     RhLatestNewsDeleteComponent,
 
@@ -63,7 +56,6 @@ import { LatestNewsComponent } from '../modules/latest-news/latest-news.componen
     RhBlogDeleteComponent,
   ],
   exports: [
-    BacklogComponent,
     LatestNewsComponent,
     RhBlogComponent,
   ],

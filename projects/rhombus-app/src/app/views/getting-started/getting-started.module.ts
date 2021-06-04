@@ -14,6 +14,7 @@ import { RhAppGettingStartedRoutingModule } from './getting-started.routing';
 import { HomeComponent } from './home/home.component';
 import { RhombusShellComponent } from './rhombus-shell/rhombus-shell.component';
 import { RhombusComponent } from './rhombus/rhombus.component';
+import { RhBacklogModule } from '../../../../../rhombus/src/lib/modules/backlog/backlog.module';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { RhombusComponent } from './rhombus/rhombus.component';
     MatTabsModule,
     MatToolbarModule,
 
+    RhBacklogModule,
     RhombusComponentsModule,
 
     RhAppGettingStartedRoutingModule,
