@@ -3,6 +3,10 @@
  */
 
 // Components Module
-export * from './lib/components/components.module';
+export * from './lib/modules/components.module';
 
+// Auth Module
+export * from './lib/modules/auth/public-api';
+
+// Modules
 export * from './lib/modules/public-api';

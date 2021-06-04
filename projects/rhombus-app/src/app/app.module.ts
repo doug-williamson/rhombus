@@ -13,7 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RhombusComponentsModule } from '@dougwilliamson/rhombus';
+import { RhAuthModule, RhombusComponentsModule } from '@dougwilliamson/rhombus';
 import { RhombusShellModule } from '@dougwilliamson/rhombus-shell';
 import { environment } from '../environments/environment';
 import { RhombusAppComponent } from './app.component';
@@ -41,6 +41,8 @@ import { ViewsComponent } from './views/views.component';
     AngularFirestoreModule,
 
     RhombusModule,
+
+    RhAuthModule,
     RhombusComponentsModule,
     RhombusAppRoutingModule,
 
