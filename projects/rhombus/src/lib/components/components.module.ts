@@ -17,16 +17,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RhLoginComponent } from '../modules/auth/login/login.component';
-import { RhBacklogAddEditComponent } from './backlog/add-edit/add-edit.component';
-import { BacklogComponent } from './backlog/backlog.component';
-import { RhBacklogDeleteComponent } from './backlog/delete/delete.component';
-import { RhBlogAddEditComponent } from './blog/add-edit/add-edit.component';
-import { RhBlogComponent } from './blog/blog.component';
-import { RhBlogDeleteComponent } from './blog/delete/delete.component';
-import { RhBlogPostComponent } from './blog/read/read.component';
-import { RhLatestNewsAddEditComponent } from './latest-news/add-edit/add-edit.component';
-import { RhLatestNewsDeleteComponent } from './latest-news/delete/delete.component';
-import { LatestNewsComponent } from './latest-news/latest-news.component';
+import { RhBacklogAddEditComponent } from '../modules/backlog/add-edit/add-edit.component';
+import { BacklogComponent } from '../modules/backlog/backlog.component';
+import { RhBacklogDeleteComponent } from '../modules/backlog/delete/delete.component';
+import { RhBlogAddEditComponent } from '../modules/blog/add-edit/add-edit.component';
+import { RhBlogComponent } from '../modules/blog/blog.component';
+import { RhBlogDeleteComponent } from '../modules/blog/delete/delete.component';
+import { RhBlogPostComponent } from '../modules/blog/read/read.component';
+import { RhLatestNewsAddEditComponent } from '../modules/latest-news/add-edit/add-edit.component';
+import { RhLatestNewsDeleteComponent } from '../modules/latest-news/delete/delete.component';
+import { LatestNewsComponent } from '../modules/latest-news/latest-news.component';
 
 @NgModule({
   imports: [

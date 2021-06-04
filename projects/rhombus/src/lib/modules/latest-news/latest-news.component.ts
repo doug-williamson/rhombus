@@ -4,7 +4,7 @@ import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { RhAuthService } from '../../services/auth.service';
+import { RhAuthService } from '../auth/auth.service';
 import { RhLatestNewsAddEditComponent } from './add-edit/add-edit.component';
 import { RhLatestNewsDeleteComponent } from './delete/delete.component';
 import { ILatestNews } from './latest-news';

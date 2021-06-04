@@ -3,7 +3,7 @@ import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { RhAuthService } from '../../services/auth.service';
+import { RhAuthService } from '../auth/auth.service';
 import { RhBacklogAddEditComponent } from './add-edit/add-edit.component';
 import { IBacklog } from './backlog';
 import { BacklogService } from './backlog.service';

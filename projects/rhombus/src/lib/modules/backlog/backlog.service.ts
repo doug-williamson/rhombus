@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { IBacklog } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { IBacklog } from './backlog';
 
 @Injectable({
   providedIn: 'root'

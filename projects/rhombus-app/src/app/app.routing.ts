@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RhombusShellSettingsComponent } from '../../../rhombus-shell/src/lib/core/views/settings/settings.component';
-import { RhLoginComponent } from '../../../rhombus/src/lib/modules/auth/login/login.component';
+import { RhLoginComponent } from '@dougwilliamson/rhombus';
+import { RhombusShellSettingsComponent } from 'projects/rhombus-shell/src/lib/core/views/settings/settings.component';
 import { RhAuthGuardService } from './services/auth-guard.service';
 import { ViewsComponent } from './views/views.component';
 

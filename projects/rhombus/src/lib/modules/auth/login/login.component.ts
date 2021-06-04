@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RhAuthService } from '../../../services/auth.service';
+import { RhAuthService } from '../auth.service';
 
 @Component({
   selector: 'rh-login',

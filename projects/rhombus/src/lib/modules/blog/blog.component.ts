@@ -3,11 +3,11 @@ import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { IPost } from '../../models/post';
-import { RhAuthService } from '../../services/auth.service';
-import { RhBlogService } from '../../services/blog.service';
+import { RhAuthService } from '../auth/auth.service';
 import { RhBlogAddEditComponent } from './add-edit/add-edit.component';
+import { RhBlogService } from './blog.service';
 import { RhBlogDeleteComponent } from './delete/delete.component';
+import { IPost } from './post';
 import { RhBlogPostComponent } from './read/read.component';
 
 export interface BlogDialogData {
@@ -27,7 +27,7 @@ export interface BlogDeleteDialogData {
 })
 export class RhBlogComponent implements OnInit {
 
-  isOwner: boolean = false;
+  isOwner = false;
   displayedColumns: string[] = ['timestamp', 'title', 'admin'];
   posts: IPost[];
   compact$: Observable<boolean>;
