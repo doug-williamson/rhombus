@@ -16,10 +16,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RhBlogAddEditComponent } from './add-edit/add-edit.component';
-import { RhBlogComponent } from './blog.component';
-import { RhBlogDeleteComponent } from './delete/delete.component';
-import { RhBlogPostComponent } from './read/read.component';
+import { RhLatestNewsAddEditComponent } from './add-edit/add-edit.component';
+import { RhLatestNewsDeleteComponent } from './delete/delete.component';
+import { LatestNewsComponent } from './latest-news.component';
 
 @NgModule({
   imports: [
@@ -43,13 +42,12 @@ import { RhBlogPostComponent } from './read/read.component';
     MatExpansionModule,
   ],
   declarations: [
-    RhBlogComponent,
-    RhBlogAddEditComponent,
-    RhBlogPostComponent,
-    RhBlogDeleteComponent,
+    LatestNewsComponent,
+    RhLatestNewsAddEditComponent,
+    RhLatestNewsDeleteComponent,
   ],
   exports: [
-    RhBlogComponent,
+    LatestNewsComponent,
   ],
 })
-export class RhBlogModule { }
+export class RhLatestNewsModule { }

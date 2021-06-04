@@ -16,9 +16,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RhLatestNewsAddEditComponent } from '../modules/latest-news/add-edit/add-edit.component';
-import { RhLatestNewsDeleteComponent } from '../modules/latest-news/delete/delete.component';
-import { LatestNewsComponent } from '../modules/latest-news/latest-news.component';
 
 @NgModule({
   imports: [
@@ -40,14 +37,6 @@ import { LatestNewsComponent } from '../modules/latest-news/latest-news.componen
     MatTabsModule,
     MatToolbarModule,
     MatExpansionModule,
-  ],
-  declarations: [
-    LatestNewsComponent,
-    RhLatestNewsAddEditComponent,
-    RhLatestNewsDeleteComponent,
-  ],
-  exports: [
-    LatestNewsComponent,
   ],
 })
 export class RhombusComponentsModule { }

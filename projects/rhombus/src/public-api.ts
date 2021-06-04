@@ -14,5 +14,8 @@ export * from './lib/modules/backlog/public-api';
 // Blog Module
 export * from './lib/modules/blog/public-api';
 
+// Latest News
+export * from './lib/modules/latest-news/public-api';
+
 // Modules
 export * from './lib/modules/public-api';

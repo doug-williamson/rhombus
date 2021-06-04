@@ -7,7 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RhBacklogModule, RhBlogModule, RhombusComponentsModule } from '@dougwilliamson/rhombus';
+import { RhBacklogModule, RhBlogModule, RhLatestNewsModule, RhombusComponentsModule } from '@dougwilliamson/rhombus';
 import { BacklogComponent } from './backlog/backlog.component';
 import { RhAppBlogComponent } from './blog/blog.component';
 import { IntroComponent } from './intro/intro.component';
@@ -28,6 +28,7 @@ import { RhombusViewsRouting } from './rhombus.routing';
 
     RhBacklogModule,
     RhBlogModule,
+    RhLatestNewsModule,
     RhombusComponentsModule,
 
     RhombusViewsRouting,
