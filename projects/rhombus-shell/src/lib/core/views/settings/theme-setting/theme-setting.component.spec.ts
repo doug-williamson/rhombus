@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RhombusShellThemeSettingComponent } from './theme-setting.component';
+import { RhShellThemeSettingComponent } from './theme-setting.component';
 
-describe('RhombusShellThemeSettingComponent', () => {
-  let component: RhombusShellThemeSettingComponent;
-  let fixture: ComponentFixture<RhombusShellThemeSettingComponent>;
+describe('RhShellThemeSettingComponent', () => {
+  let component: RhShellThemeSettingComponent;
+  let fixture: ComponentFixture<RhShellThemeSettingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RhombusShellThemeSettingComponent ]
+      declarations: [ RhShellThemeSettingComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RhombusShellThemeSettingComponent);
+    fixture = TestBed.createComponent(RhShellThemeSettingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

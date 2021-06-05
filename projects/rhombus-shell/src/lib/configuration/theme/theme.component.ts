@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
-import { RhombusShellTheme } from '../../core/models/theme';
+import { RhShellTheme } from '../../core/models/theme';
+import { RhShellRootConfigurationComponent } from '../_models/root-configuration';
 
 @Component({
   selector: 'rh-shell-theme',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RhombusShellThemeComponent implements OnChanges {
+export class RhShellThemeComponent implements OnChanges {
 
   @Input()
   name: string;
@@ -15,7 +15,7 @@ export class RhombusShellThemeComponent implements OnChanges {
   @Input()
   className: string;
 
-  constructor(private rootConfig: RhombusShellRootConfigurationComponent) { }
+  constructor(private rootConfig: RhShellRootConfigurationComponent) { }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.name || changes.className) {
@@ -23,7 +23,7 @@ export class RhombusShellThemeComponent implements OnChanges {
     }
   }
 
-  toModel(): RhombusShellTheme | undefined {
+  toModel(): RhShellTheme | undefined {
    if (this.isValid) {
     return {
       name: this.name,

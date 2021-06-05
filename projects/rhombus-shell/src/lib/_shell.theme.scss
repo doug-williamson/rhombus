@@ -1,14 +1,14 @@
 @import '~@angular/material/theming';
 @import './shell.typography';
 
-@import './core/components/shell-about/_shell-about.theme';
-@import './core/components/shell-nav/_shell-nav.theme';
-@import './core/components/shell-wrapper/_shell-wrapper.theme';
+@import './core/views/about/_about.theme';
+@import './core/components/nav/_nav.theme';
+@import './core/components/wrapper/_wrapper.theme';
 
 @mixin rhombus-shell-theme($theme) {
-    @include rhombus-shell-about-theme($theme);
-    @include rhombus-shell-nav-theme($theme);
-    @include rhombus-shell-wrapper-theme($theme);
+    @include rh-shell-about-theme($theme);
+    @include rh-shell-nav-theme($theme);
+    @include rh-shell-wrapper-theme($theme);
 }
 
 @mixin rhombus-typography($typography: $rhombus-shell-typography) {

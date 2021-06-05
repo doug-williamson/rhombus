@@ -6,11 +6,22 @@ All notable changes to Rhombus software will be documented in this location. See
 
 https://rhombus.space
 
-<a name="1.0.0-beta.11"></a>
-# 1.0.0-beta.10 (2020-12-15)
+<a name="1.0.0-beta.12"></a>
+# 1.0.0-beta.12 (2021-06-05)
 
 ### Features
+* Backlog: Added CRUD
+* Blog: Added CRUD
+* Dynasties: Added CRUD
+* Latest News: Added CRUD
+* rh-shell: Created Firebase collection for app metadata
+### Bug Fixes
+* rh-shell: Fixed sidenav collapse bug
 
+<a name="1.0.0-beta.11"></a>
+# 1.0.0-beta.11 (2020-12-15)
+
+### Features
 * Backlog: Created shareable component
 * Blog: Created shareable components for Post(s)
 * Dynasties: Created shareable components for Dynasty Mark, Years, Weeks

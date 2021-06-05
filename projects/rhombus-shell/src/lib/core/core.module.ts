@@ -14,18 +14,18 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
-import { RhombusShellSettingsModule } from '../configuration/public_api';
-import { RhombusShellAuthComponent } from './components/auth/auth.component';
-import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
-import { ShellContactComponent } from './components/shell-contact/shell-contact.component';
-import { RhombusShellDonateComponent } from './components/shell-donate/shell-donate.component';
-import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
-import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
-import { RhombusShellSelectedListItemDirective } from './components/shell-nav/shell-nav.directive';
-import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
-import { RhombusShellApplicationInfoService } from './services/application-info.service';
-import { RhombusShellThemeService } from './services/theme.service';
+import { RhShellConfigurationModule } from '../configuration/configuration.module';
+import { RhShellAuthComponent } from './components/auth/auth.component';
+import { RhShellHeaderComponent } from './components/header/header.component';
+import { RhShellNavComponent } from './components/nav/nav.component';
+import { RhShellSelectedListItemDirective } from './components/nav/nav.directive';
+import { RhShellWrapperComponent } from './components/wrapper/wrapper.component';
+import { RhShellApplicationInfoService } from './services/application-info.service';
+import { RhShellThemeService } from './services/theme.service';
+import { RhShellAboutComponent } from './views/about/about.component';
+import { RhShellContactComponent } from './views/contact/contact.component';
+import { RhShellDonateComponent } from './views/donate/donate.component';
+import { RhShellSettingsModule } from './views/settings/settings.module';
 
 @NgModule({
   imports: [
@@ -48,45 +48,40 @@ import { RhombusShellThemeService } from './services/theme.service';
     ClipboardModule,
   ],
   declarations: [
-    RhombusShellAuthComponent,
-    RhombusShellWrapperComponent,
-    RhombusShellHeaderComponent,
-    RhombusShellNavComponent,
-    RhombusShellAboutComponent,
-    RhombusShellDonateComponent,
-    ShellContactComponent,
+    RhShellAuthComponent,
+    RhShellWrapperComponent,
+    RhShellHeaderComponent,
+    RhShellNavComponent,
+    RhShellAboutComponent,
+    RhShellContactComponent,
+    RhShellDonateComponent,
 
-    RhombusShellSelectedListItemDirective,
-  ],
-  entryComponents: [
-    RhombusShellAboutComponent,
-    ShellContactComponent,
-    RhombusShellDonateComponent,
+    RhShellSelectedListItemDirective,
   ],
   exports: [
-    RhombusShellWrapperComponent,
-    RhombusShellConfigurationModule,
-    RhombusShellSelectedListItemDirective,
+    RhShellWrapperComponent,
+    RhShellConfigurationModule,
+    RhShellSelectedListItemDirective,
   ],
   providers: [
-    RhombusShellApplicationInfoService,
-    RhombusShellThemeService,
+    RhShellApplicationInfoService,
+    RhShellThemeService,
   ],
 })
-export class RhombusShellCoreModule {
-    static forRoot(): ModuleWithProviders<RhombusShellCoreRootModule> {
+export class RhShellCoreModule {
+    static forRoot(): ModuleWithProviders<RhShellCoreRootModule> {
         return {
-            ngModule: RhombusShellCoreRootModule,
+            ngModule: RhShellCoreRootModule,
         };
     }
 }
 
 @NgModule({
     imports: [
-      RhombusShellSettingsModule,
+      RhShellSettingsModule,
     ],
     exports: [
-      RhombusShellCoreModule,
+      RhShellCoreModule,
     ],
 })
-export class RhombusShellCoreRootModule {}
+export class RhShellCoreRootModule {}

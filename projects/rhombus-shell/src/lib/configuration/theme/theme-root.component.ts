@@ -1,32 +1,32 @@
 import { AfterContentInit, Component, ContentChildren, OnInit, QueryList } from '@angular/core';
 import { startWith } from 'rxjs/operators';
-import { RhombusShellTheme } from '../../core/models/theme';
-import { RhombusShellThemeService } from '../../core/services/theme.service';
-import { RhombusShellRootConfigurationComponent } from '../_models/root-configuration';
-import { RhombusShellThemeComponent } from '../theme/theme.component';
+import { RhShellTheme } from '../../core/models/theme';
+import { RhShellThemeService } from '../../core/services/theme.service';
+import { RhShellThemeComponent } from '../theme/theme.component';
+import { RhShellRootConfigurationComponent } from '../_models/root-configuration';
 
 @Component({
   selector: 'rh-shell-themes',
   template: '',
   providers: [
     {
-      provide: RhombusShellRootConfigurationComponent,
-      useExisting: RhombusShellThemeRootComponent,
+      provide: RhShellRootConfigurationComponent,
+      useExisting: RhShellThemeRootComponent,
     },
   ],
 })
-export class RhombusShellThemeRootComponent implements RhombusShellRootConfigurationComponent, AfterContentInit {
+export class RhShellThemeRootComponent implements RhShellRootConfigurationComponent, AfterContentInit {
 
-  @ContentChildren(RhombusShellThemeComponent)
-  themeConfigs?: QueryList<RhombusShellThemeComponent>;
+  @ContentChildren(RhShellThemeComponent)
+  themeConfigs?: QueryList<RhShellThemeComponent>;
 
-  constructor(private themeService: RhombusShellThemeService) { }
+  constructor(private themeService: RhShellThemeService) { }
 
   ngAfterContentInit() {
     // if (this.themeConfigs) {
     //   this.themeConfigs.changes.pipe(
     //     startWith(this.themeConfigs),
-    //   ).subscribe((shellThemes: QueryList<RhombusShellThemeComponent>) => {
+    //   ).subscribe((shellThemes: QueryList<RhShellThemeComponent>) => {
     //     // this.updateAvailableThemes(shellThemes);
     //   });
     // }
@@ -38,10 +38,10 @@ export class RhombusShellThemeRootComponent implements RhombusShellRootConfigura
     // this.themeService.setInitialDarkMode();
   }
 
-  // private updateAvailableThemes(configs: QueryList<RhombusShellThemeComponent>) {
+  // private updateAvailableThemes(configs: QueryList<RhShellThemeComponent>) {
   //   const themes = configs
   //     .map(config => config.toModel())
-  //     .filter((theme): theme is RhombusShellTheme => theme !== undefined);
+  //     .filter((theme): theme is RhShellTheme => theme !== undefined);
   //   this.themeService.updateAvailableThemes(themes);
   // }
 

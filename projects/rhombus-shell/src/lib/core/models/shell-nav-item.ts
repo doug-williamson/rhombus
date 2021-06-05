@@ -1,17 +1,17 @@
-export type RhombusShellNavEntry = RhombusShellNavGroup | RhombusShellNavItem;
+export type RhShellNavEntry = RhShellNavGroup | RhShellNavItem;
 
-export interface RhombusShellNavGroup {
+export interface RhShellNavGroup {
     name: string;
-    // children: RhombusShellNavEntry;
-    children: RhombusShellNavItem[];
+    // children: RhShellNavEntry;
+    children: RhShellNavItem[];
 }
 
-export interface RhombusShellNavItem {
+export interface RhShellNavItem {
     name: string;
     route: string;
 }
 
-export interface RhombusShellNavCollection {
+export interface RhShellNavCollection {
   label: string;
-  navEntries: RhombusShellNavEntry[];
+  navEntries: RhShellNavEntry[];
 }

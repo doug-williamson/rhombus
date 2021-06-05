@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+@mixin rh-shell-about-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    .shell-about__letters {
+        background-color: map-get($primary, 500);
+        color: white;
+    }
+}

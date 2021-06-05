@@ -1,4 +1,4 @@
-export interface RhombusShellTheme {
+export interface RhShellTheme {
     name: string;
     className: string;
 }

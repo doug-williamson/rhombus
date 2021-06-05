@@ -1,0 +1,15 @@
+<div fxLayout="row" fxLayoutAlign="start stretch" fxFlex>
+    <div fxFlex="50" fxLayout="column" fxLayoutAlign="center center">
+        <img [src]="'./assets/rhombus_software_banner.png'">
+        <div fxLayout>
+            <button mat-raised-button color="primary" (click)="login()" style="margin-right: 16px">
+                Login
+            </button>
+            <button mat-stroked-button color="accent" (click)="anonymousLogin()">
+                Continue as Guest
+            </button>
+        </div>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div fxFlex="50" style="background:url('../../../assets/rhombus_logo_white.png'); background-repeat: no-repeat; background-size: 100% 100%;"></div>
+</div>

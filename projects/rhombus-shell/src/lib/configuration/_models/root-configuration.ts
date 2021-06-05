@@ -1,3 +1,3 @@
-export abstract class RhombusShellRootConfigurationComponent {
+export abstract class RhShellRootConfigurationComponent {
     abstract refresh();
 }

@@ -8,7 +8,7 @@ describe('RhDynastiesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhDynastiesComponent ]
+      declarations: [ RhDynastiesComponent ],
     })
     .compileComponents();
   });

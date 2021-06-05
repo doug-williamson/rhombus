@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'rhombus-app-intro',
+  selector: 'rh-app-intro',
   templateUrl: './intro.component.html',
-  styleUrls: ['./intro.component.scss']
+  styleUrls: ['./intro.component.scss'],
 })
 export class IntroComponent implements OnInit {
 

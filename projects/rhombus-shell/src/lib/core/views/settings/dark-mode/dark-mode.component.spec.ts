@@ -8,7 +8,7 @@ describe('DarkModeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DarkModeComponent ]
+      declarations: [ DarkModeComponent ],
     })
     .compileComponents();
   }));

@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IDynastyWeek } from '@dougwilliamson/rhombus';
-import { RhAuthService } from 'projects/rhombus/src/lib/services/auth.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { RhAuthService } from '../../../auth/auth.service';
+import { IDynastyWeek } from '../../models/dynasty';
 import { RhDynastyMarkYearWeeksService } from '../../services/weeks.service';
 import { RhDynastyMarkYearWeekAddEditComponent } from './add-edit/add-edit.component';
 
@@ -92,7 +92,6 @@ export class RhDynastyWeeksComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.weeksService.createWeek(result);
       }
@@ -106,7 +105,6 @@ export class RhDynastyWeeksComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.weeksService.updateWeek(week.id, result);
       }

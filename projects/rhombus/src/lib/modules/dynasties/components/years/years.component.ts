@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IDynastyMark, IDynastyYear } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
-import { RhAuthService } from '../../../../services/auth.service';
+import { RhAuthService } from '../../../auth/auth.service';
+import { IDynastyMark, IDynastyYear } from '../../models/dynasty';
 import { RhDynastyMarkYearsService } from '../../services/years.service';
 import { RhDynastyMarkService } from '../dynasty-mark/services/dynasty-mark.service';
 import { RhDynastyMarkYearAddComponent } from './add/add.component';
@@ -14,7 +14,7 @@ import { RhDynastyMarkYearAddComponent } from './add/add.component';
 export interface DynastyMarkYearAddData {
   year: number;
   team: string;
-  weeks: undefined,
+  weeks: undefined;
   positionId: number;
 }
 

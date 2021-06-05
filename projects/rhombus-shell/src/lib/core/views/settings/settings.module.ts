@@ -8,10 +8,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
-import { DarkModeComponent } from './dark-mode/dark-mode.component';
-import { RhombusShellSettingsComponent } from './settings.component';
-import { RhombusShellThemeSettingComponent } from './theme-setting/theme-setting.component';
+import { RhShellDarkModeComponent } from './dark-mode/dark-mode.component';
+import { RhShellSettingsComponent } from './settings.component';
+import { RhShellThemeSettingComponent } from './theme-setting/theme-setting.component';
 
 @NgModule({
   imports: [
@@ -25,22 +24,11 @@ import { RhombusShellThemeSettingComponent } from './theme-setting/theme-setting
     MatSelectModule,
     MatSlideToggleModule,
     MatToolbarModule,
-
-    RouterModule.forChild([
-      {
-        path: 'settings',
-        component: RhombusShellSettingsComponent,
-        data: {
-          breadcrumb: 'Settings',
-        }
-      },
-    ]),
   ],
   declarations: [
-    RhombusShellSettingsComponent,
-    RhombusShellThemeSettingComponent,
-    DarkModeComponent,
-
+    RhShellSettingsComponent,
+    RhShellThemeSettingComponent,
+    RhShellDarkModeComponent,
   ],
 })
-export class RhombusShellSettingsModule { }
+export class RhShellSettingsModule { }

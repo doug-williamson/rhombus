@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { Observable } from 'rxjs';
-import { RhombusShellTheme } from '../../../models/theme';
-import { RhombusShellThemeService } from '../../../services/theme.service';
+import { RhShellTheme } from '../../../models/theme';
+import { RhShellThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'rh-shell-theme-setting',
   templateUrl: './theme-setting.component.html',
   styleUrls: ['./theme-setting.component.scss'],
 })
-export class RhombusShellThemeSettingComponent  {
+export class RhShellThemeSettingComponent  {
 
-  _themes$: Observable<RhombusShellTheme[]>;
-  _currentTheme$: Observable<RhombusShellTheme | undefined>;
+  _themes$: Observable<RhShellTheme[]>;
+  _currentTheme$: Observable<RhShellTheme | undefined>;
 
-  constructor(private themeService: RhombusShellThemeService) {
+  constructor(private themeService: RhShellThemeService) {
     this._themes$ = this.themeService.availableThemes$;
     this._currentTheme$ = this.themeService.currentTheme$;
 

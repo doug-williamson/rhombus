@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { IDynasty, IDynastyMark } from '../../../models/dynasty';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RhDynastyMarkService {
 

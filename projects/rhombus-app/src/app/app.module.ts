@@ -13,12 +13,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RhombusComponentsModule } from '@dougwilliamson/rhombus';
-import { RhombusShellModule } from '@dougwilliamson/rhombus-shell';
+import { RhAuthModule } from '@dougwilliamson/rhombus';
+import { RhShellModule } from '../../../rhombus-shell/src/lib/shell.module';
 import { environment } from '../environments/environment';
 import { RhombusAppComponent } from './app.component';
 import { RhombusAppRoutingModule } from './app.routing';
 import { RhombusModule } from './views/rhombus/rhombus.module';
+import { ViewsComponent } from './views/views.component';
 
 @NgModule({
   imports: [
@@ -39,19 +40,21 @@ import { RhombusModule } from './views/rhombus/rhombus.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
 
-    RhombusShellModule.forRoot({
-      applicationInfo: {
-        logoUrl: '/assets/rhombus-icon.png',
-        firebaseConfig: undefined,
-      },
-    }),
-
     RhombusModule,
-    RhombusComponentsModule,
+
+    RhAuthModule,
     RhombusAppRoutingModule,
+
+    RhShellModule.forRoot({
+        applicationInfo: {
+            logoUrl: '/assets/rhombus-icon.png',
+            firebaseConfig: undefined,
+        },
+    }),
   ],
   declarations: [
     RhombusAppComponent,
+    ViewsComponent,
   ],
   providers: [
     AngularFirestore,

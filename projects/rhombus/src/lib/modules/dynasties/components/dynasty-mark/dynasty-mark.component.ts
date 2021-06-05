@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { RhAuthService } from '../../../../services/auth.service';
+import { RhAuthService } from '../../../auth/auth.service';
 import { IDynasty, IDynastyMark } from '../../models/dynasty';
 import { RhDynastyMarkAddComponent } from './add/add.component';
 import { RhDynastyMarkService } from './services/dynasty-mark.service';

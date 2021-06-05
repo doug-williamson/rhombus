@@ -1,13 +1,13 @@
 import { Inject, Injectable, Optional } from '@angular/core';
-import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation, FirebaseOptions } from '../models/shell-app-info';
+import { FirebaseOptions, RhShellApplicationInformation, RH_SHELL_APPLICATION_INFORMATION } from '../models/shell-app-info';
 
 @Injectable({
   providedIn: 'root',
 })
-export class RhombusShellApplicationInfoService {
+export class RhShellApplicationInfoService {
 
   constructor(
-    @Optional() @Inject(RHOMBUS_SHELL_APPLICATION_INFORMATION) private info?: RhombusShellApplicationInformation,
+    @Optional() @Inject(RH_SHELL_APPLICATION_INFORMATION) private info?: RhShellApplicationInformation,
   ) { }
 
   get logoLetters(): string {

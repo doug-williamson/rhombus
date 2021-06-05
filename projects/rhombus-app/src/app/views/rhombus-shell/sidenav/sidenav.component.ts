@@ -5,9 +5,9 @@ import { map } from 'rxjs/operators';
 import { Tile } from '../intro/intro.component';
 
 @Component({
-  selector: 'rhombus-app-sidenav',
+  selector: 'rh-app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
 

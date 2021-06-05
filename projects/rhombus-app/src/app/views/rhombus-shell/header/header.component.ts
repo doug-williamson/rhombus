@@ -7,7 +7,7 @@ import { Tile } from '../intro/intro.component';
 @Component({
   selector: 'rh-app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
 

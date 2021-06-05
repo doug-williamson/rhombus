@@ -1,23 +1,23 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { RhombusShellCoreModule } from './core/core.module';
-import { RHOMBUS_SHELL_APPLICATION_INFORMATION, RhombusShellApplicationInformation } from './core/models/shell-app-info';
+import { RhShellCoreModule } from './core/core.module';
+import { RhShellApplicationInformation, RH_SHELL_APPLICATION_INFORMATION } from './core/models/shell-app-info';
 
-export interface RhombusShellConfiguration {
-  applicationInfo: RhombusShellApplicationInformation;
+export interface RhShellConfiguration {
+  applicationInfo: RhShellApplicationInformation;
 }
 
 @NgModule({
   exports: [
-    RhombusShellCoreModule,
+    RhShellCoreModule,
   ],
 })
-export class RhombusShellModule {
-  static forRoot(config: RhombusShellConfiguration): ModuleWithProviders<RhombusShellRootModule> {
+export class RhShellModule {
+  static forRoot(config: RhShellConfiguration): ModuleWithProviders<RhShellRootModule> {
     return {
-      ngModule: RhombusShellRootModule,
+      ngModule: RhShellRootModule,
       providers: [
         {
-          provide: RHOMBUS_SHELL_APPLICATION_INFORMATION,
+          provide: RH_SHELL_APPLICATION_INFORMATION,
           useValue: config.applicationInfo,
         },
       ],
@@ -27,10 +27,10 @@ export class RhombusShellModule {
 
 @NgModule({
   imports: [
-    RhombusShellCoreModule.forRoot(),
+    RhShellCoreModule.forRoot(),
   ],
   exports: [
-    RhombusShellModule,
+    RhShellModule,
   ],
 })
-export class RhombusShellRootModule {}
+export class RhShellRootModule {}
