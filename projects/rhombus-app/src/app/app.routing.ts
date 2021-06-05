@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RhLoginComponent } from '@dougwilliamson/rhombus';
-import { RhombusShellSettingsComponent } from 'projects/rhombus-shell/src/lib/core/views/settings/settings.component';
+import { RhShellAboutComponent } from '../../../rhombus-shell/src/lib/core/views/about/about.component';
+import { RhShellContactComponent } from '../../../rhombus-shell/src/lib/core/views/contact/contact.component';
+import { RhShellDonateComponent } from '../../../rhombus-shell/src/lib/core/views/donate/donate.component';
 import { RhAuthGuardService } from './services/auth-guard.service';
 import { ViewsComponent } from './views/views.component';
+import { RhombusShellSettingsComponent } from '../../../rhombus-shell/src/lib/core/views/settings/settings.component';
 
 const routes: Routes = [
     {
@@ -49,6 +52,27 @@ const routes: Routes = [
                 component: RhombusShellSettingsComponent,
                 data: {
                     title: 'Settings',
+                },
+            },
+            {
+                path: 'about',
+                component: RhShellAboutComponent,
+                data: {
+                    title: 'About',
+                },
+            },
+            {
+                path: 'contact',
+                component: RhShellContactComponent,
+                data: {
+                    title: 'Contact',
+                },
+            },
+            {
+                path: 'donate',
+                component: RhShellDonateComponent,
+                data: {
+                    title: 'Donate',
                 },
             },
         ],

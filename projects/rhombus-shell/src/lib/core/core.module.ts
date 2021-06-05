@@ -17,15 +17,15 @@ import { RouterModule } from '@angular/router';
 import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
 import { RhombusShellSettingsModule } from '../configuration/public_api';
 import { RhombusShellAuthComponent } from './components/auth/auth.component';
-import { RhombusShellAboutComponent } from './components/shell-about/shell-about.component';
-import { ShellContactComponent } from './components/shell-contact/shell-contact.component';
-import { RhombusShellDonateComponent } from './components/shell-donate/shell-donate.component';
 import { RhombusShellHeaderComponent } from './components/shell-header/shell-header.component';
 import { RhombusShellNavComponent } from './components/shell-nav/shell-nav.component';
 import { RhombusShellSelectedListItemDirective } from './components/shell-nav/shell-nav.directive';
 import { RhombusShellWrapperComponent } from './components/shell-wrapper/shell-wrapper.component';
 import { RhombusShellApplicationInfoService } from './services/application-info.service';
 import { RhombusShellThemeService } from './services/theme.service';
+import { RhShellAboutComponent } from './views/about/about.component';
+import { RhShellContactComponent } from './views/contact/contact.component';
+import { RhShellDonateComponent } from './views/donate/donate.component';
 
 @NgModule({
   imports: [
@@ -52,16 +52,11 @@ import { RhombusShellThemeService } from './services/theme.service';
     RhombusShellWrapperComponent,
     RhombusShellHeaderComponent,
     RhombusShellNavComponent,
-    RhombusShellAboutComponent,
-    RhombusShellDonateComponent,
-    ShellContactComponent,
+    RhShellAboutComponent,
+    RhShellContactComponent,
+    RhShellDonateComponent,
 
     RhombusShellSelectedListItemDirective,
-  ],
-  entryComponents: [
-    RhombusShellAboutComponent,
-    ShellContactComponent,
-    RhombusShellDonateComponent,
   ],
   exports: [
     RhombusShellWrapperComponent,

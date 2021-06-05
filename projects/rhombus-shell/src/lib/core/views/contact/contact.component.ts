@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { RhombusShellApplicationInfoService } from '../../services/application-info.service';
-import { IShellContact, ShellContactService } from './shell-contact.service';
+import { IShellContact, RhShellContactService } from './shell-contact.service';
 
 @Component({
   selector: 'rh-shell-contact',
-  templateUrl: './shell-contact.component.html',
-  styleUrls: ['./shell-contact.component.scss'],
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
 })
-export class ShellContactComponent implements OnInit {
+export class RhShellContactComponent implements OnInit {
 
   _appContactUsLink?: string;
   contact: IShellContact;
 
-  constructor(private _snackBar: MatSnackBar, private contactService: ShellContactService) {
+  constructor(private _snackBar: MatSnackBar, private contactService: RhShellContactService) {
   }
 
   openSnackBar() {

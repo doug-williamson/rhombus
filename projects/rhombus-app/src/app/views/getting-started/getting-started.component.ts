@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rhombus-app-getting-started',
+  selector: 'rh-app-getting-started',
   templateUrl: './getting-started.component.html',
   styleUrls: ['./getting-started.component.scss'],
 })

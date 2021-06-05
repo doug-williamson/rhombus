@@ -3,7 +3,7 @@ import { RhombusShellNavCollection, RhombusShellThemeService } from '@dougwillia
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'rhombus-app-views',
+  selector: 'rh-app-views',
   templateUrl: './views.component.html',
   styleUrls: ['./views.component.scss'],
 })

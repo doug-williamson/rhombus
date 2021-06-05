@@ -11,7 +11,7 @@ export interface IShellDonate {
 @Injectable({
   providedIn: 'root',
 })
-export class ShellDonateService {
+export class RhShellDonateService {
 
   contactCollection: AngularFirestoreCollection<IShellDonate>;
 

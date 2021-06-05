@@ -11,7 +11,7 @@ export interface IShellContact {
 @Injectable({
   providedIn: 'root',
 })
-export class ShellContactService {
+export class RhShellContactService {
 
   contactCollection: AngularFirestoreCollection<IShellContact>;
 

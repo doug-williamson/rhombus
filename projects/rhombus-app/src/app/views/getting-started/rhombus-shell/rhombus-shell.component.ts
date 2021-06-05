@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rhombus-app-rhombus-shell',
+  selector: 'rh-app-rhombus-shell',
   templateUrl: './rhombus-shell.component.html',
   styleUrls: ['./rhombus-shell.component.scss'],
 })

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'rhombus-app-home',
+  selector: 'rh-app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })

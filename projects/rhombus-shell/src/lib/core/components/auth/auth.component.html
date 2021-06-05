@@ -15,9 +15,9 @@
       </button>
       <mat-menu #menu="matMenu" xPosition="before">
         <button mat-menu-item [routerLink]="'settings'">Settings</button>
-        <button mat-menu-item (click)="showAbout()">About</button>
-        <button mat-menu-item (click)="showContact()">Contact</button>
-        <button mat-menu-item (click)="showDonate()">Donate</button>
+        <button mat-menu-item [routerLink]="'about'">About</button>
+        <button mat-menu-item [routerLink]="'contact'">Contact</button>
+        <button mat-menu-item [routerLink]="'donate'">Donate</button>
         <mat-divider></mat-divider>
         <button mat-menu-item (click)="signOut()">Sign Out</button>
       </mat-menu>
@@ -35,9 +35,9 @@
         </button>
         <mat-menu #menu="matMenu" xPosition="before">
             <button mat-menu-item [routerLink]="'settings'">Settings</button>
-            <button mat-menu-item (click)="showAbout()">About</button>
-            <button mat-menu-item (click)="showContact()">Contact</button>
-            <button mat-menu-item (click)="showDonate()">Donate</button>
+            <button mat-menu-item [routerLink]="'about'">About</button>
+            <button mat-menu-item [routerLink]="'contact'">Contact</button>
+            <button mat-menu-item [routerLink]="'donate'">Donate</button>
             <mat-divider></mat-divider>
             <button mat-menu-item (click)="signOut()">Sign Out</button>
         </mat-menu>
