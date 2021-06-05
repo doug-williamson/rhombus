@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-@mixin rhombus-shell-nav-theme($theme) {
+@mixin rh-shell-nav-theme($theme) {
     $primary: map-get($theme, primary);
     $foreground: map-get($theme, foreground);
 

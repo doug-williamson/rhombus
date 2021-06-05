@@ -3,14 +3,14 @@ import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RhombusShellNavService } from '../../services/nav.service';
-import { BreadCrumb } from '../shell-wrapper/breadcrumb';
+import { BreadCrumb } from '../wrapper/breadcrumb';
 
 @Component({
   selector: 'rh-shell-header',
-  templateUrl: './shell-header.component.html',
-  styleUrls: ['./shell-header.component.scss'],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
-export class RhombusShellHeaderComponent implements OnInit {
+export class RhShellHeaderComponent implements OnInit {
 
     timer;
     dateTimeStamp: Date = new Date();

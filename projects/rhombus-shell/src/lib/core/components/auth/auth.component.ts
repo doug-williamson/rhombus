@@ -12,7 +12,7 @@ import { RhombusShellThemeService } from '../../services/theme.service';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
 })
-export class RhombusShellAuthComponent implements OnInit {
+export class RhShellAuthComponent implements OnInit {
 
   displayName!: User;
   compact$: Observable<boolean>;

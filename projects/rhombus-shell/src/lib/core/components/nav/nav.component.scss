@@ -1,0 +1,12 @@
+.nav-list__container {
+    width: 250px;
+    padding-top: 0;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 !important;
+}
+
+::ng-deep div.mat-list-item-content {
+  padding: 0 40px !important;
+}

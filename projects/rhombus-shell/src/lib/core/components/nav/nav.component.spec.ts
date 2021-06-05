@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RhShellAuthComponent } from './auth.component';
+import { RhShellNavComponent } from './nav.component';
 
-describe('RhShellAuthComponent', () => {
-  let component: RhShellAuthComponent;
-  let fixture: ComponentFixture<RhShellAuthComponent>;
+describe('RhShellNavComponent', () => {
+  let component: RhShellNavComponent;
+  let fixture: ComponentFixture<RhShellNavComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhShellAuthComponent ],
+      declarations: [ RhShellNavComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RhShellAuthComponent);
+    fixture = TestBed.createComponent(RhShellNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

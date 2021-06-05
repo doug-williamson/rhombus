@@ -4,10 +4,10 @@ import { RhombusShellNavCollection } from '../../models/shell-nav-item';
 
 @Component({
   selector: 'rh-shell-nav',
-  templateUrl: './shell-nav.component.html',
-  styleUrls: ['./shell-nav.component.scss'],
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.scss'],
 })
-export class RhombusShellNavComponent implements OnInit {
+export class RhShellNavComponent implements OnInit {
 
     @Input()
     title: string;

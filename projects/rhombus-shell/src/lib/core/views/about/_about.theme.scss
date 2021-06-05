@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-@mixin rhombus-shell-about-theme($theme) {
+@mixin rh-shell-about-theme($theme) {
     $primary: map-get($theme, primary);
 
     .shell-about__letters {
