@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RhombusShellThemeRootComponent } from './theme/theme-root.component';
-import { RhombusShellThemeComponent } from './theme/theme.component';
+import { RhShellThemeRootComponent } from './theme/theme-root.component';
+import { RhShellThemeComponent } from './theme/theme.component';
 
 @NgModule({
   declarations: [
-    RhombusShellThemeComponent,
-    RhombusShellThemeRootComponent,
+    RhShellThemeComponent,
+    RhShellThemeRootComponent,
   ],
   exports: [
-    RhombusShellThemeComponent,
-    RhombusShellThemeRootComponent,
+    RhShellThemeComponent,
+    RhShellThemeRootComponent,
   ],
 })
-export class RhombusShellConfigurationModule { }
+export class RhShellConfigurationModule { }

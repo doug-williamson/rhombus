@@ -3,7 +3,7 @@ import { MediaObserver } from '@angular/flex-layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AppService } from '../../services/app.service';
-import { RhombusShellApplicationInfoService } from '../../services/application-info.service';
+import { RhShellApplicationInfoService } from '../../services/application-info.service';
 
 @Component({
   selector: 'rh-shell-about',
@@ -21,7 +21,7 @@ export class RhShellAboutComponent implements OnInit {
   _appTwitterUrl?: string;
   _appChangelogUrl?: string;
 
-  constructor(private applicationInfo: RhombusShellApplicationInfoService, private media: MediaObserver, private appService: AppService) {
+  constructor(private applicationInfo: RhShellApplicationInfoService, private media: MediaObserver, private appService: AppService) {
 
   }
 

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RhombusShellNavCollection } from '../../models/shell-nav-item';
+import { RhShellNavCollection } from '../../models/shell-nav-item';
 
 @Component({
   selector: 'rh-shell-nav',
@@ -13,7 +13,7 @@ export class RhShellNavComponent implements OnInit {
     title: string;
 
     @Input()
-    navCollection: RhombusShellNavCollection[];
+    navCollection: RhShellNavCollection[];
 
     constructor(
     private router: Router) { }

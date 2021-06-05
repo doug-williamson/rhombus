@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./settings.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class RhombusShellSettingsComponent implements OnInit {
+export class RhShellSettingsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 

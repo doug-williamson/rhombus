@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RhombusShellNavCollection, RhombusShellThemeService } from '@dougwilliamson/rhombus-shell';
+import { RhShellNavCollection, RhShellThemeService } from '@dougwilliamson/rhombus-shell';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,7 +12,7 @@ export class ViewsComponent implements OnInit {
     _darkMode$: Observable<boolean>;
     title = 'Rhombus';
 
-    navCollection: RhombusShellNavCollection[] = [
+    navCollection: RhShellNavCollection[] = [
         {
             label: 'Getting Started',
             navEntries: [
@@ -62,30 +62,12 @@ export class ViewsComponent implements OnInit {
                 {
                     name: 'Core',
                     route: 'rhombus-shell/core',
-                    // children: [
-                    //   {
-                    //     name: 'Wrapper',
-                    //     route: 'rhombus-shell/wrapper',
-                    //   },
-                    //   {
-                    //     name: 'Header',
-                    //     route: 'rhombus-shell/header',
-                    //   },
-                    //   {
-                    //     name: 'Sidenav',
-                    //     route: 'rhombus-shell/sidenav',
-                    //   },
-                    //   {
-                    //     name: 'Modals',
-                    //     route: 'rhombus-shell/modals',
-                    //   },
-                    // ]
                 },
             ],
         },
     ];
 
-    constructor(private themeService: RhombusShellThemeService) {
+    constructor(private themeService: RhShellThemeService) {
         this._darkMode$ = this.themeService.darkMode$;
     }
 

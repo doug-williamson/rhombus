@@ -14,7 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RhAuthModule } from '@dougwilliamson/rhombus';
-import { RhombusShellModule } from '@dougwilliamson/rhombus-shell';
+import { RhShellModule } from '../../../rhombus-shell/src/lib/shell.module';
 import { environment } from '../environments/environment';
 import { RhombusAppComponent } from './app.component';
 import { RhombusAppRoutingModule } from './app.routing';
@@ -45,7 +45,7 @@ import { ViewsComponent } from './views/views.component';
     RhAuthModule,
     RhombusAppRoutingModule,
 
-    RhombusShellModule.forRoot({
+    RhShellModule.forRoot({
         applicationInfo: {
             logoUrl: '/assets/rhombus-icon.png',
             firebaseConfig: undefined,

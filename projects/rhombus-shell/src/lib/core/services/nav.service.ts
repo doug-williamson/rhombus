@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class RhombusShellNavService {
+export class RhShellNavService {
 
   showSidenav$ = new BehaviorSubject<boolean>(false);
   _isOpened = false;

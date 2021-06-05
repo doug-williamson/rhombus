@@ -4,9 +4,9 @@ import { RhLoginComponent } from '@dougwilliamson/rhombus';
 import { RhShellAboutComponent } from '../../../rhombus-shell/src/lib/core/views/about/about.component';
 import { RhShellContactComponent } from '../../../rhombus-shell/src/lib/core/views/contact/contact.component';
 import { RhShellDonateComponent } from '../../../rhombus-shell/src/lib/core/views/donate/donate.component';
+import { RhShellSettingsComponent } from '../../../rhombus-shell/src/lib/core/views/settings/settings.component';
 import { RhAuthGuardService } from './services/auth-guard.service';
 import { ViewsComponent } from './views/views.component';
-import { RhombusShellSettingsComponent } from '../../../rhombus-shell/src/lib/core/views/settings/settings.component';
 
 const routes: Routes = [
     {
@@ -49,7 +49,7 @@ const routes: Routes = [
             },
             {
                 path: 'settings',
-                component: RhombusShellSettingsComponent,
+                component: RhShellSettingsComponent,
                 data: {
                     title: 'Settings',
                 },

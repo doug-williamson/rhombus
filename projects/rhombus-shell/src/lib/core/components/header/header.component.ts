@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { RhombusShellNavService } from '../../services/nav.service';
+import { RhShellNavService } from '../../services/nav.service';
 import { BreadCrumb } from '../wrapper/breadcrumb';
 
 @Component({
@@ -20,7 +20,7 @@ export class RhShellHeaderComponent implements OnInit {
     breadcrumbs: Observable<BreadCrumb[]>;
 
     constructor(
-        private navService: RhombusShellNavService,
+        private navService: RhShellNavService,
         private titleService: Title,
         private router: Router) {
             this.router.events.subscribe(event => {

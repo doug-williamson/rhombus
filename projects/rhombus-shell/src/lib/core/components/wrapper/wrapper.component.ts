@@ -3,10 +3,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { RhombusShellNavCollection } from '../../models/shell-nav-item';
+import { RhShellNavCollection } from '../../models/shell-nav-item';
 import { AppService } from '../../services/app.service';
-import { RhombusShellNavService } from '../../services/nav.service';
-import { RhombusShellThemeService } from '../../services/theme.service';
+import { RhShellNavService } from '../../services/nav.service';
+import { RhShellThemeService } from '../../services/theme.service';
 import { BreadCrumb } from './breadcrumb';
 import { slideInAnimation } from './shell-wrapper-animation';
 
@@ -28,11 +28,11 @@ export class RhShellWrapperComponent implements OnInit {
   title: string;
 
   @Input()
-  navCollection: RhombusShellNavCollection[];
+  navCollection: RhShellNavCollection[];
 
   constructor(
-    private navService: RhombusShellNavService,
-    private themeService: RhombusShellThemeService,
+    private navService: RhShellNavService,
+    private themeService: RhShellThemeService,
     private breakpointObserver: BreakpointObserver,
     private router: Router,
     private activatedRoute: ActivatedRoute,

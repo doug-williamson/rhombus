@@ -14,18 +14,18 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { RhombusShellConfigurationModule } from '../configuration/configuration.module';
+import { RhShellConfigurationModule } from '../configuration/configuration.module';
 import { RhShellAuthComponent } from './components/auth/auth.component';
 import { RhShellHeaderComponent } from './components/header/header.component';
 import { RhShellNavComponent } from './components/nav/nav.component';
-import { RhombusShellSelectedListItemDirective } from './components/nav/nav.directive';
+import { RhShellSelectedListItemDirective } from './components/nav/nav.directive';
 import { RhShellWrapperComponent } from './components/wrapper/wrapper.component';
-import { RhombusShellApplicationInfoService } from './services/application-info.service';
-import { RhombusShellThemeService } from './services/theme.service';
+import { RhShellApplicationInfoService } from './services/application-info.service';
+import { RhShellThemeService } from './services/theme.service';
 import { RhShellAboutComponent } from './views/about/about.component';
 import { RhShellContactComponent } from './views/contact/contact.component';
 import { RhShellDonateComponent } from './views/donate/donate.component';
-import { RhombusShellSettingsModule } from './views/settings/settings.module';
+import { RhShellSettingsModule } from './views/settings/settings.module';
 
 @NgModule({
   imports: [
@@ -56,32 +56,32 @@ import { RhombusShellSettingsModule } from './views/settings/settings.module';
     RhShellContactComponent,
     RhShellDonateComponent,
 
-    RhombusShellSelectedListItemDirective,
+    RhShellSelectedListItemDirective,
   ],
   exports: [
     RhShellWrapperComponent,
-    RhombusShellConfigurationModule,
-    RhombusShellSelectedListItemDirective,
+    RhShellConfigurationModule,
+    RhShellSelectedListItemDirective,
   ],
   providers: [
-    RhombusShellApplicationInfoService,
-    RhombusShellThemeService,
+    RhShellApplicationInfoService,
+    RhShellThemeService,
   ],
 })
-export class RhombusShellCoreModule {
-    static forRoot(): ModuleWithProviders<RhombusShellCoreRootModule> {
+export class RhShellCoreModule {
+    static forRoot(): ModuleWithProviders<RhShellCoreRootModule> {
         return {
-            ngModule: RhombusShellCoreRootModule,
+            ngModule: RhShellCoreRootModule,
         };
     }
 }
 
 @NgModule({
     imports: [
-      RhombusShellSettingsModule,
+      RhShellSettingsModule,
     ],
     exports: [
-      RhombusShellCoreModule,
+      RhShellCoreModule,
     ],
 })
-export class RhombusShellCoreRootModule {}
+export class RhShellCoreRootModule {}

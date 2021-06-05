@@ -5,7 +5,7 @@ import { RhAuthService } from '@dougwilliamson/rhombus';
 import { User } from 'firebase';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
-import { RhombusShellThemeService } from '../../services/theme.service';
+import { RhShellThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'rh-shell-auth',
@@ -18,7 +18,7 @@ export class RhShellAuthComponent implements OnInit {
   compact$: Observable<boolean>;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private media: MediaObserver, private dialog: MatDialog, public authService: RhAuthService, private themeService: RhombusShellThemeService) {
+  constructor(private media: MediaObserver, private dialog: MatDialog, public authService: RhAuthService, private themeService: RhShellThemeService) {
     this.compact$ = this.media.asObservable().pipe(
       map(mediaMatch => {
         return !mediaMatch.find(change => change.mqAlias === 'gt-xs');

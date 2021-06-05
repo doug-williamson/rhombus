@@ -4,7 +4,7 @@ import { Directive, HostBinding, Input } from '@angular/core';
     selector: 'mat-list-item[rhActive], a[rhActive][mat-list-item]',
 })
 /** A directive that can be added to Material list items to apply a selected style. */
-export class RhombusShellSelectedListItemDirective {
+export class RhShellSelectedListItemDirective {
 
     @HostBinding('class.rh-list-item--active')
 

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ShellDonateService } from './shell-donate.service';
+import { RhShellDonateService } from './shell-donate.service';
 
-describe('ShellDonateService', () => {
-  let service: ShellDonateService;
+describe('RhShellDonateService', () => {
+  let service: RhShellDonateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ShellDonateService);
+    service = TestBed.inject(RhShellDonateService);
   });
 
   it('should be created', () => {

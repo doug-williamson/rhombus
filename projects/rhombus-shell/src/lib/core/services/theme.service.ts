@@ -1,19 +1,19 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { RhombusShellTheme } from '../models/theme';
+import { RhShellTheme } from '../models/theme';
 
-const LOCAL_STORAGE_THEME_MODE_KEY = 'RhombusShellThemeMode';
-const LOCAL_STORAGE_DARK_MODE_KEY = 'RhombusShellDarkMode';
+const LOCAL_STORAGE_THEME_MODE_KEY = 'RhShellThemeMode';
+const LOCAL_STORAGE_DARK_MODE_KEY = 'RhShellDarkMode';
 
 @Injectable({
   providedIn: 'root',
 })
-export class RhombusShellThemeService {
+export class RhShellThemeService {
 
   private _darkModeSubject = new BehaviorSubject<boolean | undefined>(false);
-  private _currentThemeSubject = new BehaviorSubject<RhombusShellTheme | undefined>(undefined);
-  private _availableThemesSubject = new BehaviorSubject<RhombusShellTheme[]>([]);
+  private _currentThemeSubject = new BehaviorSubject<RhShellTheme | undefined>(undefined);
+  private _availableThemesSubject = new BehaviorSubject<RhShellTheme[]>([]);
 
   /**
    * Available themes to consume
@@ -41,7 +41,7 @@ export class RhombusShellThemeService {
   /**
    * Update the applications CSS theme applied to the root element
    */
-  // updateTheme(theme: RhombusShellTheme) {
+  // updateTheme(theme: RhShellTheme) {
   //   const themeClassName = theme.className;
   //   this.updateCDKOverlay(themeClassName);
   //   localStorage.setItem(LOCAL_STORAGE_THEME_MODE_KEY, themeClassName);
@@ -58,7 +58,7 @@ export class RhombusShellThemeService {
     this.updateDarkMode(!this._darkModeSubject.value);
   }
 
-  // updateAvailableThemes(themes: RhombusShellTheme[]) {
+  // updateAvailableThemes(themes: RhShellTheme[]) {
   //   this._availableThemesSubject.next(themes);
   //   this.setInitialTheme();
   // }
@@ -102,9 +102,9 @@ export class RhombusShellThemeService {
   private updateCDKOverlay(value: boolean) {
     const containerElement = this.overlayContainer.getContainerElement();
     if (value) {
-      containerElement.classList.add('rhombus-dark-theme');
+      containerElement.classList.add('Rh-dark-theme');
     } else {
-      containerElement.classList.remove('rhombus-dark-theme');
+      containerElement.classList.remove('Rh-dark-theme');
     }
   }
 

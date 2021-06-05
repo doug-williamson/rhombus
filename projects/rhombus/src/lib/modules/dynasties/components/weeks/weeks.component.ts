@@ -92,7 +92,6 @@ export class RhDynastyWeeksComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.weeksService.createWeek(result);
       }
@@ -106,7 +105,6 @@ export class RhDynastyWeeksComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.weeksService.updateWeek(week.id, result);
       }
