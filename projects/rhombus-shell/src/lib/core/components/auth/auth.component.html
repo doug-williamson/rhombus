@@ -3,26 +3,26 @@
 </ng-container>
 
 <ng-template #authenticated>
-  <div *ngIf="authService.user$ | async as user">
-    <ng-container *ngIf="!(compact$ | async)">
-      <div class="auth__displayName" fxLayoutAlign="end center">{{ user.displayName }}</div>
-    </ng-container>
+    <div *ngIf="authService.user$ | async as user">
+        <ng-container *ngIf="!(compact$ | async)">
+            <div class="auth__displayName" fxLayoutAlign="end center">{{ user.displayName }}</div>
+        </ng-container>
 
-    <div fxLayout fxLayoutAlign="center stretch" fxFlex>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-          <!-- <div mat-card-avatar class="auth__avatar" [style.backgroundImage]="'url(' + authService.userData.photoURL + ')'"></div> -->
-          <mat-icon>account_circle</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu" xPosition="before">
-        <button mat-menu-item [routerLink]="'settings'">Settings</button>
-        <button mat-menu-item [routerLink]="'about'">About</button>
-        <button mat-menu-item [routerLink]="'contact'">Contact</button>
-        <button mat-menu-item [routerLink]="'donate'">Donate</button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item (click)="signOut()">Sign Out</button>
-      </mat-menu>
+        <div fxLayout fxLayoutAlign="center stretch" fxFlex>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <!-- <div mat-card-avatar class="auth__avatar" [style.backgroundImage]="'url(' + authService.userData.photoURL + ')'"></div> -->
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+                <!-- <button mat-menu-item [routerLink]="'settings'">Settings</button> -->
+                <button mat-menu-item [routerLink]="'about'">About</button>
+                <button mat-menu-item [routerLink]="'contact'">Contact</button>
+                <button mat-menu-item [routerLink]="'donate'">Donate</button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item (click)="signOut()">Sign Out</button>
+            </mat-menu>
+        </div>
     </div>
-  </div>
 </ng-template>
 
 <ng-template #anonymous>
@@ -34,7 +34,7 @@
             <mat-icon>account_circle</mat-icon>
         </button>
         <mat-menu #menu="matMenu" xPosition="before">
-            <button mat-menu-item [routerLink]="'settings'">Settings</button>
+            <!-- <button mat-menu-item [routerLink]="'settings'">Settings</button> -->
             <button mat-menu-item [routerLink]="'about'">About</button>
             <button mat-menu-item [routerLink]="'contact'">Contact</button>
             <button mat-menu-item [routerLink]="'donate'">Donate</button>

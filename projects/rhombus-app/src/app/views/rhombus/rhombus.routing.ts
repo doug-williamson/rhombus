@@ -13,7 +13,7 @@ const routes: Routes = [
     },
     {
         path: 'blog',
-        loadChildren: () => import('./blog/blog.module').then(m => m.RhAppBlogModule),
+        loadChildren: () => import('@dougwilliamson/rhombus').then(m => m.RhBlogModule),
         data: {
             title: 'Blog',
         },

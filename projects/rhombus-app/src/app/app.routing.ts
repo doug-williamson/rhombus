@@ -47,13 +47,13 @@ const routes: Routes = [
                     title: '',
                 },
             },
-            {
-                path: 'settings',
-                component: RhShellSettingsComponent,
-                data: {
-                    title: 'Settings',
-                },
-            },
+            // {
+            //     path: 'settings',
+            //     component: RhShellSettingsComponent,
+            //     data: {
+            //         title: 'Settings',
+            //     },
+            // },
             {
                 path: 'about',
                 component: RhShellAboutComponent,

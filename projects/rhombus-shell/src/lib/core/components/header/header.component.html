@@ -9,5 +9,9 @@
         <span>{{ title }}</span>
     </div>
     <span fxFlex></span>
+    <button mat-icon-button (click)="toggleDarkMode()" >
+        <mat-icon>{{ darkMode ? 'dark_mode' : 'light_mode' }}</mat-icon>
+    </button>
+    <span fxFlex></span>
     <rh-shell-auth></rh-shell-auth>
 </mat-toolbar>
