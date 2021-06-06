@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RhShellNavService } from '../../services/nav.service';
+import { RhShellThemeService } from '../../services/theme.service';
 import { BreadCrumb } from '../wrapper/breadcrumb';
 
 @Component({
@@ -12,6 +13,7 @@ import { BreadCrumb } from '../wrapper/breadcrumb';
 })
 export class RhShellHeaderComponent implements OnInit {
 
+    darkMode: boolean;
     timer;
     dateTimeStamp: Date = new Date();
     title: string;
@@ -22,6 +24,7 @@ export class RhShellHeaderComponent implements OnInit {
     constructor(
         private navService: RhShellNavService,
         private titleService: Title,
+        private themeService: RhShellThemeService,
         private router: Router) {
             this.router.events.subscribe(event => {
                 if (event instanceof NavigationEnd) {
@@ -36,6 +39,14 @@ export class RhShellHeaderComponent implements OnInit {
         this.timer = setInterval(() => {
             this.dateTimeStamp = new Date();
         });
+
+        this.themeService.darkMode$.subscribe(results => {
+            this.darkMode = results;
+        });
+    }
+
+    toggleDarkMode() {
+        this.themeService.toggleDarkMode();
     }
 
     toggleNav() {
