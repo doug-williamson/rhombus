@@ -1,5 +1,6 @@
 export interface IPost {
-  timestamp: any;
-  title: string;
-  paragraphs: Array<string>;
+    id: string;
+    timestamp: any;
+    title: string;
+    paragraphs: Array<string>;
 }
