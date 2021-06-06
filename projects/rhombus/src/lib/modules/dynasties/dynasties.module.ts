@@ -94,7 +94,6 @@ import { RhDynastyYearsComponent } from './components/years/years.component';
     ],
     exports: [
         RouterModule,
-        RhDynastiesComponent,
     ],
 })
 export class RhDynastiesModule { }

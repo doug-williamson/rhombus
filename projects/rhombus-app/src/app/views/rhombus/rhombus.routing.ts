@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BacklogComponent } from './backlog/backlog.component';
-import { RhAppBlogComponent } from './blog/blog.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 
 const routes: Routes = [
@@ -14,9 +13,9 @@ const routes: Routes = [
     },
     {
         path: 'blog',
-        component: RhAppBlogComponent,
+        loadChildren: () => import('./blog/blog.module').then(m => m.RhAppBlogModule),
         data: {
-          title: 'Blog',
+            title: 'Blog',
         },
     },
     {
@@ -30,7 +29,7 @@ const routes: Routes = [
         path: 'dynasties',
         loadChildren: () => import('./dynasties/dynasties.module').then(m => m.RhAppDynastiesModule),
         data: {
-          title: '',
+            title: '',
         },
     },
 ];

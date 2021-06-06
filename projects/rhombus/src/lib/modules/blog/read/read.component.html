@@ -1,18 +1,19 @@
 <div class="mat-typography">
-  <h2 mat-dialog-title>{{ data.title }}</h2>
-  <mat-dialog-content>
-    <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex>
-      <ng-container *ngFor="let paragraph of data.paragraphs">
-        <div style="margin: 8px 0;">
-          {{ paragraph.text }}
-        </div>
-      </ng-container>
-    </div>
-  </mat-dialog-content>
-  <mat-dialog-actions>
-    <div fxLayout fxLayoutAlign="end center" fxFlex>
-      <span>~ Doug Williamson</span>
-    </div>
-  </mat-dialog-actions>
+    <mat-toolbar>
+        <button mat-icon-button (click)="goBack()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <!-- <span>{{ dynastyName }}</span> -->
+    </mat-toolbar>
+    <mat-card *ngIf="post">
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-content>
+            <ng-container *ngFor="let paragraph of post.paragraphs">
+                <div style="margin: 8px 0;">
+                {{ paragraph.text }}
+                </div>
+            </ng-container>
+        </mat-card-content>
+    </mat-card>
 </div>
 
