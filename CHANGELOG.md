@@ -7,7 +7,7 @@ All notable changes to Rhombus software will be documented in this location. See
 https://rhombus.space
 
 <a name="1.0.0-beta.12"></a>
-# 1.0.0-beta.12 (2021-06-05)
+# 1.0.0-beta.12 (2021-06-06)
 
 ### Features
 * Backlog: Added CRUD
@@ -15,6 +15,10 @@ https://rhombus.space
 * Dynasties: Added CRUD
 * Latest News: Added CRUD
 * rh-shell: Created Firebase collection for app metadata
+
+### Tasks
+* Moved all non-confirmation dialogs to views (About, Contact, Donate, Blog)
+
 ### Bug Fixes
 * rh-shell: Fixed sidenav collapse bug
 

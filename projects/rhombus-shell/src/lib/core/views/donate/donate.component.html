@@ -1,18 +1,10 @@
-<ng-container *ngIf="donate">
-    <mat-card class="shell-about__card" fxFlex>
-        <mat-card-header class="shell-about__header">
-            <mat-card-title class="shell-about__title">Donate</mat-card-title>
-            <mat-card-subtitle>
-                <ng-container *ngFor="let paragraph of donate.paragraphs">
-                    <p>{{ paragraph }}</p>
-                </ng-container>
-            </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content fxLayoutAlign="center center">
-          <button mat-raised-button color="primary" (click)="goToLink(donate.payPalLink)">PayPal</button>
-        </mat-card-content>
-        <mat-card-footer>
-            <mat-card-subtitle class="shell-about__powered-by-rhombus" fxLayoutAlign="center center">Donations are optional, non-refundable</mat-card-subtitle>
-        </mat-card-footer>
-    </mat-card>
-</ng-container>
+<div class="donate__container" fxLayout="column" fxLayoutAlign="center center" fxFill>
+    <div class="shell-about__title">Donate</div>
+    <ng-container *ngFor="let paragraph of donate.paragraphs">
+        <p>{{ paragraph }}</p>
+    </ng-container>
+    <button mat-raised-button color="primary" (click)="goToLink(donate.payPalLink)">PayPal</button>
+    <div class="shell-about__powered-by-rhombus" fxLayoutAlign="center center">
+        Donations are optional, non-refundable
+    </div>
+</div>

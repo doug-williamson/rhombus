@@ -4,9 +4,14 @@
             <rh-shell-nav [title]="title" [navCollection]="navCollection"></rh-shell-nav>
         </mat-drawer>
         <mat-drawer-content>
-            <div [@routeAnimations]="o && o.activatedRouteData && o.activatedRouteData['animation']" fxFlex>
-                <rh-shell-header [title]="title" ></rh-shell-header>
-                <router-outlet #o="outlet"></router-outlet>
+            <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex>
+                <div [@routeAnimations]="o && o.activatedRouteData && o.activatedRouteData['animation']" fxFlex>
+                    <rh-shell-header [title]="title" ></rh-shell-header>
+                    <router-outlet #o="outlet"></router-outlet>
+                </div>
+                <div fxLayout fxLayoutAlign="center stretch" style="padding: 16px">
+                    <span>Powered By Rhombus</span>
+                </div>
             </div>
         </mat-drawer-content>
     </mat-drawer-container>
