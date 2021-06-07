@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { DarkModeComponent } from './dark-mode.component';
+import { RhShellDarkModeComponent } from './dark-mode.component';
 
-describe('DarkModeComponent', () => {
-  let component: DarkModeComponent;
-  let fixture: ComponentFixture<DarkModeComponent>;
+describe('RhShellDarkModeComponent', () => {
+  let component: RhShellDarkModeComponent;
+  let fixture: ComponentFixture<RhShellDarkModeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DarkModeComponent ],
+      declarations: [ RhShellDarkModeComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DarkModeComponent);
+    fixture = TestBed.createComponent(RhShellDarkModeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

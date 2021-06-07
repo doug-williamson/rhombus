@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { RhombusShellSettingsComponent } from './settings.component';
+import { RhShellSettingsComponent } from './settings.component';
 
-describe('RhombusShellSettingsComponent', () => {
-  let component: RhombusShellSettingsComponent;
-  let fixture: ComponentFixture<RhombusShellSettingsComponent>;
+describe('RhShellSettingsComponent', () => {
+  let component: RhShellSettingsComponent;
+  let fixture: ComponentFixture<RhShellSettingsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RhombusShellSettingsComponent ],
+      declarations: [ RhShellSettingsComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RhombusShellSettingsComponent);
+    fixture = TestBed.createComponent(RhShellSettingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

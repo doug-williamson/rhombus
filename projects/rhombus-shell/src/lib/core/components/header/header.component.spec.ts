@@ -8,7 +8,7 @@ describe('RhShellHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhShellHeaderComponent ]
+      declarations: [ RhShellHeaderComponent ],
     })
     .compileComponents();
   });

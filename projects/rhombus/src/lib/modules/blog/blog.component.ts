@@ -32,7 +32,12 @@ export class RhBlogComponent implements OnInit {
     posts: IPost[];
     compact$: Observable<boolean>;
 
-    constructor(private media: MediaObserver, private dialog: MatDialog, private authService: RhAuthService, private router: Router, private blogService: RhBlogService) {
+    constructor(
+      private media: MediaObserver,
+      private dialog: MatDialog,
+      private authService: RhAuthService,
+      private router: Router,
+      private blogService: RhBlogService) {
 
     }
 

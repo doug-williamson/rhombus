@@ -19,7 +19,12 @@ export class RhBlogPostComponent implements OnInit {
     post: IPost;
     compact$: Observable<boolean>;
 
-    constructor(private router: Router, private route: ActivatedRoute, private media: MediaObserver, private authService: RhAuthService, private blogService: RhBlogService) {
+    constructor(
+      private router: Router,
+      private route: ActivatedRoute,
+      private media: MediaObserver,
+      private authService: RhAuthService,
+      private blogService: RhBlogService) {
 
     }
 

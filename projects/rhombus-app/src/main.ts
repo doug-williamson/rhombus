@@ -1,12 +1,12 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { RhombusAppModule } from './app/app.module';
+import { RhAppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(RhombusAppModule)
+platformBrowserDynamic().bootstrapModule(RhAppModule)
   .catch(err => console.error(err));

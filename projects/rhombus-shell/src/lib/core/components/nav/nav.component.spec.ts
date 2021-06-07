@@ -8,7 +8,7 @@ describe('RhShellNavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RhShellNavComponent ]
+      declarations: [ RhShellNavComponent ],
     })
     .compileComponents();
   });

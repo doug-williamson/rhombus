@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ApplicationInfoService } from './application-info.service';
+import { RhShellApplicationInfoService } from './application-info.service';
 
-describe('ApplicationInfoService', () => {
+describe('RhShellApplicationInfoService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ApplicationInfoService = TestBed.get(ApplicationInfoService);
+    const service: RhShellApplicationInfoService = TestBed.inject(RhShellApplicationInfoService);
     expect(service).toBeTruthy();
   });
 });

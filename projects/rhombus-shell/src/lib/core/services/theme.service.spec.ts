@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ThemeService } from './theme.service';
+import { RhShellThemeService } from './theme.service';
 
-describe('ThemeService', () => {
+describe('RhShellThemeService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ThemeService = TestBed.get(ThemeService);
+    const service: RhShellThemeService = TestBed.inject(RhShellThemeService);
     expect(service).toBeTruthy();
   });
 });

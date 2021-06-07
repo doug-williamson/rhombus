@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RhAuthModule } from '@dougwilliamson/rhombus';
 import { RhShellModule } from '../../../rhombus-shell/src/lib/shell.module';
 import { environment } from '../environments/environment';
-import { RhombusAppComponent } from './app.component';
+import { RhAppComponent } from './app.component';
 import { RhombusAppRoutingModule } from './app.routing';
 import { RhombusModule } from './views/rhombus/rhombus.module';
 import { ViewsComponent } from './views/views.component';
@@ -53,12 +53,12 @@ import { ViewsComponent } from './views/views.component';
     }),
   ],
   declarations: [
-    RhombusAppComponent,
+    RhAppComponent,
     ViewsComponent,
   ],
   providers: [
     AngularFirestore,
   ],
-  bootstrap: [RhombusAppComponent],
+  bootstrap: [RhAppComponent],
 })
-export class RhombusAppModule { }
+export class RhAppModule { }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material/dialog';
-import { RhAuthService } from '@dougwilliamson/rhombus';
 import { User } from 'firebase';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
@@ -18,7 +17,7 @@ export class RhShellAuthComponent implements OnInit {
   compact$: Observable<boolean>;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private media: MediaObserver, private dialog: MatDialog, public authService: RhAuthService, private themeService: RhShellThemeService) {
+  constructor(private media: MediaObserver, private themeService: RhShellThemeService) {
     this.compact$ = this.media.asObservable().pipe(
       map(mediaMatch => {
         return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
@@ -30,7 +29,7 @@ export class RhShellAuthComponent implements OnInit {
   }
 
   signOut(): void {
-    this.authService.signOut();
+    // this.authService.signOut();
   }
 
   toggleDarkMode() {

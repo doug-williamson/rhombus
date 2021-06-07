@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { RhombusShellThemeRootComponent } from './theme-root.component';
+import { RhShellThemeRootComponent } from './theme-root.component';
 
-describe('RhombusShellThemeRootComponent', () => {
-  let component: RhombusShellThemeRootComponent;
-  let fixture: ComponentFixture<RhombusShellThemeRootComponent>;
+describe('RhShellThemeRootComponent', () => {
+  let component: RhShellThemeRootComponent;
+  let fixture: ComponentFixture<RhShellThemeRootComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RhombusShellThemeRootComponent ],
+      declarations: [ RhShellThemeRootComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RhombusShellThemeRootComponent);
+    fixture = TestBed.createComponent(RhShellThemeRootComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { RhShellThemeSettingComponent } from './theme-setting.component';
 
@@ -6,7 +6,7 @@ describe('RhShellThemeSettingComponent', () => {
   let component: RhShellThemeSettingComponent;
   let fixture: ComponentFixture<RhShellThemeSettingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RhShellThemeSettingComponent ],
     })

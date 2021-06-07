@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RhombusShellNavService } from './nav.service';
+import { RhShellNavService } from './nav.service';
 
-describe('RhombusShellNavService', () => {
+describe('RhShellNavService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RhombusShellNavService = TestBed.get(RhombusShellNavService);
+    const service: RhShellNavService = TestBed.inject(RhShellNavService);
     expect(service).toBeTruthy();
   });
 });
