@@ -1,8 +1,4 @@
-::ng-deep .mat-dialog-container {
-    padding: 0;
-}
-
-.shell-about__container {
+.about__container {
     padding: 16px;
 }
 
@@ -43,3 +39,13 @@
 .shell-about__powered-by-rhombus {
     font-size: 12px;
 }
+
+
+
+@media (min-width: 600px) {
+    .shell-about__url {
+        width: 175px;
+        height: 175px;
+    }
+}
+

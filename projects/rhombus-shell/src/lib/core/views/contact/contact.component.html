@@ -1,15 +1,7 @@
-<ng-container *ngIf="contact">
-    <mat-card class="shell-about__card" fxFlex>
-        <mat-card-header class="shell-about__header">
-            <mat-card-title class="shell-about__title">Contact</mat-card-title>
-            <mat-card-subtitle>
-                <ng-container *ngFor="let paragraph of contact.paragraphs">
-                    <p>{{ paragraph }}</p>
-                </ng-container>
-            </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content fxLayoutAlign="center center">
-          <button mat-raised-button color="primary" [cdkCopyToClipboard]="_appContactUsLink" (click)="goToLink(contact.discordLink)">Discord</button>
-        </mat-card-content>
-    </mat-card>
-</ng-container>
+<div class="about__container" fxLayout="column" fxLayoutAlign="center center" fxFill>
+    <div class="shell-about__title">Contact</div>
+    <ng-container *ngFor="let paragraph of contact.paragraphs">
+        <p>{{ paragraph }}</p>
+    </ng-container>
+    <button mat-raised-button color="primary" [cdkCopyToClipboard]="_appContactUsLink" (click)="goToLink(contact.discordLink)">Discord</button>
+</div>
