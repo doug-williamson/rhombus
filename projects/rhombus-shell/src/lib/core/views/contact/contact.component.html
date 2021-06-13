@@ -1,7 +1,9 @@
-<div class="about__container" fxLayout="column" fxLayoutAlign="center center" fxFill>
-    <div class="shell-about__title">Contact</div>
-    <ng-container *ngFor="let paragraph of contact.paragraphs">
-        <p>{{ paragraph }}</p>
-    </ng-container>
-    <button mat-raised-button color="primary" [cdkCopyToClipboard]="_appContactUsLink" (click)="goToLink(contact.discordLink)">Discord</button>
-</div>
+<ng-container *ngIf="contact && contact.paragraphs">
+    <div class="about__container" fxLayout="column" fxLayoutAlign="center center" fxFill>
+        <div class="shell-about__title">Contact</div>
+        <ng-container *ngFor="let paragraph of contact.paragraphs">
+            <p>{{ paragraph }}</p>
+        </ng-container>
+        <button mat-raised-button color="primary" [cdkCopyToClipboard]="_appContactUsLink" (click)="goToLink(contact.discordLink)">Discord</button>
+    </div>
+</ng-container>

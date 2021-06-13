@@ -1,6 +1,5 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { IDynastyYear } from '@dougwilliamson/rhombus';
 
 @Component({
   selector: 'rh-dynasty-team',

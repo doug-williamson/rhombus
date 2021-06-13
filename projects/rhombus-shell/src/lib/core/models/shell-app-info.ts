@@ -10,5 +10,6 @@ export declare interface FirebaseOptions {
 export interface RhShellApplicationInformation {
     logoLetters?: string;
     logoUrl?: string;
+    firebaseMetadataId: string;
     firebaseConfig?: FirebaseOptions;
 }

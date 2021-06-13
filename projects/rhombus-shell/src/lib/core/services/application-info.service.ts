@@ -21,4 +21,8 @@ export class RhShellApplicationInfoService {
   get firebaseConfig(): FirebaseOptions {
     return this.info && this.info.firebaseConfig;
   }
+
+  get firebaseMetadataId(): string {
+      return this.info && this.info.firebaseMetadataId;
+  }
 }

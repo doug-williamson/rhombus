@@ -48,7 +48,7 @@ import { ViewsComponent } from './views/views.component';
     RhShellModule.forRoot({
         applicationInfo: {
             logoUrl: '/assets/rhombus_logo_white.png',
-            firebaseConfig: undefined,
+            firebaseMetadataId: 'HkxoJ5pwH1mTEGh3FWww',
         },
     }),
   ],

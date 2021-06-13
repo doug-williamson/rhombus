@@ -102,18 +102,9 @@ export class RhShellThemeService {
   private updateCDKOverlay(value: boolean) {
     const containerElement = this.overlayContainer.getContainerElement();
     if (value) {
-      containerElement.classList.add('Rh-dark-theme');
+      containerElement.classList.add('rhombus-dark-theme');
     } else {
-      containerElement.classList.remove('Rh-dark-theme');
+      containerElement.classList.remove('rhombus-dark-theme');
     }
   }
-
-  // private updateCDKOverlay(themeClassName: string) {
-  //   const containerElement = this.overlayContainer.getContainerElement();
-  //   const currentTheme = this._currentThemeSubject.value;
-  //   if (currentTheme && currentTheme.className) {
-  //     containerElement.classList.remove(currentTheme.className);
-  //   }
-  //   containerElement.classList.add(themeClassName);
-  // }
 }

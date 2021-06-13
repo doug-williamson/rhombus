@@ -32,7 +32,7 @@ export class RhShellAboutComponent implements OnInit {
       }),
     );
 
-    this.appService.getAppMetadata$('HkxoJ5pwH1mTEGh3FWww').subscribe(res => {
+    this.appService.getAppMetadata$(this.applicationInfo.firebaseMetadataId).subscribe(res => {
       this._appName = res.app_name;
       this._appVersion = res.app_version;
       this._appLogoLetters = this.applicationInfo.logoLetters;
