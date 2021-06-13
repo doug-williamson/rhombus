@@ -8,9 +8,9 @@
         // color: mat-color($primary, 100);
         background-color: mat-color($primary, 200, 0.5);
 
-        @if(map-get($theme, is-dark)) {
-            color: mat-color($foreground, text);
-        }
+        // @if(map-get($theme, is-dark)) {
+        //     color: mat-color($foreground, text);
+        // }
     }
 
     .mat-nav-list .mat-list-item.rh-list-item--active:focus,

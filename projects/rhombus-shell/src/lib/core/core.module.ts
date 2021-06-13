@@ -62,6 +62,10 @@ import { RhShellSettingsModule } from './views/settings/settings.module';
     RhShellWrapperComponent,
     RhShellConfigurationModule,
     RhShellSelectedListItemDirective,
+
+    RhShellAboutComponent,
+    RhShellContactComponent,
+    RhShellDonateComponent,
   ],
   providers: [
     RhShellApplicationInfoService,

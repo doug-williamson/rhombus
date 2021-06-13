@@ -4,11 +4,11 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { RhShellNavCollection } from '../../models/shell-nav-item';
-import { AppService } from '../../services/app.service';
 import { RhShellNavService } from '../../services/nav.service';
 import { RhShellThemeService } from '../../services/theme.service';
 import { BreadCrumb } from './breadcrumb';
 import { slideInAnimation } from './shell-wrapper-animation';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'rh-shell-wrapper',
@@ -31,12 +31,12 @@ export class RhShellWrapperComponent implements OnInit {
   navCollection: RhShellNavCollection[];
 
   constructor(
+    private overlayContainer: OverlayContainer,
     private navService: RhShellNavService,
     private themeService: RhShellThemeService,
     private breakpointObserver: BreakpointObserver,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private appService: AppService) {
+    private activatedRoute: ActivatedRoute) {
       this._themeClassName$ = this.themeService.currentTheme$.pipe(
         map(theme => theme ? theme.className : ''),
       );
@@ -65,10 +65,6 @@ export class RhShellWrapperComponent implements OnInit {
         this.navService.setState(true);
         this._isMobile = false;
       }
-    });
-
-    this.appService.getAppMetadata$('HkxoJ5pwH1mTEGh3FWww').subscribe(res => {
-      // console.log(res);
     });
   }
 

@@ -1,10 +1,12 @@
-<div class="donate__container" fxLayout="column" fxLayoutAlign="center center" fxFill>
-    <div class="shell-about__title">Donate</div>
-    <ng-container *ngFor="let paragraph of donate.paragraphs">
-        <p>{{ paragraph }}</p>
-    </ng-container>
-    <button mat-raised-button color="primary" (click)="goToLink(donate.payPalLink)">PayPal</button>
-    <div class="shell-about__powered-by-rhombus" fxLayoutAlign="center center">
-        Donations are optional, non-refundable
+<ng-container *ngIf="donate && donate.paragraphs">
+    <div class="donate__container" fxLayout="column" fxLayoutAlign="center center" fxFill>
+        <div class="shell-about__title">Donate</div>
+        <ng-container *ngFor="let paragraph of donate.paragraphs">
+            <p>{{ paragraph }}</p>
+        </ng-container>
+        <button mat-raised-button color="primary" (click)="goToLink(donate.payPalLink)">PayPal</button>
+        <div class="shell-about__powered-by-rhombus" fxLayoutAlign="center center">
+            Donations are optional, non-refundable
+        </div>
     </div>
-</div>
+</ng-container>

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
-import { MatDialog } from '@angular/material/dialog';
-import { RhAuthService } from '@dougwilliamson/rhombus';
-import { User } from 'firebase';
+import { RhAuthService, User } from '@dougwilliamson/rhombus';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
 import { RhShellThemeService } from '../../services/theme.service';
@@ -14,26 +12,31 @@ import { RhShellThemeService } from '../../services/theme.service';
 })
 export class RhShellAuthComponent implements OnInit {
 
-  displayName!: User;
-  compact$: Observable<boolean>;
+    _themeClassName$: Observable<string>;
+    user$: Observable<User>;
+    compact$: Observable<boolean>;
 
-  // tslint:disable-next-line:max-line-length
-  constructor(private media: MediaObserver, private dialog: MatDialog, public authService: RhAuthService, private themeService: RhShellThemeService) {
-    this.compact$ = this.media.asObservable().pipe(
-      map(mediaMatch => {
-        return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
-      }),
-    );
-   }
+    constructor(private media: MediaObserver, private authService: RhAuthService, private themeService: RhShellThemeService) {
+        this.compact$ = this.media.asObservable().pipe(
+            map(mediaMatch => {
+                return !mediaMatch.find(change => change.mqAlias === 'gt-xs');
+            }),
+        );
 
-  ngOnInit(): void {
-  }
+        this._themeClassName$ = this.themeService.currentTheme$.pipe(
+            map(theme => theme ? theme.className : ''),
+        );
+    }
 
-  signOut(): void {
-    this.authService.signOut();
-  }
+    ngOnInit(): void {
+        this.user$ = this.authService.user$;
+    }
 
-  toggleDarkMode() {
-    this.themeService.toggleDarkMode();
-  }
+    signOut(): void {
+        this.authService.signOut();
+    }
+
+    toggleDarkMode() {
+        this.themeService.toggleDarkMode();
+    }
 }
