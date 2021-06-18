@@ -1,0 +1,10 @@
+.streaming__wrapper {
+  max-height: 100% !important;
+
+  // margin: 16px;
+  overflow: auto;
+
+  &-iframe {
+      // margin: 8px;
+  }
+}

@@ -1,13 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { StreamComponent } from './stream.component';
-
-
+import { RhStreamComponent } from './stream.component';
 
 @NgModule({
-  declarations: [StreamComponent],
-  imports: [
-    CommonModule
-  ]
+  declarations: [RhStreamComponent],
 })
 export class StreamModule { }

@@ -1,13 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ExperienceComponent } from './experience.component';
-
-
+import { RhExperienceComponent } from './experience.component';
 
 @NgModule({
-  declarations: [ExperienceComponent],
-  imports: [
-    CommonModule
-  ]
+  declarations: [RhExperienceComponent],
 })
 export class ExperienceModule { }

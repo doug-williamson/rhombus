@@ -1,1 +1,16 @@
-<p>stream works!</p>
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="start stretch" fxFill class="streaming__wrapper" *ngIf="streamData">
+  <iframe fxFlex="70" fxFlex.xs="60"
+	class="streaming__wrapper-iframe"
+	[src]="video_url"
+	frameborder="0"
+	scrolling="no"
+	allowfullscreen="true">
+  </iframe>
+  <iframe fxFlex="30" fxFlex.xs="40"
+    class="streaming__wrapper-iframe"
+    frameborder="0"
+    scrolling="no"
+    id="chat_embed"
+    [src]="chat_url">
+  </iframe>
+</div>

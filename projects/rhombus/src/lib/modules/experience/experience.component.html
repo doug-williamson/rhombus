@@ -1,1 +1,39 @@
-<p>experience works!</p>
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFill class="experience__wrapper">
+  <ng-container *ngIf="experience">
+    <mat-card fxFlex>
+      <mat-card-header class="experience__wrapper-header">
+          <img mat-card-avatar *ngIf="media.isActive('gt-xs')" [src]="'./assets/images/doug_williamson.jpg'" class="experience__wrapper-image">
+          <mat-card-title class="experience__wrapper-title">{{ experience.name }}</mat-card-title>
+          <mat-card-subtitle class="experience__wrapper-subtitle">{{ experience.position }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex>
+          <div class="experience__wrapper-job-card-content" fxFlex>
+            {{ experience.description }}
+          </div>
+          <mat-accordion class="example-headers-align">
+            <ng-container *ngIf="jobs">
+              <ng-container *ngFor="let job of jobs">
+                <mat-expansion-panel [expanded]="job.id === 4">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{ job.name }}
+                    </mat-panel-title>
+                    <mat-panel-description *ngIf="media.isActive('gt-xs')">
+                      {{ job.dates }}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <span *ngIf="media.isActive('xs')">{{ job.dates }}</span>
+                  <div class="experience__wrapper-job-card-content">
+                    {{ job.description }}
+                  </div>
+                  <app-tags [jobId]="job.id"></app-tags>
+                </mat-expansion-panel>
+              </ng-container>
+            </ng-container>
+          </mat-accordion>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>
